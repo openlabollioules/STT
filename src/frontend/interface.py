@@ -6,11 +6,13 @@ import subprocess
 import threading
 import tkinter as tk
 from tkinter import scrolledtext, ttk, filedialog
+from tkinterdnd2 import DND_FILES, TkinterDnD
 
 # Assurez-vous que votre fichier post_process.py (ou services.py) est dans le bon répertoire
 # Ici, on suppose que la fonction start_post_process est importée depuis services.py
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from services import start_post_process
+from diarization import start_transcription_n_diarization
 
 
 class STTInterface:
@@ -142,6 +144,9 @@ class STTInterface:
         self.stt_process = None
         self.queue = queue.Queue()
         self.running = False
+
+        self.root.drop_target_register(DND_FILES)
+        self.root.dnd_bind('<<Drop>>', self.drop_event)
 
     def get_audio_devices(self):
         """Récupère la liste des périphériques audio disponibles avec ffmpeg."""
@@ -369,12 +374,91 @@ class STTInterface:
         else:
             self.text_display.insert(tk.END, "Aucun fichier sélectionné.\n")
             self.text_display.yview(tk.END)
+    
+    def drop_event(self, event):
+        """
+        Gère le drag & drop de fichiers audio en ouvrant une nouvelle fenêtre de traitement pour chaque fichier.
+        """
+        files = self.root.tk.splitlist(event.data)
+        audio_extensions = ('.wav', '.mp3', '.flac', '.ogg', '.m4a')
+        for file_path in files:
+            if file_path.lower().endswith(audio_extensions):
+                self.open_drag_post_process_window(file_path)
+            else:
+                self.text_display.insert(tk.END, f"Le fichier {file_path} n'est pas un fichier audio.\n")
+        self.text_display.yview(tk.END)
+    
+    def open_drag_post_process_window(self, file_path):
+        """
+        Ouvre une nouvelle fenêtre avec une barre de progression pour traiter le fichier audio déposé.
+        """
+        file_name = os.path.basename(file_path)
+        self.text_display.insert(tk.END, f"Début du traitement pour le fichier : {file_path}\n")
+        self.text_display.yview(tk.END)
 
+        # Création de la fenêtre de chargement
+        loading_window = tk.Toplevel(self.root)
+        loading_window.title("Traitement du fichier glissé...")
+        loading_window.resizable(False, False)
+        
+        loading_window.geometry("300x100")
+        loading_window.update_idletasks()  # Assure que la fenêtre est bien dimensionnée
 
+        # Calculer la position pour centrer la fenêtre
+        window_width = loading_window.winfo_width()
+        window_height = loading_window.winfo_height()
+        screen_width = loading_window.winfo_screenwidth()
+        screen_height = loading_window.winfo_screenheight()
+
+        x = (screen_width // 2) - (window_width // 2)
+        y = (screen_height // 2) - (window_height // 2)
+
+        loading_window.geometry(f"300x100+{x}+{y}")
+        
+        label = tk.Label(loading_window, text="Traitement en cours...\nVeuillez patienter.", font=("Arial", 12))
+        label.pack(pady=10)
+        
+        progress = ttk.Progressbar(loading_window, orient=tk.HORIZONTAL, mode='indeterminate', length=250)
+        progress.pack(pady=5)
+        progress.start(10)
+        loading_window.update()
+
+        def worker():
+            try:
+                result = start_transcription_n_diarization('./testttttt.txt',file_path)
+                self.load_transcription(result)
+                self.root.after(0, finish, result, None)
+            except Exception as e:
+                self.root.after(0, finish, None, e)
+        
+        def finish(result, error):
+            progress.stop()  
+            if error is not None:
+                self.text_display.insert(tk.END, f"Erreur lors du traitement du fichier : {error}\n")
+            else:
+                if result == 0:
+                    self.text_display.insert(tk.END, f"Traitement du fichier {file_path} terminé.\n")
+            loading_window.destroy()
+            self.text_display.yview(tk.END)
+        
+        threading.Thread(target=worker, daemon=True).start()
+    
+    def load_transcription(self,file_path):
+        """Ouvre un fichier et affiche son contenu dans la zone de texte."""
+ 
+        if file_path:
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    content = f.read()
+                self.text_display.delete("1.0", tk.END) 
+                self.text_display.insert(tk.END, content)
+                self.text_display.insert(tk.END, "\nTranscription chargée avec succès.\n")
+            except Exception as e:
+                self.text_display.insert(tk.END, f"Erreur lors de la lecture du fichier : {e}\n")
 
 
 
 if __name__ == "__main__":
-    root = tk.Tk()
+    root = TkinterDnD.Tk()
     app = STTInterface(root)
     root.mainloop()

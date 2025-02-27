@@ -140,10 +140,10 @@ def save_transcriptions(output_file, transcriptions):
         with open(output_file, "w", encoding="utf-8") as f:
             f.write("**Transcriptions par locuteur**\n\n")
             for segment in transcriptions:
-                f.write(f"[{segment['start']:.2f}s - {segment['end']:.2f}s] {segment['speaker']} : {segment['transcription']}\n")
-        
+                f.write(f"[{segment['start']:.2f}s - {segment['end']:.2f}s] {segment['speaker']} : {segment['transcription']}\n\n")
         logger.info(f"Transcriptions sauvegardées dans {output_file}")
-
+        return output_file
+        
     except Exception as e:
         logger.error(f"Error saving transcription file: {e}", exc_info=True)
 
