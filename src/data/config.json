@@ -1,0 +1,21 @@
+{
+    "input_file": "/Users/openlab/DEV/data/input.wav",
+    "output_file": "/Users/openlab/DEV/data/output.txt",
+    
+    "file_name":"ia_open_source.mp3",
+    "audio_dir":"audiofiles/",
+    
+    "REUNION_NAME" :"Debat_sur_l'IA",
+    "MODEL_NAME":"mistral-small:latest",
+    
+    "llm_intro":"deepseek-r1:8b",
+    "llm_speakers":"phi4:14b-q4_K_M",
+    "llm_format":"smallthinker:latest",
+    "llm_shorter_phrase":"mistral-small:latest",
+    "llm_summary":"llama3.3-128k-context:latest",
+    "llm_feedback":"command-r-plus:latest",
+    "llm_correction":"llama3.3-128k-context:latest",
+
+    "logger_level":"INFO"
+
+}

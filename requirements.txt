@@ -1,0 +1,17 @@
+torch
+transformers
+torchaudio
+pydub
+ffmpeg-python
+speechbrain
+ffmpeg
+python-dotenv
+tiktoken
+pyannote.audio
+pyannote.core
+pyannote.database
+pyannote.pipeline
+pyannote.metricspip
+langchain
+langgraph
+langchain-ollama
