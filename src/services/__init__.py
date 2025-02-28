@@ -1,5 +1,5 @@
 from .file_service import (create_output_file, load_audio,
-                           write_in_output_formated, write_in_output_raw, save_transcriptions, cleanup_transcriptions)
+                           write_in_output_formated, write_in_output_raw, save_transcriptions, cleanup_transcriptions, md_2_docx)
 from .json_service import list_available_prompts, load_prompt
 from .LLM_service import start_post_process, transcription_post_process
 from .logger_service import logger
@@ -23,5 +23,6 @@ __all__ = [
     "process_audio_for_whisper",
     "save_transcriptions",
     "cleanup_transcriptions",
-    "remove_think_tags"
+    "remove_think_tags",
+    "md_2_docx"
 ]

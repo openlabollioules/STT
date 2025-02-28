@@ -16,9 +16,9 @@ Install requirements :
 ```bash 
 pip install -r requirements.txt
 ```
-Install ffmpeg : 
+Install ffmpeg and Pypandoc : 
 ```bash
-brew ffmpeg
+brew install ffmpeg && brew install pypandoc 
 ```
 For an instance of the live Version :
 ```bash

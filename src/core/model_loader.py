@@ -97,6 +97,6 @@ def load_pyannote():
 
     logger.info(f"Utilisation du périphérique : {device}")
 
-    pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1", use_auth_token=HF_TOKEN, cache_dir=MODEL_DIR)
+    pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1", cache_dir=MODEL_DIR)
     pipeline.to(torch.device(device))
     return pipeline

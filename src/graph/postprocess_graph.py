@@ -22,7 +22,7 @@ class TranscriptionProcessor:
         # Initialisation des modèles LLM pour chaque tâche
         self.llm_intro = OllamaLLM(model="deepseek-r1:8b", num_ctx=128000)
         self.llm_speakers = OllamaLLM(model="phi4:14b-q4_K_M", num_ctx=128000)
-        self.llm_format = OllamaLLM(model="mistral-small:latest", num_ctx=128000)
+        self.llm_format = OllamaLLM(model="phi4:14b-q4_K_M", num_ctx=128000)
         self.llm_shorter_phrase = OllamaLLM(model="mistral-small:latest", num_ctx=128000)
         self.llm_summary = OllamaLLM(model="deepseek-r1:14b", num_ctx=128000)
         self.llm_feedback = OllamaLLM(model="deepseek-r1:14b", num_ctx=128000)
@@ -180,3 +180,6 @@ class TranscriptionProcessor:
             f.write(result["corrected_text"])
 
         print(f"\n Transcription saved here : {output_path}")
+        return str(output_path)
+
+post_process_graph = TranscriptionProcessor()

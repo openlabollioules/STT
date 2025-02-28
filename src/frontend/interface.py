@@ -5,14 +5,15 @@ import re
 import subprocess
 import threading
 import tkinter as tk
-from tkinter import scrolledtext, ttk, filedialog
+from tkinter import scrolledtext, ttk, filedialog, Toplevel, Text, BOTH, LEFT,RIGHT, filedialog, Button, Frame
 from tkinterdnd2 import DND_FILES, TkinterDnD
+import markdown
+from tkhtmlview import HTMLLabel
 
-# Assurez-vous que votre fichier post_process.py (ou services.py) est dans le bon répertoire
-# Ici, on suppose que la fonction start_post_process est importée depuis services.py
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from services import start_post_process
+from services import start_post_process,md_2_docx
 from diarization import start_transcription_n_diarization
+from graph import post_process_graph
 
 
 class STTInterface:
@@ -20,6 +21,17 @@ class STTInterface:
         self.root = root
         self.root.title("STT Interface")
         self.root.geometry("700x550")
+        
+        window_width = self.root.winfo_width()
+        window_height = self.root.winfo_height()
+        screen_width = self.root.winfo_screenwidth()
+        screen_height = self.root.winfo_screenheight()
+
+        x = (screen_width // 2) - (window_width // 2)
+        y = (screen_height // 2) - (window_height // 2)
+
+        self.root.geometry(f"700x550+{x-350}+{y-225}")
+        
         self.root.minsize(650, 400)
 
         # Rendre la grille responsive : la ligne 0 (avec le texte) occupe tout l'espace
@@ -306,34 +318,37 @@ class STTInterface:
                 with open(file_path, "w", encoding="utf-8") as file:
                     content = self.text_display.get("1.0", tk.END)
                     file.write(content)
-                self.text_display.insert(tk.END, f"💾 Transcription sauvegardée dans {file_path}\n")
+                self.text_display.insert(tk.END, f"Transcription sauvegardée dans {file_path}\n")
             except Exception as e:
                 self.text_display.insert(tk.END, f"Erreur lors de la sauvegarde : {e}\n")
             self.text_display.yview(tk.END)
 
     def start_post_processing(self):
-        """Ouvre l'explorateur de fichiers pour sélectionner un fichier et lance le post process dans un thread séparé avec une barre d'avancement."""
+        """Open the file explorer to select files than start post process"""
         file_path = filedialog.askopenfilename(
             title="Sélectionnez un fichier pour le post process",
             filetypes=[("All Files", "*.*")]
         )
-        if file_path:
-            import os
-            file_name = os.path.basename(file_path)
-            write_in_file_auto_correction = True
-            deepseek = True
-
+        if file_path:            
             self.text_display.insert(tk.END, f"Post process lancé pour le fichier : {file_path}\n")
             self.text_display.yview(tk.END)
             self.root.update()
 
-            # Création d'une fenêtre de chargement
             loading_window = tk.Toplevel(self.root)
             loading_window.title("Processing...")
             loading_window.resizable(False, False)
             loading_window.geometry("300x100")
             
-            # Label de chargement
+            window_width = loading_window.winfo_width()
+            window_height = loading_window.winfo_height()
+            screen_width = loading_window.winfo_screenwidth()
+            screen_height = loading_window.winfo_screenheight()
+
+            x = (screen_width // 2) - (window_width // 2)
+            y = (screen_height // 2) - (window_height // 2)
+
+            loading_window.geometry(f"300x100+{x}+{y}")
+                
             label = tk.Label(
                 loading_window, 
                 text="Traitement en cours...\nVeuillez patienter.",
@@ -341,21 +356,20 @@ class STTInterface:
             )
             label.pack(pady=10)
 
-            # Barre d'avancement en mode indéterminé
             progress = ttk.Progressbar(loading_window, orient=tk.HORIZONTAL, mode='indeterminate', length=250)
             progress.pack(pady=5)
             progress.start(10)  # L'intervalle (ms) entre chaque mouvement de la barre
             loading_window.update()
 
-            # Fonction worker exécutée dans un thread séparé
             def worker():
                 try:
-                    result = start_post_process(write_in_file_auto_correction, file_path, file_name, deepseek)
+                    result = post_process_graph.process_transcription(file_path)
+                    print(result)
+                    self.open_markdown_editor(result)
                     self.root.after(0, finish, result, None)
                 except Exception as e:
                     self.root.after(0, finish, None, e)
 
-            # Fonction appelée dans le thread principal une fois le traitement terminé
             def finish(result, error):
                 progress.stop()  # Arrête la barre d'avancement
                 if error is not None:
@@ -368,17 +382,14 @@ class STTInterface:
                 loading_window.destroy()
                 self.text_display.yview(tk.END)
 
-            # Démarrage du post process dans un thread séparé
             threading.Thread(target=worker, daemon=True).start()
 
         else:
-            self.text_display.insert(tk.END, "Aucun fichier sélectionné.\n")
+            self.text_display.insert(tk.END, "no file selected\n")
             self.text_display.yview(tk.END)
     
     def drop_event(self, event):
-        """
-        Gère le drag & drop de fichiers audio en ouvrant une nouvelle fenêtre de traitement pour chaque fichier.
-        """
+        """Handles the drag and drop"""
         files = self.root.tk.splitlist(event.data)
         audio_extensions = ('.wav', '.mp3', '.flac', '.ogg', '.m4a')
         for file_path in files:
@@ -389,9 +400,7 @@ class STTInterface:
         self.text_display.yview(tk.END)
     
     def open_drag_post_process_window(self, file_path):
-        """
-        Ouvre une nouvelle fenêtre avec une barre de progression pour traiter le fichier audio déposé.
-        """
+        """Open a new windows with a loading bar"""
         file_name = os.path.basename(file_path)
         self.text_display.insert(tk.END, f"Début du traitement pour le fichier : {file_path}\n")
         self.text_display.yview(tk.END)
@@ -444,7 +453,7 @@ class STTInterface:
         threading.Thread(target=worker, daemon=True).start()
     
     def load_transcription(self,file_path):
-        """Ouvre un fichier et affiche son contenu dans la zone de texte."""
+        """Open a file and display his content inse the text zone"""
  
         if file_path:
             try:
@@ -455,7 +464,203 @@ class STTInterface:
                 self.text_display.insert(tk.END, "\nTranscription chargée avec succès.\n")
             except Exception as e:
                 self.text_display.insert(tk.END, f"Erreur lors de la lecture du fichier : {e}\n")
+    def open_markdown_editor(self, file_path):
+        """
+        Ouvre un éditeur Markdown visuel dans une fenêtre pop-up.
+        Si un chemin vers un fichier Markdown est fourni, le fichier est chargé.
+        """
+        popup = Toplevel()
+        popup.title("Éditeur Markdown Visuel")
+        popup.geometry("800x600")
+        
+        # On stocke le chemin du fichier dans la fenêtre (attribut custom)
+        popup.file_path = file_path
 
+        # Créer un cadre en haut pour les boutons "Charger" et "Sauvegarder"
+        button_frame = Frame(popup)
+        button_frame.pack(fill=tk.X, pady=5)
+
+        def load_file():
+            path = filedialog.askopenfilename(
+                title="Ouvrir fichier Markdown",
+                filetypes=[("Markdown Files", "*.md"), ("Text Files", "*.txt"), ("All Files", "*.*")]
+            )
+            if path:
+                popup.file_path = path
+                try:
+                    with open(path, "r", encoding="utf-8") as f:
+                        content = f.read()
+                    editor.delete("1.0", tk.END)
+                    editor.insert(tk.END, content)
+                    update_preview()
+                except Exception as e:
+                    editor.insert(tk.END, f"Erreur lors du chargement du fichier : {e}")
+
+        def save_file():
+            # Utilise le chemin existant, sinon demande où sauvegarder
+            if popup.file_path:
+                path = popup.file_path
+            else:
+                path = filedialog.asksaveasfilename(
+                    title="Sauvegarder fichier Markdown",
+                    defaultextension=".md",
+                    filetypes=[("Markdown Files", "*.md"), ("Text Files", "*.txt"), ("All Files", "*.*")]
+                )
+                if not path:
+                    return
+                popup.file_path = path
+
+            try:
+                with open(path, "w", encoding="utf-8") as f:
+                    f.write(editor.get("1.0", tk.END))
+            except Exception as e:
+                print(f"Erreur lors de la sauvegarde : {e}")
+        def handle_export():
+            # Utilise le chemin existant, sinon demande où sauvegarder
+            if popup.file_path:
+                path = popup.file_path
+            else:
+                path = filedialog.asksaveasfilename(
+                    title="Sauvegarder fichier Markdown",
+                    defaultextension=".md",
+                    filetypes=[("Markdown Files", "*.md"), ("Text Files", "*.txt"), ("All Files", "*.*")]
+                )
+                if not path:
+                    return
+                popup.file_path = path
+
+            try:
+                md_2_docx(file_path,path)
+            except Exception as e:
+                print(f"Erreur lors de la sauvegarde : {e}")
+            
+
+        # Bouton pour charger un fichier Markdown
+        load_button = Button(button_frame, text="Charger Fichier", command=load_file)
+        load_button.pack(side=LEFT, padx=5)
+
+        # Bouton pour sauvegarder les modifications
+        save_button = Button(button_frame, text="Sauvegarder", command=save_file)
+        save_button.pack(side=LEFT, padx=5)
+        
+        save_button = Button(button_frame, text="exporter en word", command=handle_export)
+        save_button.pack(side=LEFT, padx=5)
+
+        # Zone d'édition Markdown
+        editor = Text(popup, wrap="word", font=("Arial", 12))
+        editor.pack(side=LEFT, fill=BOTH, expand=True, padx=5, pady=5)
+
+        # Zone de prévisualisation HTML
+        preview = HTMLLabel(popup, html="<h1>Prévisualisation</h1>", background="white", font=("Arial", 12))
+        preview.pack(side=RIGHT, fill=BOTH, expand=True, padx=5, pady=5)
+
+        # Variable de synchronisation pour éviter les appels récursifs
+        syncing = False
+
+        # Fonction qui met à jour la prévisualisation en convertissant le Markdown en HTML
+        def update_preview(event=None):
+            nonlocal syncing
+            # Sauvegarde de la position de défilement du widget preview
+            try:
+                scroll_fraction = preview.yview()[0]
+            except Exception:
+                scroll_fraction = 0.0
+            # Conversion du Markdown en HTML
+            md_text = editor.get("1.0", tk.END)
+            html_content = markdown.markdown(md_text)
+            # On met à jour le HTML puis on restaure la position de scroll
+            preview.set_html(html_content)
+            try:
+                preview.yview_moveto(scroll_fraction)
+            except Exception:
+                pass
+            editor.edit_modified(False)
+
+        # Synchronisation du scroll de l'éditeur vers la prévisualisation
+        def on_editor_scroll(event):
+            nonlocal syncing
+            if syncing:
+                return
+            syncing = True
+            try:
+                fraction = editor.yview()[0]
+                preview.yview_moveto(fraction)
+            except Exception:
+                pass
+            syncing = False
+
+        # Synchronisation du scroll de la prévisualisation vers l'éditeur
+        def on_preview_scroll(event):
+            nonlocal syncing
+            if syncing:
+                return
+            syncing = True
+            try:
+                fraction = preview.yview()[0]
+                editor.yview_moveto(fraction)
+            except Exception:
+                pass
+            syncing = False
+        
+        def sync_editor_to_preview(event=None):
+            nonlocal syncing
+            if syncing:
+                return
+            syncing = True
+            try:
+                # Récupère la fraction de défilement de l'éditeur
+                fraction = editor.yview()[0]
+                # Applique un facteur de correction (à ajuster selon vos tests)
+                correction_factor = 1.1  
+                target_fraction = min(1.0, fraction * correction_factor)
+                preview.yview_moveto(target_fraction)
+            finally:
+                syncing = False
+
+        def sync_preview_to_editor(event=None):
+            nonlocal syncing
+            if syncing:
+                return
+            syncing = True
+            try:
+                fraction = preview.yview()[0]
+                # Inverse le facteur de correction (approximativement)
+                correction_factor = 1 / 1.1  
+                target_fraction = min(1.0, fraction * correction_factor)
+                editor.yview_moveto(target_fraction)
+            finally:
+                syncing = False
+
+
+        # Lier les événements de défilement à la molette de la souris
+        editor.bind("<MouseWheel>", on_editor_scroll)
+        preview.bind("<MouseWheel>", on_preview_scroll)
+        editor.bind("<MouseWheel>", sync_editor_to_preview)
+        preview.bind("<MouseWheel>", sync_preview_to_editor)
+        # Et éventuellement sur d'autres événements de défilement (flèches, KeyRelease, etc.)
+        editor.bind("<KeyRelease>", sync_editor_to_preview)
+        preview.bind("<KeyRelease>", sync_preview_to_editor)
+
+        
+        # Optionnel : lier également les flèches et la barre d'espace, etc.
+        editor.bind("<KeyRelease>", lambda event: on_editor_scroll(event))
+        preview.bind("<KeyRelease>", lambda event: on_preview_scroll(event))
+
+        # Lier l'événement de modification pour mettre à jour la prévisualisation
+        def on_modified(event):
+            if editor.edit_modified():
+                update_preview()
+        editor.bind("<<Modified>>", on_modified)
+
+        # Si un chemin de fichier a été passé en paramètre, charge son contenu
+        if file_path:
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    content = f.read()
+                editor.insert(tk.END, content)
+                update_preview()
+            except Exception as e:
+                editor.insert(tk.END, f"Erreur lors du chargement du fichier : {e}")
 
 
 if __name__ == "__main__":

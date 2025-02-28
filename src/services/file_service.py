@@ -1,4 +1,5 @@
 import os
+import pypandoc
 import sys
 import numpy as np
 from dotenv import load_dotenv
@@ -168,3 +169,9 @@ def cleanup_transcriptions(transcriptions):
 
     cleaned_transcriptions.append(current_segment)
     return cleaned_transcriptions
+
+def md_2_docx(file_path,output_path):
+
+    output = pypandoc.convert_file(file_path, 'docx', outputfile=f"{output_path}.docx")
+    print("Conversion terminée !")
+    return output_path
