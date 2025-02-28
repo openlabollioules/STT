@@ -13,7 +13,7 @@ from services import load_prompt, remove_think_tags
 class TranscriptionProcessor:
     def __init__(self, output_dir=None):
         """
-        Initialise le post-processeur avec LangGraph et plusieurs modèles OllamaLLM.
+        Initiate post process Class with LangGraph 
         """
         # Loading env variables
         load_dotenv()
@@ -182,4 +182,5 @@ class TranscriptionProcessor:
         print(f"\n Transcription saved here : {output_path}")
         return str(output_path)
 
+# Global instance 
 post_process_graph = TranscriptionProcessor()

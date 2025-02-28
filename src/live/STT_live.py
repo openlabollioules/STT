@@ -58,41 +58,41 @@ def send_text(text):
 
 def cleanup_text(previous_text, new_text):
     """
-    Supprime les répétitions entre previous_text et new_text,
-    en conservant la ponctuation correcte et sans liste prédéfinie de corrections.
+    Removes repetitions between previous_text and new_text,
+    while preserving correct punctuation and without a predefined list of corrections.
     """
     if not previous_text:
-        return new_text  # Premier passage, rien à nettoyer.
+        return new_text  # First pass, nothing to clean.
 
-    # Supprime temporairement la ponctuation pour comparer les répétitions
+    # Temporarily removes punctuation to compare repetitions
     prev_clean = re.sub(r"[^\w\s]", "", previous_text).lower().split()
     new_clean = re.sub(r"[^\w\s]", "", new_text).lower().split()
 
-    # Recherche de la plus longue séquence répétée
+    # Searches for the longest repeated sequence
     overlap = 0
     max_overlap = min(len(prev_clean), len(new_clean))
 
     for i in range(1, max_overlap + 1):
         if (
             prev_clean[-i:] == new_clean[:i]
-        ):  # Vérifie si la fin de previous_text == début de new_text
+        ):  # Checks if the end of previous_text == start of new_text
             overlap = i
 
-    # Garde la forme originale de new_text mais supprime la répétition
+    # Keeps the original form of new_text but removes the repetition
     words_new = new_text.split()
     cleaned_text = " ".join(
         words_new[overlap:]
-    )  # Garde la ponctuation originale de new_text
+    )  # Preserves the original punctuation of new_text
 
-    # Supprime les répétitions internes ("j'appel j'appel" → "j'appel")
+    # Removes internal repetitions ("I call I call" → "I call")
     cleaned_text = re.sub(r"\b(\w+)\s+\1\b", r"\1", cleaned_text, flags=re.IGNORECASE)
 
-    # Supprime les répétitions de groupes de mots ("success story success story" → "success story")
+    # Removes repetitions of word groups ("success story success story" → "success story")
     cleaned_text = re.sub(
         r"(\b\w+\s+\w+\b)\s+\1", r"\1", cleaned_text, flags=re.IGNORECASE
     )
 
-    # Supprime les espaces inutiles
+    # Removes unnecessary spaces
     cleaned_text = re.sub(r"\s+", " ", cleaned_text).strip()
 
     return cleaned_text
@@ -103,6 +103,7 @@ def transcribe_stream(mode, write_auto_correction=True):
     """
     This function takes the buffer audio and transcribe it
     --- args ---
+        mode 
     --- return ---
         Le fichier retranscrit
     """

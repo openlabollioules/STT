@@ -28,6 +28,7 @@ def start_transcription_n_diarization(output_path,file_path):
     audio = AudioSegment.from_wav(audio_file)
     duration = len(audio) / 1000
 
+    # Logs 
     logger.info(f"Durée totale de l'audio : {duration:.2f} secondes")
     logger.info("Exécution de la diarisation...")
     

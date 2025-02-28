@@ -1,4 +1,3 @@
-# pip install --upgrade transformers datasets[audio] accelerate
 import os
 import sys
 import time
@@ -58,9 +57,9 @@ def transcribe_file(audio_file_path, write_auto_correction=True):
         end_time = time.time()
         elapsed_time = end_time - charging_time
         logger.info(f"Transcription completed in {elapsed_time:.2f} seconds for a {duration:.2f}-second file")
-
-        # Post-processing (auto-correction, deepseek)
         logger.info("Starting post-processing...")
+
+        # starting post process
         start_post_process(write_auto_correction, file_path, file_name, deepseek=True)
         logger.info("Post-processing completed successfully.")
     except FileNotFoundError as e:

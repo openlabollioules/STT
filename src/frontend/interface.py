@@ -17,6 +17,9 @@ from graph import post_process_graph
 
 
 class STTInterface:
+    """
+    This class is for the STT interface
+    """
     def __init__(self, root):
         self.root = root
         self.root.title("STT Interface")
@@ -34,14 +37,13 @@ class STTInterface:
         
         self.root.minsize(650, 400)
 
-        # Rendre la grille responsive : la ligne 0 (avec le texte) occupe tout l'espace
+        # Make the grid responsive
         self.root.grid_rowconfigure(0, weight=1)
         self.root.grid_columnconfigure(0, weight=1)
 
-        # Taille du texte (par défaut)
+        # text size
         self.text_size = 12
 
-        # ------------------ Ligne 0 : Zone de texte ------------------
         self.text_display = scrolledtext.ScrolledText(
             root, wrap=tk.WORD, font=("Arial", self.text_size)
         )
@@ -49,14 +51,12 @@ class STTInterface:
             row=0, column=0, columnspan=4, sticky="nsew", padx=10, pady=10
         )
 
-        # Configuration de la mise en évidence
         self.text_display.tag_config(
             "last_phrase",
             foreground="white",
             font=("Arial", self.text_size + 2, "bold", "underline"),
         )
 
-        # ------------------ Ligne 1 : Start, Stop, Post Process, Save ------------------
         self.start_button = tk.Button(
             root,
             text="Start",
@@ -93,7 +93,6 @@ class STTInterface:
         )
         self.save_button.grid(row=4, column=1, padx=5, pady=5, sticky="ew")
 
-        # ------------------ Ligne 2 : Zoom +, Zoom -, Reset Zoom ------------------
         self.zoom_in_button = tk.Button(
             root, text="Zoom +", command=self.zoom_in, font=("Arial", 12)
         )
@@ -109,10 +108,8 @@ class STTInterface:
         )
         self.reset_zoom_button.grid(row=2, column=2, padx=5, pady=5, sticky="ew")
 
-        # ------------------ Ligne 3 : Mode, Langue, Audio ------------------
-        # Variables pour les combobox
-        self.mode_var = tk.StringVar(value="Transcribe")  # Par défaut, Transcribe
-        self.language_var = tk.StringVar(value="fr")       # Par défaut, français
+        self.mode_var = tk.StringVar(value="Transcribe")  # default value Transcribe
+        self.language_var = tk.StringVar(value="fr")  # default value french
         self.audio_devices = self.get_audio_devices()
         self.selected_device = tk.StringVar(value=self.audio_devices[0])
 
@@ -125,7 +122,7 @@ class STTInterface:
         )
         self.mode_selector.grid(row=3, column=0, padx=5, pady=5, sticky="ew")
 
-        # Combobox de la langue
+        # Combobox language
         languages = {
             "Français": "fr",
             "Anglais": "en",
@@ -142,7 +139,7 @@ class STTInterface:
         )
         self.language_selector.grid(row=3, column=1, padx=5, pady=5, sticky="ew")
 
-        # Combobox de l'entrée audio
+        # Combobox for audio input 
         self.audio_selector = ttk.Combobox(
             root,
             textvariable=self.selected_device,
@@ -161,7 +158,8 @@ class STTInterface:
         self.root.dnd_bind('<<Drop>>', self.drop_event)
 
     def get_audio_devices(self):
-        """Récupère la liste des périphériques audio disponibles avec ffmpeg."""
+        """Récupère la liste des périphériques audio disponibles avec ffmpeg.
+        Fetch all the device list """
         try:
             result = subprocess.run(
                 ["ffmpeg", "-list_devices", "true", "-f", "avfoundation", "-i", ""],
@@ -190,7 +188,7 @@ class STTInterface:
             return [f"Erreur: {e}"]
 
     def start_process(self):
-        """Démarre ffmpeg avec l'entrée sélectionnée et envoie le flux à STT_live.py."""
+        """starts ffmpeg with the selected device then send it back to STT_live.py"""
         if self.ffmpeg_process is None and self.stt_process is None:
             self.running = True
 
@@ -238,7 +236,7 @@ class STTInterface:
             self.listen_to_stt()
 
     def listen_to_stt(self):
-        """Écoute les messages de STT_live.py et met à jour l'affichage."""
+        """listen to STT_live.py messages then update the interface."""
         def listen():
             while self.running:
                 try:
@@ -251,7 +249,7 @@ class STTInterface:
         self.root.after(100, self.update_text_display)
 
     def update_text_display(self):
-        """Mise à jour de la zone de texte avec les messages reçus."""
+        """Update the text zone on the interface"""
         while not self.queue.empty():
             message = self.queue.get()
             self.text_display.insert(tk.END, f"{message}\n")
