@@ -16,6 +16,7 @@
     "llm_feedback":"command-r-plus:latest",
     "llm_correction":"llama3.3-128k-context:latest",
 
-    "logger_level":"INFO"
+    "logger_level":"INFO",
+    "langage":"fr"
 
 }

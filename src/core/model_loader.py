@@ -8,7 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from services import logger
 from config import config
 
-MODEL_DIR = os.path.abspath("../../models")
+MODEL_DIR = os.getenv("MODEL_DIR")
 HF_TOKEN = os.getenv("HF_TOKEN")
 
 def load_model():

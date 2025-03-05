@@ -99,11 +99,11 @@ def cleanup_text(previous_text, new_text):
 
 file_path = create_output_file(file_name, reunion_name, date)
 
-def transcribe_stream(mode, write_auto_correction=True):
+def transcribe_stream( write_auto_correction=True):
     """
     This function takes the buffer audio and transcribe it
     --- args ---
-        mode 
+        write_auto_correction : set to true 
     --- return ---
         Le fichier retranscrit
     """
@@ -142,7 +142,7 @@ def transcribe_stream(mode, write_auto_correction=True):
 
                 # Convertir l'audio
                 audio = (np.frombuffer(audio_data, dtype=np.int16).astype(np.float32)/ 32768.0)
-                results = do_transcription(audio, model, processor, torch_dtype, device, file_path, mode=mode)
+                results = do_transcription(audio, model, processor, torch_dtype, device, file_path)
                 
                 if results:
                     new_text = results["text"]

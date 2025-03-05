@@ -10,7 +10,7 @@ def do_transcription(audio,
                      torch_dtype, 
                      device, 
                      output_file,
-                     mode="transcribe"):
+                     ):
     """
     This function takes an audio input and outputs the transcription inside the output_file.
 
@@ -26,8 +26,11 @@ def do_transcription(audio,
     Returns:
         Writes the transcription inside the output file and returns the result.
     """
+    
+    known_false_positive = [" Sous-titrage Société Radio-Canada", " Merci.", " Thank you."," Bye."," ん"]
+    
     try:
-        logger.info(f"Starting transcription (mode: {mode}, device: {device})")
+        logger.info(f"Starting transcription ( device: {device})")
 
         # Débogage des paramètres
         logger.debug(f"Pipeline parameters - dtype: {torch_dtype}, chunk length: 30s")
@@ -41,7 +44,7 @@ def do_transcription(audio,
             chunk_length_s=30,
             batch_size=16,
             torch_dtype=torch_dtype,
-            device=device,
+            device=device
         )
         logger.info("ASR pipeline initialized successfully.")
 
@@ -50,7 +53,7 @@ def do_transcription(audio,
             {"raw": audio, "sampling_rate": 16000},
             return_timestamps=True,
             chunk_length_s=30,
-            generate_kwargs={"task": mode, "language": "fr"},
+            # generate_kwargs={ "language": "fr"},
         )
 
         if not result or "text" not in result:
@@ -58,7 +61,7 @@ def do_transcription(audio,
             return None
 
         # Vérification des faux positifs connus avec Whisper-V3-Turbo
-        if result["text"] in [" Sous-titrage Société Radio-Canada", " Merci."]:
+        if result["text"] in known_false_positive:
             logger.warning("Ignoring result due to known false positive.")
             return None
 

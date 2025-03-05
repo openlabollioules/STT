@@ -5,13 +5,17 @@ import re
 import subprocess
 import threading
 import tkinter as tk
-from tkinter import scrolledtext, ttk, filedialog, Toplevel, Text, BOTH, LEFT,RIGHT, filedialog, Button, Frame
+from tkinter import scrolledtext, ttk, filedialog, Toplevel, Text, BOTH, LEFT, RIGHT, Frame
 from tkinterdnd2 import DND_FILES, TkinterDnD
 import markdown
 from tkhtmlview import HTMLLabel
 
+import ttkbootstrap as ttkb
+from ttkbootstrap.constants import *
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from services import start_post_process,md_2_docx
+from services import start_post_process, md_2_docx
+from core import translate_text
 from diarization import start_transcription_n_diarization
 from graph import post_process_graph
 
@@ -21,6 +25,8 @@ class STTInterface:
     This class is for the STT interface
     """
     def __init__(self, root):
+        self.themes = ["flatly", "cosmo", "minty" ,"darkly", "cyborg", "superhero"]
+        self.initial_theme=tk.StringVar(value=self.themes[-1])
         self.root = root
         self.root.title("STT Interface")
         self.root.geometry("700x550")
@@ -34,119 +40,62 @@ class STTInterface:
         y = (screen_height // 2) - (window_height // 2)
 
         self.root.geometry(f"700x550+{x-350}+{y-225}")
-        
         self.root.minsize(650, 400)
+        
+        # Appliquer le thème ttkbootstrap
+        self.style = ttkb.Style(theme=self.themes[-1])
 
-        # Make the grid responsive
+
+        # Rendre la grille responsive
         self.root.grid_rowconfigure(0, weight=1)
         self.root.grid_columnconfigure(0, weight=1)
 
-        # text size
+        # Taille de la police
         self.text_size = 12
+
+        # Bouton engrenage ⚙️ pour les réglages
+        self.settings_button = ttkb.Button(
+            root, text="⚙️", command=self.open_settings, bootstyle="secondary"
+        )
+        self.settings_button.grid(row=0, column=5, sticky="nw", padx=5, pady=5)
 
         self.text_display = scrolledtext.ScrolledText(
             root, wrap=tk.WORD, font=("Arial", self.text_size)
         )
-        self.text_display.grid(
-            row=0, column=0, columnspan=4, sticky="nsew", padx=10, pady=10
-        )
-
+        self.text_display.grid(row=0, column=0, columnspan=4, sticky="nsew", padx=10, pady=10)
         self.text_display.tag_config(
             "last_phrase",
             foreground="white",
             font=("Arial", self.text_size + 2, "bold", "underline"),
         )
 
-        self.start_button = tk.Button(
-            root,
-            text="Start",
-            command=self.start_process,
-            bg="white",
-            fg="green",
-            font=("Arial", 12),
+        self.start_button = ttkb.Button(
+            root, text="Start", command=self.start_process, bootstyle="success"
         )
-        self.start_button.grid(row=1, column=0, padx=5, pady=5, sticky="ew")
+        self.start_button.grid(row=3, column=0, columnspan=1, padx=5, pady=5, sticky="ew")
 
-        self.stop_button = tk.Button(
-            root,
-            text="Stop",
-            command=self.stop_process,
-            bg="white",
-            fg="red",
-            font=("Arial", 12),
+        self.post_process_button = ttkb.Button(
+            root, text="Start Post Process", command=self.start_post_processing, bootstyle="primary"
         )
-        self.stop_button.grid(row=1, column=1, padx=5, pady=5, sticky="ew")
+        self.post_process_button.grid(row=3, column=2, padx=5, pady=5, sticky="ew")
 
-        self.post_process_button = tk.Button(
-            root,
-            text="Start Post Process",
-            command=self.start_post_processing,
-            font=("Arial", 12),
+        self.save_button = ttkb.Button(
+            root, text="Save Transcription", command=self.save_transcription, bootstyle="info"
         )
-        self.post_process_button.grid(row=1, column=2, padx=5, pady=5, sticky="ew")
+        self.save_button.grid(row=5, column=0, columnspan=3, padx=5, pady=5, sticky="ew")
 
-        self.save_button = tk.Button(
-            root,
-            text="Save Transcription",
-            command=self.save_transcription,
-            font=("Arial", 12),
+        # Variable pour activer/désactiver la traduction
+        self.translation_enabled = tk.BooleanVar(value=False)
+
+        # Bouton Activer/Désactiver la Traduction
+        self.toggle_translation_button = ttkb.Button(
+            root, text="Activer Traduction", command=self.toggle_translation, bootstyle="outline"
         )
-        self.save_button.grid(row=4, column=1, padx=5, pady=5, sticky="ew")
+        self.toggle_translation_button.grid(row=3, column=1, columnspan=1, padx=5, pady=5, sticky="ew")
 
-        self.zoom_in_button = tk.Button(
-            root, text="Zoom +", command=self.zoom_in, font=("Arial", 12)
-        )
-        self.zoom_in_button.grid(row=2, column=0, padx=5, pady=5, sticky="ew")
-
-        self.zoom_out_button = tk.Button(
-            root, text="Zoom -", command=self.zoom_out, font=("Arial", 12)
-        )
-        self.zoom_out_button.grid(row=2,column=1, padx=5, pady=5, sticky="ew")
-
-        self.reset_zoom_button = tk.Button(
-            root, text="Reset Zoom", command=self.reset_zoom, font=("Arial", 12)
-        )
-        self.reset_zoom_button.grid(row=2, column=2, padx=5, pady=5, sticky="ew")
-
-        self.mode_var = tk.StringVar(value="Transcribe")  # default value Transcribe
-        self.language_var = tk.StringVar(value="fr")  # default value french
+        self.language_var = tk.StringVar(value="fr")  # valeur par défaut : français
         self.audio_devices = self.get_audio_devices()
         self.selected_device = tk.StringVar(value=self.audio_devices[0])
-
-        # Combobox du mode (Transcribe/Translate)
-        self.mode_selector = ttk.Combobox(
-            root,
-            textvariable=self.mode_var,
-            values=["Transcribe", "Translate"],
-            state="readonly",
-        )
-        self.mode_selector.grid(row=3, column=0, padx=5, pady=5, sticky="ew")
-
-        # Combobox language
-        languages = {
-            "Français": "fr",
-            "Anglais": "en",
-            "Espagnol": "es",
-            "Allemand": "de",
-            "Italien": "it",
-            "Portugais": "pt",
-        }
-        self.language_selector = ttk.Combobox(
-            root,
-            textvariable=self.language_var,
-            values=list(languages.values()),
-            state="readonly",
-        )
-        self.language_selector.grid(row=3, column=1, padx=5, pady=5, sticky="ew")
-
-        # Combobox for audio input 
-        self.audio_selector = ttk.Combobox(
-            root,
-            textvariable=self.selected_device,
-            values=self.audio_devices,
-            state="readonly",
-        )
-        self.audio_selector.grid(row=3, column=2, padx=5, pady=5, sticky="ew")
 
         # Processus STT
         self.ffmpeg_process = None
@@ -156,10 +105,20 @@ class STTInterface:
 
         self.root.drop_target_register(DND_FILES)
         self.root.dnd_bind('<<Drop>>', self.drop_event)
+        
+        # Zone d'affichage pour la traduction
+        self.translation_display = scrolledtext.ScrolledText(
+            root, wrap=tk.WORD, font=("Arial", self.text_size), height=8
+        )
+        self.translation_display.grid(row=1, column=0, columnspan=4, sticky="nsew", padx=10, pady=10)
+        self.translation_display.insert(tk.END, "🟡 Traduction en temps réel s'affichera ici...\n")
+        self.translation_display.config(state=tk.DISABLED)  # Empêcher l'édition manuelle
+
+        if not self.translation_enabled.get():
+            self.translation_display.grid_remove()
 
     def get_audio_devices(self):
-        """Récupère la liste des périphériques audio disponibles avec ffmpeg.
-        Fetch all the device list """
+        """Récupère la liste des périphériques audio disponibles avec ffmpeg."""
         try:
             result = subprocess.run(
                 ["ffmpeg", "-list_devices", "true", "-f", "avfoundation", "-i", ""],
@@ -188,12 +147,11 @@ class STTInterface:
             return [f"Erreur: {e}"]
 
     def start_process(self):
-        """starts ffmpeg with the selected device then send it back to STT_live.py"""
+        """Démarre ffmpeg avec le périphérique sélectionné puis lance STT_live.py."""
         if self.ffmpeg_process is None and self.stt_process is None:
             self.running = True
-
+            self.start_button.config(text="Stop", bootstyle="danger", command=self.stop_process)
             device_index = self.selected_device.get().split(" ")[0]
-            mode = "transcribe" if self.mode_var.get() == "Transcribe" else "translate"
             language = self.language_var.get()
 
             self.ffmpeg_process = subprocess.Popen(
@@ -219,7 +177,6 @@ class STTInterface:
                 [
                     "python3",
                     "./src/live/STT_live.py",
-                    mode,
                 ],
                 stdin=self.ffmpeg_process.stdout,
                 stdout=subprocess.PIPE,
@@ -229,19 +186,21 @@ class STTInterface:
 
             self.text_display.insert(
                 tk.END,
-                f"🔴 Enregistrement en cours ({mode.capitalize()} - {language}) avec l'entrée {self.selected_device.get()}...\n",
+                f"🔴 Enregistrement en cours ({language}) avec l'entrée {self.selected_device.get()}...\n",
             )
             self.text_display.yview(tk.END)
 
             self.listen_to_stt()
 
     def listen_to_stt(self):
-        """listen to STT_live.py messages then update the interface."""
+        """Écoute les messages de STT en temps réel et traduit en parallèle."""
         def listen():
             while self.running:
                 try:
                     for line in self.stt_process.stdout:
-                        self.queue.put(line.strip())
+                        text = line.strip()
+                        self.queue.put(text)
+                        threading.Thread(target=self.translate_text, args=(text,), daemon=True).start()
                 except Exception as e:
                     self.queue.put(f"Erreur : {e}")
 
@@ -249,12 +208,19 @@ class STTInterface:
         self.root.after(100, self.update_text_display)
 
     def update_text_display(self):
-        """Update the text zone on the interface"""
+        """Met à jour l'affichage du texte transcrit et traduit."""
         while not self.queue.empty():
             message = self.queue.get()
-            self.text_display.insert(tk.END, f"{message}\n")
-            self.highlight_last_phrase()
-            self.text_display.yview(tk.END)
+            if isinstance(message, tuple) and message[0] == "translated":
+                translated_text = message[1]
+                self.translation_display.config(state=tk.NORMAL)
+                self.translation_display.insert(tk.END, f"{translated_text}\n")
+                self.translation_display.yview(tk.END)
+                self.translation_display.config(state=tk.DISABLED)
+            else:
+                self.text_display.insert(tk.END, f"{message}\n")
+                self.highlight_last_phrase()
+                self.text_display.yview(tk.END)
 
         if self.running:
             self.root.after(100, self.update_text_display)
@@ -269,7 +235,8 @@ class STTInterface:
         if self.stt_process:
             self.stt_process.terminate()
             self.stt_process = None
-
+        
+        self.start_button.config(text="Start", bootstyle="success", command=self.start_process)
         self.text_display.insert(tk.END, "🛑 Enregistrement arrêté.\n")
         self.text_display.yview(tk.END)
 
@@ -322,7 +289,7 @@ class STTInterface:
             self.text_display.yview(tk.END)
 
     def start_post_processing(self):
-        """Open the file explorer to select files than start post process"""
+        """Ouvre l'explorateur de fichiers pour sélectionner un fichier puis lance le post process."""
         file_path = filedialog.askopenfilename(
             title="Sélectionnez un fichier pour le post process",
             filetypes=[("All Files", "*.*")]
@@ -332,7 +299,7 @@ class STTInterface:
             self.text_display.yview(tk.END)
             self.root.update()
 
-            loading_window = tk.Toplevel(self.root)
+            loading_window = Toplevel(self.root)
             loading_window.title("Processing...")
             loading_window.resizable(False, False)
             loading_window.geometry("300x100")
@@ -341,22 +308,20 @@ class STTInterface:
             window_height = loading_window.winfo_height()
             screen_width = loading_window.winfo_screenwidth()
             screen_height = loading_window.winfo_screenheight()
-
             x = (screen_width // 2) - (window_width // 2)
             y = (screen_height // 2) - (window_height // 2)
-
             loading_window.geometry(f"300x100+{x}+{y}")
                 
-            label = tk.Label(
+            label = ttkb.Label(
                 loading_window, 
                 text="Traitement en cours...\nVeuillez patienter.",
                 font=("Arial", 12)
             )
             label.pack(pady=10)
 
-            progress = ttk.Progressbar(loading_window, orient=tk.HORIZONTAL, mode='indeterminate', length=250)
+            progress = ttkb.Progressbar(loading_window, orient=tk.HORIZONTAL, mode='indeterminate', length=250)
             progress.pack(pady=5)
-            progress.start(10)  # L'intervalle (ms) entre chaque mouvement de la barre
+            progress.start(10)
             loading_window.update()
 
             def worker():
@@ -369,7 +334,7 @@ class STTInterface:
                     self.root.after(0, finish, None, e)
 
             def finish(result, error):
-                progress.stop()  # Arrête la barre d'avancement
+                progress.stop()
                 if error is not None:
                     self.text_display.insert(tk.END, f"Erreur lors du post process : {error}\n")
                 else:
@@ -381,13 +346,12 @@ class STTInterface:
                 self.text_display.yview(tk.END)
 
             threading.Thread(target=worker, daemon=True).start()
-
         else:
             self.text_display.insert(tk.END, "no file selected\n")
             self.text_display.yview(tk.END)
     
     def drop_event(self, event):
-        """Handles the drag and drop"""
+        """Gère le drag & drop."""
         files = self.root.tk.splitlist(event.data)
         audio_extensions = ('.wav', '.mp3', '.flac', '.ogg', '.m4a')
         for file_path in files:
@@ -398,48 +362,43 @@ class STTInterface:
         self.text_display.yview(tk.END)
     
     def open_drag_post_process_window(self, file_path):
-        """Open a new windows with a loading bar"""
+        """Ouvre une nouvelle fenêtre avec une barre de chargement pour le fichier glissé."""
         file_name = os.path.basename(file_path)
         self.text_display.insert(tk.END, f"Début du traitement pour le fichier : {file_path}\n")
         self.text_display.yview(tk.END)
 
-        # Création de la fenêtre de chargement
-        loading_window = tk.Toplevel(self.root)
+        loading_window = Toplevel(self.root)
         loading_window.title("Traitement du fichier glissé...")
         loading_window.resizable(False, False)
-        
         loading_window.geometry("300x100")
-        loading_window.update_idletasks()  # Assure que la fenêtre est bien dimensionnée
+        loading_window.update_idletasks()
 
-        # Calculer la position pour centrer la fenêtre
         window_width = loading_window.winfo_width()
         window_height = loading_window.winfo_height()
         screen_width = loading_window.winfo_screenwidth()
         screen_height = loading_window.winfo_screenheight()
-
         x = (screen_width // 2) - (window_width // 2)
         y = (screen_height // 2) - (window_height // 2)
-
         loading_window.geometry(f"300x100+{x}+{y}")
         
-        label = tk.Label(loading_window, text="Traitement en cours...\nVeuillez patienter.", font=("Arial", 12))
+        label = ttkb.Label(loading_window, text="Traitement en cours...\nVeuillez patienter.", font=("Arial", 12))
         label.pack(pady=10)
         
-        progress = ttk.Progressbar(loading_window, orient=tk.HORIZONTAL, mode='indeterminate', length=250)
+        progress = ttkb.Progressbar(loading_window, orient=tk.HORIZONTAL, mode='indeterminate', length=250)
         progress.pack(pady=5)
         progress.start(10)
         loading_window.update()
 
         def worker():
             try:
-                result = start_transcription_n_diarization('./testttttt.txt',file_path)
+                result = start_transcription_n_diarization('./testttttt.txt', file_path)
                 self.load_transcription(result)
                 self.root.after(0, finish, result, None)
             except Exception as e:
                 self.root.after(0, finish, None, e)
         
         def finish(result, error):
-            progress.stop()  
+            progress.stop()
             if error is not None:
                 self.text_display.insert(tk.END, f"Erreur lors du traitement du fichier : {error}\n")
             else:
@@ -450,9 +409,8 @@ class STTInterface:
         
         threading.Thread(target=worker, daemon=True).start()
     
-    def load_transcription(self,file_path):
-        """Open a file and display his content inse the text zone"""
- 
+    def load_transcription(self, file_path):
+        """Ouvre un fichier et affiche son contenu dans la zone de texte."""
         if file_path:
             try:
                 with open(file_path, "r", encoding="utf-8") as f:
@@ -462,6 +420,7 @@ class STTInterface:
                 self.text_display.insert(tk.END, "\nTranscription chargée avec succès.\n")
             except Exception as e:
                 self.text_display.insert(tk.END, f"Erreur lors de la lecture du fichier : {e}\n")
+    
     def open_markdown_editor(self, file_path):
         """
         Ouvre un éditeur Markdown visuel dans une fenêtre pop-up.
@@ -470,12 +429,9 @@ class STTInterface:
         popup = Toplevel()
         popup.title("Éditeur Markdown Visuel")
         popup.geometry("800x600")
-        
-        # On stocke le chemin du fichier dans la fenêtre (attribut custom)
         popup.file_path = file_path
 
-        # Créer un cadre en haut pour les boutons "Charger" et "Sauvegarder"
-        button_frame = Frame(popup)
+        button_frame = ttkb.Frame(popup)
         button_frame.pack(fill=tk.X, pady=5)
 
         def load_file():
@@ -495,7 +451,6 @@ class STTInterface:
                     editor.insert(tk.END, f"Erreur lors du chargement du fichier : {e}")
 
         def save_file():
-            # Utilise le chemin existant, sinon demande où sauvegarder
             if popup.file_path:
                 path = popup.file_path
             else:
@@ -513,8 +468,8 @@ class STTInterface:
                     f.write(editor.get("1.0", tk.END))
             except Exception as e:
                 print(f"Erreur lors de la sauvegarde : {e}")
+
         def handle_export():
-            # Utilise le chemin existant, sinon demande où sauvegarder
             if popup.file_path:
                 path = popup.file_path
             else:
@@ -528,45 +483,35 @@ class STTInterface:
                 popup.file_path = path
 
             try:
-                md_2_docx(file_path,path)
+                md_2_docx(file_path, path)
             except Exception as e:
                 print(f"Erreur lors de la sauvegarde : {e}")
             
-
-        # Bouton pour charger un fichier Markdown
-        load_button = Button(button_frame, text="Charger Fichier", command=load_file)
+        load_button = ttkb.Button(button_frame, text="Charger Fichier", command=load_file, bootstyle="secondary")
         load_button.pack(side=LEFT, padx=5)
 
-        # Bouton pour sauvegarder les modifications
-        save_button = Button(button_frame, text="Sauvegarder", command=save_file)
+        save_button = ttkb.Button(button_frame, text="Sauvegarder", command=save_file, bootstyle="primary")
         save_button.pack(side=LEFT, padx=5)
         
-        save_button = Button(button_frame, text="exporter en word", command=handle_export)
-        save_button.pack(side=LEFT, padx=5)
+        export_button = ttkb.Button(button_frame, text="exporter en word", command=handle_export, bootstyle="info")
+        export_button.pack(side=LEFT, padx=5)
 
-        # Zone d'édition Markdown
         editor = Text(popup, wrap="word", font=("Arial", 12))
         editor.pack(side=LEFT, fill=BOTH, expand=True, padx=5, pady=5)
 
-        # Zone de prévisualisation HTML
         preview = HTMLLabel(popup, html="<h1>Prévisualisation</h1>", background="white", font=("Arial", 12))
         preview.pack(side=RIGHT, fill=BOTH, expand=True, padx=5, pady=5)
 
-        # Variable de synchronisation pour éviter les appels récursifs
         syncing = False
 
-        # Fonction qui met à jour la prévisualisation en convertissant le Markdown en HTML
         def update_preview(event=None):
             nonlocal syncing
-            # Sauvegarde de la position de défilement du widget preview
             try:
                 scroll_fraction = preview.yview()[0]
             except Exception:
                 scroll_fraction = 0.0
-            # Conversion du Markdown en HTML
             md_text = editor.get("1.0", tk.END)
             html_content = markdown.markdown(md_text)
-            # On met à jour le HTML puis on restaure la position de scroll
             preview.set_html(html_content)
             try:
                 preview.yview_moveto(scroll_fraction)
@@ -574,7 +519,6 @@ class STTInterface:
                 pass
             editor.edit_modified(False)
 
-        # Synchronisation du scroll de l'éditeur vers la prévisualisation
         def on_editor_scroll(event):
             nonlocal syncing
             if syncing:
@@ -587,7 +531,6 @@ class STTInterface:
                 pass
             syncing = False
 
-        # Synchronisation du scroll de la prévisualisation vers l'éditeur
         def on_preview_scroll(event):
             nonlocal syncing
             if syncing:
@@ -606,9 +549,7 @@ class STTInterface:
                 return
             syncing = True
             try:
-                # Récupère la fraction de défilement de l'éditeur
                 fraction = editor.yview()[0]
-                # Applique un facteur de correction (à ajuster selon vos tests)
                 correction_factor = 1.1  
                 target_fraction = min(1.0, fraction * correction_factor)
                 preview.yview_moveto(target_fraction)
@@ -622,35 +563,25 @@ class STTInterface:
             syncing = True
             try:
                 fraction = preview.yview()[0]
-                # Inverse le facteur de correction (approximativement)
                 correction_factor = 1 / 1.1  
                 target_fraction = min(1.0, fraction * correction_factor)
                 editor.yview_moveto(target_fraction)
             finally:
                 syncing = False
 
-
-        # Lier les événements de défilement à la molette de la souris
         editor.bind("<MouseWheel>", on_editor_scroll)
         preview.bind("<MouseWheel>", on_preview_scroll)
         editor.bind("<MouseWheel>", sync_editor_to_preview)
         preview.bind("<MouseWheel>", sync_preview_to_editor)
-        # Et éventuellement sur d'autres événements de défilement (flèches, KeyRelease, etc.)
         editor.bind("<KeyRelease>", sync_editor_to_preview)
         preview.bind("<KeyRelease>", sync_preview_to_editor)
-
-        
-        # Optionnel : lier également les flèches et la barre d'espace, etc.
         editor.bind("<KeyRelease>", lambda event: on_editor_scroll(event))
         preview.bind("<KeyRelease>", lambda event: on_preview_scroll(event))
-
-        # Lier l'événement de modification pour mettre à jour la prévisualisation
         def on_modified(event):
             if editor.edit_modified():
                 update_preview()
         editor.bind("<<Modified>>", on_modified)
 
-        # Si un chemin de fichier a été passé en paramètre, charge son contenu
         if file_path:
             try:
                 with open(file_path, "r", encoding="utf-8") as f:
@@ -659,7 +590,107 @@ class STTInterface:
                 update_preview()
             except Exception as e:
                 editor.insert(tk.END, f"Erreur lors du chargement du fichier : {e}")
+    
+    def open_translation_window(self):
+        """Ouvre une nouvelle fenêtre pour afficher la traduction en temps réel."""
+        if hasattr(self, "translation_window") and self.translation_window.winfo_exists():
+            return  
+        
+        self.translation_window = Toplevel(self.root)
+        self.translation_window.title("Traduction en Temps Réel")
+        self.translation_window.geometry("600x400")
 
+        self.translated_text_display = scrolledtext.ScrolledText(
+            self.translation_window, wrap=tk.WORD, font=("Arial", self.text_size)
+        )
+        self.translated_text_display.pack(fill=BOTH, expand=True, padx=10, pady=10)
+    
+    def toggle_translation(self):
+        """Active ou désactive l'affichage de la zone de traduction."""
+        if self.translation_enabled.get():
+            self.translation_display.grid_remove()
+            self.toggle_translation_button.config(text="Activer Traduction")
+        else:
+            self.translation_display.grid()
+            self.toggle_translation_button.config(text="Désactiver Traduction")
+        self.translation_enabled.set(not self.translation_enabled.get())
+
+    def translate_text(self, text):
+        """Traduit le texte transcrit en arrière-plan et met à jour l'interface."""
+        if not self.translation_enabled.get():
+            return
+        try:
+            translated_text = translate_text(text)
+            self.queue.put(("translated", translated_text))
+        except Exception as e:
+            self.queue.put(("translated", f"⚠️ Erreur de traduction : {e}"))
+    
+    def open_settings(self):
+        """Ouvre la fenêtre des réglages."""
+        settings_window = Toplevel(self.root)
+        settings_window.title("Réglages")
+        settings_window.geometry("500x400")
+        settings_window.update_idletasks()
+        window_width = settings_window.winfo_width()
+        window_height = settings_window.winfo_height()
+        screen_width = settings_window.winfo_screenwidth()
+        screen_height = settings_window.winfo_screenheight()
+        x = (screen_width // 2) - (window_width // 2)
+        y = (screen_height // 2) - (window_height // 2)
+        settings_window.geometry(f"500x400+{x}+{y}")
+
+        ttkb.Label(settings_window, text="Taille du texte:", font=("Arial", 12)).pack(pady=5)
+        font_size_slider = ttkb.Scale(settings_window, from_=8, to=30, orient="horizontal", command=self.update_font_size)
+        font_size_slider.set(self.text_size)
+        font_size_slider.pack(pady=5)
+
+        ttkb.Label(settings_window, text="Couleur de fond:", font=("Arial", 12)).pack(pady=5)
+        self.bg_color_var = tk.StringVar(value=self.root["bg"])
+        bg_color_selector = ttk.Combobox(
+            settings_window, textvariable=self.initial_theme, values= self.themes,
+            state="readonly"
+        )
+        bg_color_selector.pack(pady=5)
+        
+        ttkb.Label(settings_window, text="Audio Input :", font=("Arial", 12)).pack(pady=5)
+        audio_selector = ttk.Combobox(
+            settings_window,
+            textvariable=self.selected_device,
+            values=self.audio_devices,
+            state="readonly",
+        )
+        audio_selector.pack(pady=5)
+        
+        languages = {
+            "Français": "fr",
+            "Anglais": "en",
+            "Espagnol": "es",
+            "Allemand": "de",
+            "Italien": "it",
+            "Portugais": "pt",
+        }
+        ttkb.Label(settings_window, text="Sélection de la langue de l'audio :", font=("Arial", 12)).pack(pady=5)
+        language_selector = ttk.Combobox(
+            settings_window,
+            textvariable=self.language_var,
+            values=list(languages.keys()),
+            state="readonly",
+        )
+        language_selector.pack(pady=5)
+        
+        apply_button = ttkb.Button(settings_window, text="Appliquer", command=lambda: self.apply_settings(bg_color_selector.get()), bootstyle="primary")
+        apply_button.pack(pady=20)
+    
+    def update_font_size(self, new_size):
+        """Met à jour la taille de la police dans les zones de texte."""
+        self.text_size = int(float(new_size))
+        self.text_display.config(font=("Arial", self.text_size))
+        self.translation_display.config(font=("Arial", self.text_size))
+        self.text_display.tag_config("last_phrase", font=("Arial", self.text_size + 2, "bold", "underline"))
+
+    def apply_settings(self, new_theme):
+        """Applique les changements de couleur de fond."""
+        self.style = ttkb.Style(theme=new_theme)
 
 if __name__ == "__main__":
     root = TkinterDnD.Tk()
