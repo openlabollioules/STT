@@ -23,33 +23,6 @@ reunion_name = config.get("REUNION_NAME")
 date = datetime.today().strftime("_%Y-%m-%d_%H:%M:%S")
 file_name = reunion_name + date
 
-
-def merge_repeated_segments(
-    last_formatted_text, last_end_time, formatted_text, new_end_time
-):
-    """
-    merge las formatted text and fromated text and adjust the time stemps
-    """
-    # Extraire le dernier bout de phrase du texte précédent (2 à 4 mots)
-    match_prev = re.search(r"(\b\w+(?: \w+){1,3})$", last_formatted_text)
-    match_curr = re.match(r"^(\w+(?: \w+){1,3})", formatted_text)
-
-    if match_prev and match_curr:
-        last_words = match_prev.group(0)  # Ex: "pour coder"
-        first_words = match_curr.group(0)  # Ex: "pour coder"
-
-        # Vérifier si la fin de last_formatted_text est répétée au début de formatted_text
-        if last_words == first_words:
-            # Fusionner les deux textes en supprimant la répétition
-            merged_text = last_formatted_text + formatted_text[len(first_words) :]
-            merged_end_time = (
-                new_end_time  # Le timestamp final est celui du dernier segment
-            )
-            return merged_text, merged_end_time
-
-    return formatted_text, new_end_time
-
-
 def send_text(text):
     """Function to send text to the interface"""
     print(text)
@@ -58,8 +31,24 @@ def send_text(text):
 
 def cleanup_text(previous_text, new_text):
     """
-    Removes repetitions between previous_text and new_text,
-    while preserving correct punctuation and without a predefined list of corrections.
+    Cleans up transcribed text by removing repetitions between consecutive transcriptions and within the same text.
+
+    This function performs the following cleanup operations:
+    1. Removes overlapping text between consecutive transcriptions
+    2. Removes repeated single words
+    3. Removes repeated word pairs
+    4. Normalizes spacing
+
+    Parameters
+    ----------
+    previous_text : str
+        The previously transcribed text segment
+    new_text : str
+        The newly transcribed text segment
+
+    Returns
+    -------
+    str : The cleaned text with repetitions removed and proper spacing
     """
     if not previous_text:
         return new_text  # First pass, nothing to clean.
@@ -99,13 +88,25 @@ def cleanup_text(previous_text, new_text):
 
 file_path = create_output_file(file_name, reunion_name, date)
 
-def transcribe_stream( write_auto_correction=True):
+def transcribe_stream( language,write_auto_correction=True):
     """
-    This function takes the buffer audio and transcribe it
-    --- args ---
-        write_auto_correction : set to true 
-    --- return ---
-        Le fichier retranscrit
+    Process a continuous audio stream and perform real-time speech-to-text transcription.
+    This function reads audio data from standard input in chunks, processes it using a pre-loaded
+    speech recognition model, and performs transcription with overlap handling to ensure smooth
+    continuous transcription across audio segments.
+    Args:
+        language (str): The language code for transcription (e.g., 'en' for English, 'fr' for French)
+        write_auto_correction (bool, optional): Flag to enable auto-correction in post-processing. 
+            Defaults to True.
+    Returns:
+        None
+    Raises:
+        Exception: Any exception that occurs during the transcription process is caught and logged.
+    Notes:
+        - The function expects 16-bit PCM audio input at 16kHz sampling rate
+        - Uses a 0.5 second overlap between segments to maintain continuity
+        - Processes audio in chunks when buffer reaches 3 seconds of data
+        - Previous text segments are used for context and cleanup
     """
     buffer = BytesIO()
     model, processor, torch_dtype, device = load_model()
@@ -142,7 +143,7 @@ def transcribe_stream( write_auto_correction=True):
 
                 # Convertir l'audio
                 audio = (np.frombuffer(audio_data, dtype=np.int16).astype(np.float32)/ 32768.0)
-                results = do_transcription(audio, model, processor, torch_dtype, device, file_path)
+                results = do_transcription(audio, model, processor, torch_dtype, device, file_path,lang_code=language)
                 
                 if results:
                     new_text = results["text"]
@@ -158,6 +159,6 @@ def transcribe_stream( write_auto_correction=True):
     #     start_post_process(write_auto_correction, file_path, file_name)
 
 if __name__ == "__main__":
-    mode = sys.argv[1] if len(sys.argv) > 1 else "transcribe"
-    transcribe_stream(mode)
+    language = sys.argv[1] if len(sys.argv) > 1 else "transcribe"
+    transcribe_stream(language)
     start_post_process(True, file_path, file_name)

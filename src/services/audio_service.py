@@ -6,15 +6,18 @@ import numpy as np
 from librosa import resample
 
 def convert_audio_to_wav(input_file, output_wav_file=None, target_rate=16000):
-    """
-    Converts any audio file into WAV (mono, 16kHz).
+    """Convert an audio file to WAV format with specific parameters.
+    This function takes an input audio file and converts it to WAV format with
+    specified sampling rate and mono channel. If no output filename is provided,
+    it will use the same name as input file with .wav extension.
     Args:
-        input_file (str): Imput source path
-        output_wav_file (str, optional): Output path
-        target_rate (int, optional): rate 16kHz
+        input_file (str): Path to the input audio file
+        output_wav_file (str, optional): Path for the output WAV file. Defaults to None.
+        target_rate (int, optional): Target sampling rate in Hz. Defaults to 16000.
     Returns:
-        str: Chemin du fichier WAV converti.
+        str or None: Path to the converted WAV file if successful, None if conversion fails.
     """
+    
     try:
         if output_wav_file is None:
             output_wav_file = os.path.splitext(input_file)[0] + ".wav"
@@ -38,7 +41,26 @@ def convert_audio_to_wav(input_file, output_wav_file=None, target_rate=16000):
         return None
 
 def process_audio_for_whisper(waveform, sample_rate):
-    """Transforme un extrait audio Pyannote en format compatible Whisper."""
+    """
+    Process and normalize audio waveform for Whisper model input.
+
+    This function performs several preprocessing steps on the audio waveform:
+    1. Converts PyTorch tensor to numpy array if needed
+    2. Converts stereo to mono if needed
+    3. Resamples to 16kHz if needed
+    4. Normalizes the waveform amplitude
+
+    Args:
+        waveform (Union[torch.Tensor, numpy.ndarray]): Input audio waveform
+        sample_rate (int): Sample rate of the input audio in Hz
+
+    Returns:
+        numpy.ndarray: Processed waveform as float32 numpy array normalized to [-1,1] range
+        None: If input waveform is empty
+
+    Raises:
+        Exception: If any error occurs during processing
+    """
     try:
         if waveform.size == 0:
             logger.warning(f"⚠️ Segment vide détecté ({sample_rate} Hz), passage au suivant...")

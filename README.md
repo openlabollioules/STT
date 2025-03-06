@@ -1,77 +1,114 @@
-# Speech to Text live and file Transcription
 
-This app is made to generate live time transcriptions or process files for a transcription and generate a sumary based on them.
+---
+# Speech-to-Text & Translation Application
 
-## How to lauch the code 
+This application provides robust speech-to-text and translation functionalities for both live audio and pre-recorded files. Its key features include:
 
-You need to have a loopback of your system audio for the live transcription. 
+- **Live Transcription & Translation:** Capture system audio in real time via a loopback device for immediate transcription and translation.
+- **File Transcription with Drag & Drop:** Easily transcribe audio files by dragging and dropping them into the interface.
+- **Meeting Summaries with LangGraph:** Generate concise summaries from transcriptions (ideal for meetings or lengthy audio recordings) using the LangGraph pipeline.
+- **Markdown Viewer & Editor:** Review and edit generated summaries in Markdown format, then export the final output as a DOCX file.
+- **Customizable Preferences:** Adjust the transcription and summary behaviors through a modifiable `prompt.json` file that serves as a user template.
 
-> [!NOTE]
-> This command only works for MacOS users. 
-> you need to get an adui loopback form your system audio I used **BackHole-2ch** to test the code.
-> 
-### Requirements :
+---
 
-Install requirements :
-```bash 
-pip install -r requirements.txt
-```
-Install ffmpeg and Pypandoc : 
+## Requirements
+
+- **Audio Loopback:**  
+  For live transcription, your system audio must be routed through a loopback device.  
+  > **Note:** This feature currently supports macOS users. For testing, the application was configured using **BackHole-2ch**.
+- **FFmpeg & PyPandoc:**  
+  These are required for audio processing and document conversion.
+
+---
+
+## Installation
+
+1. **Install Python dependencies:**  
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. **Install FFmpeg,Python Markdown and PyPandoc:**  
+   ```bash
+   brew install ffmpeg && brew install python-markdown && brew install pypandoc
+   ```
+
+---
+
+## Running the Application
+
+Launch the main interface of the application using:
+
 ```bash
-brew install ffmpeg && brew install pypandoc 
+python3 main.py
 ```
-For an instance of the live Version :
+
+This starts the user-friendly interface where you can select live transcription, live translation, file transcription via drag & drop, and summary generation.
+
+---
+
+## Terminal Commands
+
+The application also supports command-line execution. For example, to run a live transcription instance directly, use:
+
 ```bash
 ffmpeg -f avfoundation -i ":0" -ac 1 -ar 16000 -f wav - | python3 ./src/live/STT_live.py
 ```
-For the live interface :
-```bash
-python3 ./src/frontend/interface.py
-```
-## Steps of the Project : 
 
-This is a plan of each steps for the Speech2text application for audio Files
+---
 
-```
-Audio_file --> Transcription + diarization ( Wisper & Pyannote ) 
-|--> Post_Prossesing --> Fomatting with LLM --> Summary with LLM 
-|--> Feedback of the Summary with LLM --> Correcting the summary with the LLM based on the Feedback
-```
+## LangGraph Iteration
 
-## Project Architecture :
+The LangGraph module is used to generate summaries from transcribed audio. This pipeline processes the transcription through several steps to produce a concise meeting or audio file summary. The diagram below provides an overview of the LangGraph flow:
+
+![LangGraph representation](graph_png.png)
+
+---
+
+## Customization with prompt.json
+
+Users can adjust transcription, translation, and summarization preferences by modifying the `prompt.json` file. This allows you to tailor the behavior of the application to your specific needs or template preferences.
+
+---
+
+## Project Architecture
 
 ```
 Speech2Text/
-│── benchmark/                      # performances test results
-│── audiofiles/                     # audio Files for testing
-│── models/                         # models like wisper or pyannote
-│── output/                         # Output results
+│── benchmark/                      # Performance test results and benchmarks
+│── audiofiles/                     # Sample audio files for testing
+│── models/                         # Models (e.g., Whisper, Pyannote)
+│── output/                         # Transcription and summary output files
+│── pipeline/                       # For open-webui implementation
 │── src/
-│   │── live/                       # Live transcription
+│   │── live/                       # Live transcription module
 │   │   │── __init__.py
-│   │   │── STT_live.py             # logic for live transcription
+│   │   │── STT_live.py             # Live transcription logic
 │   │
-│   │── file/                       # File transcription
+│   │── file/                       # File transcription module
 │   │   │── __init__.py
-│   │   │── STT_file.py             # Logic for file transcription 
+│   │   │── STT_file.py             # File transcription logic 
 │   │
-│   │── services/                   # Services 
+│   │── services/                   # Auxiliary services
 │   │   │── __init__.py
-│   │   │── folder_service.py       # File and directory service
-│   │   │── json_service.py         # service for Json files 
-│   │   │── LLM_service.py          # LLM service 
-│   │   │── Remove_think.py         # Rejex to remove Think with deepseek
+│   │   │── folder_service.py       # File and directory handling
+│   │   │── json_service.py         # JSON file management
+│   │   │── LLM_service.py          # Language model services for translation/summarization
+│   │   │── Remove_think.py         # Regex module to remove unwanted "think" segments (deepseek integration)
 │   │
-│   │── core/                       # core of the project
+│   │── core/                       # Core functionality
 │   │   │── __init__.py
-│   │   │── model_loader.py         # Loads the models 
+│   │   │── model_loader.py         # Model loader
 │   │   │── transcriber.py          # Transcription logic
 │   │
-│   │── benchmark/                  # Benchmarkfiles
+│   │── benchmark/                  # Additional benchmark files
 │   │   │── __init__.py
 │   │   │── benchmark.py
-│   │
+│
 │── README.MD
+│── Graph_png.png                   # Diagram of LangGraph pipeline
 │── requirements.txt
-│── main.py                         # Entry point 
+│── main.py                         # Application entry point 
 ```
+
+---

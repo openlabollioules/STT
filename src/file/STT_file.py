@@ -24,13 +24,32 @@ start_time = time.time()
 
 def transcribe_file(audio_file_path, write_auto_correction=True):
     """
-    This function is used to transcribe audio files
-    ___args___
-        file_path : the audio file path
-        write_auto_correction : if you want to have the auto-correction prompt to be writted inside the outputfile 
-    ___return___
-        Write the transcription inside the output_file.txt
+    Transcribes the given audio file and writes the transcription output to a file.
+    This function performs several steps:
+        - Loads the necessary Whisper model along with its processor and settings.
+        - Loads the audio file and computes its duration.
+        - Creates an output file based on the audio file's name.
+        - Performs transcription using the loaded model and writes the results.
+        - Executes a post-processing step (including optional auto-correction and deepseek enhancements).
+
+    Parameters:
+            audio_file_path (str): The path to the audio file to be transcribed.
+            write_auto_correction (bool, optional): Flag to determine whether to apply auto-correction 
+                                                                                                during the post-processing phase. Defaults to True.
+
+    Exceptions:
+            FileNotFoundError: Raised when the audio file cannot be found.
+            Exception: Catches any unexpected errors that occur during processing.
+
+    Returns:
+            None
+
+    Side Effects:
+            - Logs progress and errors at various steps of the transcription workflow.
+            - Creates output files for storing the transcription results.
+            - Initiates post-processing routines on the generated transcription.
     """
+
     try:
         logger.info(f"Starting transcription for file: {audio_file_path}")
 

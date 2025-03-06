@@ -88,6 +88,16 @@ def load_ollama_model():
         raise
 
 def load_pyannote():
+    """
+    Load the PyAnnote speaker diarization pipeline and set the appropriate device.
+
+    This function checks for the availability of MPS (Metal Performance Shaders) and CUDA
+    (Compute Unified Device Architecture) to determine the device to be used for running
+    the PyAnnote pipeline. If neither is available, it defaults to using the CPU.
+
+    Returns:
+        Pipeline: The PyAnnote speaker diarization pipeline loaded on the appropriate device.
+    """
     if torch.backends.mps.is_available():
         device = "mps"
     elif torch.cuda.is_available():

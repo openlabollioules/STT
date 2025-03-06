@@ -3,8 +3,22 @@ import os
 
 
 class Config:
-    """
-    This class allows to get various config parametters for cleaner code.
+    """Configuration Manager Class
+
+    This class manages application configuration through a JSON file system. It provides
+    functionality to load, save, and manipulate configuration settings persistently.
+
+    Attributes:
+        CONFIG_DIR (str): Absolute path to the configuration directory
+        CONFIG_FILE (str): Full path to the JSON configuration file
+        config (dict): Dictionary containing the current configuration settings
+
+    Methods:
+        load_config(): Loads configuration from JSON file
+        save_config(): Saves current configuration to JSON file
+        get(key, default=None): Retrieves a configuration value by key
+        set(key, value): Sets a configuration value and saves it
+        show_config(): Returns a formatted string of current configuration
     """
 
     CONFIG_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data"))
@@ -17,7 +31,7 @@ class Config:
         self.load_config()
 
     def load_config(self):
-        """Charge la configuration depuis le fichier JSON."""
+        """load a config from a json file."""
         if os.path.exists(self.CONFIG_FILE):
             with open(self.CONFIG_FILE, "r", encoding="utf-8") as f:
                 self.config = json.load(f)

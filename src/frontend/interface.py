@@ -9,7 +9,7 @@ from tkinter import scrolledtext, ttk, filedialog, Toplevel, Text, BOTH, LEFT, R
 from tkinterdnd2 import DND_FILES, TkinterDnD
 import markdown
 from tkhtmlview import HTMLLabel
-
+from ttkbootstrap.icons import Icon
 import ttkbootstrap as ttkb
 from ttkbootstrap.constants import *
 
@@ -22,11 +22,94 @@ from graph import post_process_graph
 
 class STTInterface:
     """
-    This class is for the STT interface
+    STTInterface Class
+    ------------------
+    This class implements the graphical user interface for a Speech-to-Text (STT) application using the tkinter framework. 
+    It provides functionalities to start/stop audio recording with ffmpeg, display live transcription as well as real-time translation,
+    manage settings and themes, process dropped audio files, and open a Markdown editor for transcription post-processing.
+    Attributes:
+        root: The main tkinter window.
+        themes: A list of pre-defined UI themes.
+        initial_theme: A tkinter StringVar holding the current theme.
+        style: ttkbootstrap style object initialized with the selected theme.
+        languages: A dictionary mapping human-readable language names to their language codes.
+        text_size: Current font size for text displays.
+        settings_button: A button to open the settings window.
+        text_display: A scrolled text widget for displaying transcription text.
+        start_button: A button to start the audio capturing and STT process.
+        post_process_button: Buttons to start post-processing and open the Markdown editor.
+        save_button: A button to save the transcription to a file.
+        translation_enabled: A boolean variable indicating if live translation is active.
+        toggle_translation_button: A button to toggle the live translation display.
+        language_var: A tkinter StringVar indicating the language selected for audio processing.
+        audio_devices: List of available audio input devices as fetched by ffmpeg.
+        selected_device: A tkinter StringVar holding the currently selected audio device.
+        ffmpeg_process: Reference to the ffmpeg subprocess handling audio input.
+        stt_process: Reference to the subprocess running the live STT process.
+        queue: A thread-safe queue used for inter-thread communication (transcription and translation updates).
+        running: A flag indicating if the recording and STT processes are active.
+        translation_display: A scrolled text widget used for displaying translated text.
+    Methods:
+        __init__(root)
+            Initializes the STT interface, configures the main window, widgets, and necessary variables.
+        get_audio_devices()
+            Retrieves the list of available audio devices by invoking ffmpeg and parsing its output.
+        start_process()
+            Starts the audio recording process with ffmpeg and launches the STT live script. It also updates the UI to reflect 
+            that the recording has begun.
+        listen_to_stt()
+            Spawns a thread to continuously listen to the STDOUT of the STT process and enqueue transcribed text and initiate 
+            translation if enabled.
+        update_text_display()
+            Periodically updates the transcription display area (and the translation display if applicable) with new messages 
+            from the processing queue.
+        stop_process()
+            Terminates both the ffmpeg and STT subprocesses, stops the live transcription process and updates the UI accordingly.
+        zoom_in()
+            Increases the font size of the transcription text as well as the highlight for the last transcribed phrase.
+        zoom_out()
+            Decreases the font size for the transcription text while ensuring it remains above a minimum threshold.
+        reset_zoom()
+            Resets the font size settings back to the default value.
+        highlight_last_phrase()
+            Highlights the most recently transcribed phrase in the text display area to visually distinguish it.
+        save_transcription()
+            Opens a file dialog for the user to select a file path and then saves the current transcription content to that file.
+        start_post_processing()
+            Opens a file picker for post-processing. It then runs a post-process function (e.g. diarization or formatting)
+            and reflects the result in the UI.
+        drop_event(event)
+            Handles drag-and-drop events over the interface. It checks for valid audio file extensions and either processes 
+            the file via a dedicated post-process window or shows an error message.
+        open_drag_post_process_window(file_path)
+            Opens a pop-up window asking the user to select the language for the dragged audio file and then initiates
+            processing with a loading screen.
+        start_drag_processing(file_path, file_name, lang_code)
+            Processes an audio file initiated by drag-and-drop. It displays a loading window, launches the transcription 
+            and diarization process, and finally loads the transcription result into the main display.
+        load_transcription(file_path)
+            Opens a specified file and loads its content into the transcription display area, providing confirmation upon success.
+        open_markdown_editor(file_path="")
+            Opens a separate window providing a split view Markdown editor and previewer. It also allows loading an existing 
+            Markdown file, saving, and exporting the content to a Word document.
+        open_translation_window()
+            Creates and displays a new window dedicated to live translation output, separate from the main transcription display.
+        toggle_translation()
+            Toggles the visibility of the translation display zone and updates the control button text accordingly.
+        translate_text(text)
+            Translates the provided text in a background thread and queues the translated output for display, provided that 
+            translation is enabled.
+        open_settings()
+            Opens the settings window, allowing users to adjust UI preferences such as font size, theme, audio input device,
+            and language selection for audio transcription.
+        update_font_size(new_size)
+            Updates the font size in the transcription and translation display areas based on the provided slider value.
+        apply_settings(new_theme)
+            Applies the selected UI theme to the interface by reinitializing the style with the new theme.
     """
     def __init__(self, root):
-        self.themes = ["flatly", "cosmo", "minty" ,"darkly", "cyborg", "superhero"]
-        self.initial_theme=tk.StringVar(value=self.themes[-1])
+        self.themes = ["flatly", "cosmo", "minty","sandstone" ,"darkly", "cyborg", "superhero"]
+        self.initial_theme=tk.StringVar(value=self.themes[1])
         self.root = root
         self.root.title("STT Interface")
         self.root.geometry("700x550")
@@ -43,8 +126,16 @@ class STTInterface:
         self.root.minsize(650, 400)
         
         # Appliquer le thème ttkbootstrap
-        self.style = ttkb.Style(theme=self.themes[-1])
-
+        self.style = ttkb.Style(theme=self.themes[1])
+        self.languages = {
+            "auto" : "",
+            "Français": "fr",
+            "Anglais": "en",
+            "Espagnol": "es",
+            "Allemand": "de",
+            "Italien": "it",
+            "Portugais": "pt",
+        }
 
         # Rendre la grille responsive
         self.root.grid_rowconfigure(0, weight=1)
@@ -55,9 +146,12 @@ class STTInterface:
 
         # Bouton engrenage ⚙️ pour les réglages
         self.settings_button = ttkb.Button(
-            root, text="⚙️", command=self.open_settings, bootstyle="secondary"
+            root, text="⚙️", command=self.open_settings,
+            bootstyle="link",  # Supprime le contour
+            padding=0,
         )
-        self.settings_button.grid(row=0, column=5, sticky="nw", padx=5, pady=5)
+
+        self.settings_button.grid(row=0, column=5, sticky="nw", ipady= 5,ipadx=5)
 
         self.text_display = scrolledtext.ScrolledText(
             root, wrap=tk.WORD, font=("Arial", self.text_size)
@@ -77,12 +171,18 @@ class STTInterface:
         self.post_process_button = ttkb.Button(
             root, text="Start Post Process", command=self.start_post_processing, bootstyle="primary"
         )
+        self.post_process_button.grid(row=3, column=3, padx=5, pady=5, sticky="ew")
+        
+        
+        self.post_process_button = ttkb.Button(
+            root, text="Open MD editor", command=self.open_markdown_editor, bootstyle="secondary"
+        )
         self.post_process_button.grid(row=3, column=2, padx=5, pady=5, sticky="ew")
-
+        
         self.save_button = ttkb.Button(
             root, text="Save Transcription", command=self.save_transcription, bootstyle="info"
         )
-        self.save_button.grid(row=5, column=0, columnspan=3, padx=5, pady=5, sticky="ew")
+        self.save_button.grid(row=5, column=0, columnspan=4, padx=5, pady=5, sticky="ew")
 
         # Variable pour activer/désactiver la traduction
         self.translation_enabled = tk.BooleanVar(value=False)
@@ -93,7 +193,7 @@ class STTInterface:
         )
         self.toggle_translation_button.grid(row=3, column=1, columnspan=1, padx=5, pady=5, sticky="ew")
 
-        self.language_var = tk.StringVar(value="fr")  # valeur par défaut : français
+        self.language_var = tk.StringVar(value="auto") 
         self.audio_devices = self.get_audio_devices()
         self.selected_device = tk.StringVar(value=self.audio_devices[0])
 
@@ -172,11 +272,11 @@ class STTInterface:
                 stdout=subprocess.PIPE,
                 stderr=subprocess.DEVNULL,
             )
-
             self.stt_process = subprocess.Popen(
                 [
                     "python3",
                     "./src/live/STT_live.py",
+                    self.languages[language]
                 ],
                 stdin=self.ffmpeg_process.stdout,
                 stdout=subprocess.PIPE,
@@ -362,17 +462,71 @@ class STTInterface:
         self.text_display.yview(tk.END)
     
     def open_drag_post_process_window(self, file_path):
-        """Ouvre une nouvelle fenêtre avec une barre de chargement pour le fichier glissé."""
+        """
+        Ouvre une fenêtre popup pour choisir la langue de l'audio,
+        puis lance le traitement avec une barre de chargement.
+        """
+        languages = {
+            "Français": "fr",
+            "Anglais": "en",
+            "Espagnol": "es",
+            "Allemand": "de",
+            "Italien": "it",
+            "Portugais": "pt",
+        }
         file_name = os.path.basename(file_path)
+        
+        # Popup de sélection de langue
+        lang_popup = Toplevel(self.root)
+        lang_popup.title("Sélectionnez la langue de l'audio")
+        lang_popup.resizable(False, False)
+        lang_popup.geometry("300x150")
+        lang_popup.update_idletasks()
+        
+        # Centrer la popup
+        window_width = lang_popup.winfo_width()
+        window_height = lang_popup.winfo_height()
+        screen_width = lang_popup.winfo_screenwidth()
+        screen_height = lang_popup.winfo_screenheight()
+        x = (screen_width // 2) - (window_width // 2)
+        y = (screen_height // 2) - (window_height // 2)
+        lang_popup.geometry(f"300x150+{x}+{y}")
+        
+        label = ttkb.Label(lang_popup, text="Sélectionnez la langue de l'audio:", font=("Arial", 12))
+        label.pack(pady=10)
+        
+        selected_lang = tk.StringVar(value="Français")  # Par défaut Français
+        combobox = ttk.Combobox(lang_popup, textvariable=selected_lang,
+                                values=list(languages.keys()), state="readonly", font=("Arial", 12))
+        combobox.pack(pady=5)
+        
+        def confirm_language():
+            # Récupère le code de langue correspondant
+            lang_code = languages[selected_lang.get()]
+            lang_popup.destroy()
+            # Lance le traitement avec la langue sélectionnée
+            self.start_drag_processing(file_path, file_name, lang_code)
+        
+        confirm_button = ttkb.Button(lang_popup, text="Confirmer", command=confirm_language, bootstyle="primary")
+        confirm_button.pack(pady=10)
+        
+        lang_popup.grab_set()  # Rend la popup modale
+
+    def start_drag_processing(self, file_path, file_name, lang_code):
+        """
+        Lance le traitement du fichier glissé en affichant une fenêtre
+        avec une barre de chargement. La langue sélectionnée (lang_code)
+        est passée à la fonction de transcription.
+        """
         self.text_display.insert(tk.END, f"Début du traitement pour le fichier : {file_path}\n")
         self.text_display.yview(tk.END)
-
+        
         loading_window = Toplevel(self.root)
         loading_window.title("Traitement du fichier glissé...")
         loading_window.resizable(False, False)
         loading_window.geometry("300x100")
         loading_window.update_idletasks()
-
+        
         window_width = loading_window.winfo_width()
         window_height = loading_window.winfo_height()
         screen_width = loading_window.winfo_screenwidth()
@@ -388,10 +542,10 @@ class STTInterface:
         progress.pack(pady=5)
         progress.start(10)
         loading_window.update()
-
+        
         def worker():
             try:
-                result = start_transcription_n_diarization('./testttttt.txt', file_path)
+                result = start_transcription_n_diarization(f'{os.getenv("OUTPUT_DIR")}/{file_name}.txt', file_path, lang_code)
                 self.load_transcription(result)
                 self.root.after(0, finish, result, None)
             except Exception as e:
@@ -408,6 +562,7 @@ class STTInterface:
             self.text_display.yview(tk.END)
         
         threading.Thread(target=worker, daemon=True).start()
+
     
     def load_transcription(self, file_path):
         """Ouvre un fichier et affiche son contenu dans la zone de texte."""
@@ -421,7 +576,7 @@ class STTInterface:
             except Exception as e:
                 self.text_display.insert(tk.END, f"Erreur lors de la lecture du fichier : {e}\n")
     
-    def open_markdown_editor(self, file_path):
+    def open_markdown_editor(self, file_path=""):
         """
         Ouvre un éditeur Markdown visuel dans une fenêtre pop-up.
         Si un chemin vers un fichier Markdown est fourni, le fichier est chargé.
@@ -470,22 +625,20 @@ class STTInterface:
                 print(f"Erreur lors de la sauvegarde : {e}")
 
         def handle_export():
-            if popup.file_path:
-                path = popup.file_path
-            else:
-                path = filedialog.asksaveasfilename(
-                    title="Sauvegarder fichier Markdown",
-                    defaultextension=".md",
-                    filetypes=[("Markdown Files", "*.md"), ("Text Files", "*.txt"), ("All Files", "*.*")]
-                )
-                if not path:
-                    return
-                popup.file_path = path
-
+            # Demander à l'utilisateur où sauvegarder le fichier Word
+            output_path = filedialog.asksaveasfilename(
+                title="Enregistrer en tant que fichier Word",
+                defaultextension=".docx",
+                filetypes=[("Documents Word", "*.docx"), ("Tous les fichiers", "*.*")]
+            )
+            if not output_path:
+                return  # L'utilisateur a annulé
+            
             try:
-                md_2_docx(file_path, path)
+                md_2_docx(popup.file_path, output_path)
             except Exception as e:
                 print(f"Erreur lors de la sauvegarde : {e}")
+
             
         load_button = ttkb.Button(button_frame, text="Charger Fichier", command=load_file, bootstyle="secondary")
         load_button.pack(side=LEFT, padx=5)
@@ -661,19 +814,12 @@ class STTInterface:
         )
         audio_selector.pack(pady=5)
         
-        languages = {
-            "Français": "fr",
-            "Anglais": "en",
-            "Espagnol": "es",
-            "Allemand": "de",
-            "Italien": "it",
-            "Portugais": "pt",
-        }
+
         ttkb.Label(settings_window, text="Sélection de la langue de l'audio :", font=("Arial", 12)).pack(pady=5)
         language_selector = ttk.Combobox(
             settings_window,
             textvariable=self.language_var,
-            values=list(languages.keys()),
+            values=list(self.languages.keys()),
             state="readonly",
         )
         language_selector.pack(pady=5)
@@ -692,7 +838,14 @@ class STTInterface:
         """Applique les changements de couleur de fond."""
         self.style = ttkb.Style(theme=new_theme)
 
-if __name__ == "__main__":
+def run():
+    """
+    Initializes and starts the Speech-to-Text interface application.
+
+    This function creates the main application window using TkinterDnD,
+    instantiates the STTInterface class, and starts the main event loop.
+    """
     root = TkinterDnD.Tk()
     app = STTInterface(root)
     root.mainloop()
+

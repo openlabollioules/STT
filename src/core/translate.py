@@ -15,6 +15,15 @@ tokenizer = MarianTokenizer.from_pretrained(model_name)
 model = MarianMTModel.from_pretrained(model_name)
 
 def translate_text(text):
+    """
+    Translates the given text using a pre-trained language model.
+
+    Args:
+        text (str): The text to be translated.
+
+    Returns:
+        str: The translated text.
+    """
     inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True)
     translated_tokens = model.generate(**inputs)
     return tokenizer.decode(translated_tokens[0], skip_special_tokens=True)

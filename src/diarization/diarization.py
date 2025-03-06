@@ -12,7 +12,7 @@ from config import config
 MODEL_DIR = os.path.abspath("../../models")
 os.makedirs(MODEL_DIR, exist_ok=True)
 
-def start_transcription_n_diarization(output_path,file_path):
+def start_transcription_n_diarization(output_path,file_path,lang_code):
     """
     This function transcribe an audio file and use diarization for Speaker separation
     Args:
@@ -67,7 +67,7 @@ def start_transcription_n_diarization(output_path,file_path):
 
             logger.debug(f"Shape: {waveform_np.shape}, Min: {waveform_np.min()}, Max: {waveform_np.max()}")
 
-            transcription = do_transcription(waveform_np, model, processor, torch_dtype, device, "output.txt")
+            transcription = do_transcription(waveform_np, model, processor, torch_dtype, device, "output.txt",lang_code=lang_code)
 
             output_transcriptions.append({
                 "speaker": speaker,

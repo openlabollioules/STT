@@ -9,7 +9,7 @@ def do_transcription(audio,
                      processor,
                      torch_dtype, 
                      device, 
-                     output_file,
+                     output_file,lang_code=""
                      ):
     """
     This function takes an audio input and outputs the transcription inside the output_file.
@@ -47,13 +47,17 @@ def do_transcription(audio,
             device=device
         )
         logger.info("ASR pipeline initialized successfully.")
-
+        
+        kwargs = {}
+        if lang_code != "":
+            kwargs["generate_kwargs"] = {"language": lang_code}
+            
         # Conversion en texte
         result = pipe(
             {"raw": audio, "sampling_rate": 16000},
             return_timestamps=True,
             chunk_length_s=30,
-            # generate_kwargs={ "language": "fr"},
+            **kwargs
         )
 
         if not result or "text" not in result:

@@ -136,7 +136,7 @@ def load_audio(file_path, target_rate=16000):
         return None, 0.0
 
 def save_transcriptions(output_file, transcriptions):
-    """Sauvegarde les transcriptions formatées dans un fichier."""
+    """Save the transcriptions formated in a file."""
     try:
         with open(output_file, "w", encoding="utf-8") as f:
             f.write("**Transcriptions par locuteur**\n\n")
@@ -150,7 +150,7 @@ def save_transcriptions(output_file, transcriptions):
 
 
 def cleanup_transcriptions(transcriptions):
-    """Fusionne les transcriptions consécutives d'un même locuteur."""
+    """merge transcriptions from the same speaker."""
     if not transcriptions:
         return []
 
@@ -170,8 +170,21 @@ def cleanup_transcriptions(transcriptions):
     cleaned_transcriptions.append(current_segment)
     return cleaned_transcriptions
 
-def md_2_docx(file_path,output_path):
-
-    output = pypandoc.convert_file(file_path, 'docx', outputfile=f"{output_path}.docx")
+def md_2_docx(file_path, output_path):
+    """
+    Convert a Markdown file to a DOCX (Word) document.
+    This function takes a Markdown file and converts it to a DOCX format using pypandoc.
+    If the output path doesn't end with '.docx', the extension is automatically added.
+    Parameters:
+        file_path (str): Path to the source Markdown file
+        output_path (str): Desired output path for the DOCX file
+    Returns:
+        str: The complete path to the generated DOCX file
+    """
+    # Si output_path ne se termine pas par .docx, on l'ajoute
+    if not output_path.lower().endswith('.docx'):
+        output_path += '.docx'
+    
+    output = pypandoc.convert_file(file_path, 'docx', outputfile=output_path)
     print("Conversion terminée !")
     return output_path
