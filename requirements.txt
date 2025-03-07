@@ -16,3 +16,4 @@ tkinterdnd2
 torch
 transformers
 ttkbootstrap
+langdetect

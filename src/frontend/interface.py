@@ -60,9 +60,6 @@ class STTInterface:
         listen_to_stt()
             Spawns a thread to continuously listen to the STDOUT of the STT process and enqueue transcribed text and initiate 
             translation if enabled.
-        update_text_display()
-            Periodically updates the transcription display area (and the translation display if applicable) with new messages 
-            from the processing queue.
         stop_process()
             Terminates both the ffmpeg and STT subprocesses, stops the live transcription process and updates the UI accordingly.
         zoom_in()
@@ -108,6 +105,7 @@ class STTInterface:
             Applies the selected UI theme to the interface by reinitializing the style with the new theme.
     """
     def __init__(self, root):
+        self.line_id = 0 
         self.themes = ["flatly", "cosmo", "minty","sandstone" ,"darkly", "cyborg", "superhero"]
         self.initial_theme=tk.StringVar(value=self.themes[1])
         self.root = root
@@ -140,9 +138,9 @@ class STTInterface:
         # Rendre la grille responsive
         self.root.grid_rowconfigure(0, weight=1)
         self.root.grid_columnconfigure(0, weight=1)
-
+        self.language_translation_var=tk.StringVar(value="Français")
         # Taille de la police
-        self.text_size = 12
+        self.text_size = 16
 
         # Bouton engrenage ⚙️ pour les réglages
         self.settings_button = ttkb.Button(
@@ -159,7 +157,6 @@ class STTInterface:
         self.text_display.grid(row=0, column=0, columnspan=4, sticky="nsew", padx=10, pady=10)
         self.text_display.tag_config(
             "last_phrase",
-            foreground="white",
             font=("Arial", self.text_size + 2, "bold", "underline"),
         )
 
@@ -211,7 +208,6 @@ class STTInterface:
             root, wrap=tk.WORD, font=("Arial", self.text_size), height=8
         )
         self.translation_display.grid(row=1, column=0, columnspan=4, sticky="nsew", padx=10, pady=10)
-        self.translation_display.insert(tk.END, "🟡 Traduction en temps réel s'affichera ici...\n")
         self.translation_display.config(state=tk.DISABLED)  # Empêcher l'édition manuelle
 
         if not self.translation_enabled.get():
@@ -293,37 +289,54 @@ class STTInterface:
             self.listen_to_stt()
 
     def listen_to_stt(self):
-        """Écoute les messages de STT en temps réel et traduit en parallèle."""
+        """Écoute le flux STT, affiche la transcription et lance la traduction."""
         def listen():
-            while self.running:
-                try:
-                    for line in self.stt_process.stdout:
-                        text = line.strip()
-                        self.queue.put(text)
-                        threading.Thread(target=self.translate_text, args=(text,), daemon=True).start()
-                except Exception as e:
-                    self.queue.put(f"Erreur : {e}")
-
+            for line in self.stt_process.stdout:
+                text = line.strip()
+                # Affichage immédiat de la transcription dans sa fenêtre dédiée
+                self.root.after(0, self.display_transcription, text)
+                # Lancement de la traduction dans un thread séparé
         threading.Thread(target=listen, daemon=True).start()
-        self.root.after(100, self.update_text_display)
 
-    def update_text_display(self):
-        """Met à jour l'affichage du texte transcrit et traduit."""
-        while not self.queue.empty():
-            message = self.queue.get()
-            if isinstance(message, tuple) and message[0] == "translated":
-                translated_text = message[1]
-                self.translation_display.config(state=tk.NORMAL)
-                self.translation_display.insert(tk.END, f"{translated_text}\n")
-                self.translation_display.yview(tk.END)
-                self.translation_display.config(state=tk.DISABLED)
-            else:
-                self.text_display.insert(tk.END, f"{message}\n")
-                self.highlight_last_phrase()
-                self.text_display.yview(tk.END)
+    def display_transcription(self, text):
+        """Affiche le texte transcrit dans la fenêtre de transcription."""
+        self.text_display.insert(tk.END, f"{text}\n")
+        self.highlight_last_phrase()
+        self.text_display.yview(tk.END)
+        threading.Thread(target=self.process_translation, args=(text,), daemon=True).start()
+        
 
-        if self.running:
-            self.root.after(100, self.update_text_display)
+    def process_translation(self, text):
+        """Traduit le texte et affiche le résultat dans la fenêtre dédiée à la traduction."""
+        if not self.translation_enabled.get():
+            return
+        try:
+            # Récupère la langue sélectionnée via la variable tkinter
+            selected_lang = self.language_translation_var.get()
+            # Mappe le libellé de la combobox au code de langue (ajoutez ici d'autres langues si besoin)
+            lang_map = {
+                "Français": "fr",
+                "Anglais": "en",
+                "Espagnol": "es",
+                "Allemand": "de",
+                "Italien": "it",
+                "Portugais": "pt"
+            }
+            target_code = lang_map.get(selected_lang, "fr")  # Par défaut en français
+            # Utilise une seule fonction de traduction qui prend en paramètre la langue cible
+            translated_text = translate_text(text, target_code)
+            self.root.after(10, self.display_translation, translated_text)
+        except Exception as e:
+            self.root.after(10, self.display_translation, f"⚠️ Erreur de traduction : {e}")
+
+
+    def display_translation(self, translation):
+        """Affiche la traduction dans la fenêtre dédiée à la traduction."""
+        self.translation_display.config(state=tk.NORMAL)
+        self.translation_display.insert(tk.END, f"{translation}\n")
+        self.translation_display.yview(tk.END)
+        self.translation_display.config(state=tk.DISABLED)
+
 
     def stop_process(self):
         """Arrête les processus ffmpeg et STT."""
@@ -768,15 +781,18 @@ class STTInterface:
             self.toggle_translation_button.config(text="Désactiver Traduction")
         self.translation_enabled.set(not self.translation_enabled.get())
 
-    def translate_text(self, text):
-        """Traduit le texte transcrit en arrière-plan et met à jour l'interface."""
+    def translate_text(self, text, index):
+        """Traduit le texte et insère le résultat juste sous la transcription associée."""
         if not self.translation_enabled.get():
             return
         try:
-            translated_text = translate_text(text)
-            self.queue.put(("translated", translated_text))
+            lang = self.language_translation_var.get()
+            translated_text = translate_text(text, lang)
+            # Planifie l'insertion de la traduction dans le thread principal
+            self.root.after(0, self.insert_translation, index, translated_text)
         except Exception as e:
-            self.queue.put(("translated", f"⚠️ Erreur de traduction : {e}"))
+            self.root.after(0, self.insert_translation, index, f"⚠️ Erreur de traduction : {e}")
+
     
     def open_settings(self):
         """Ouvre la fenêtre des réglages."""
@@ -824,8 +840,22 @@ class STTInterface:
         )
         language_selector.pack(pady=5)
         
+        ttkb.Label(settings_window, text="Traduction en : ", font=("Arial", 12)).pack(pady=5)
+        translation_selector = ttk.Combobox(
+            settings_window,
+            textvariable=self.language_translation_var,
+            values=["Français", "Anglais", "Espagnol", "Allemand", "Italien", "Portugais"],
+            state="readonly",
+            )
+        translation_selector.bind("<<ComboboxSelected>>", self.on_translation_language_change)
+        translation_selector.pack(pady=5)
+        
         apply_button = ttkb.Button(settings_window, text="Appliquer", command=lambda: self.apply_settings(bg_color_selector.get()), bootstyle="primary")
         apply_button.pack(pady=20)
+    
+    def on_translation_language_change(self, event):
+        """Handles the event when the translation language is changed."""
+        self.translation_display.insert(tk.END, f"Traduction en {self.language_translation_var.get()}\n")
     
     def update_font_size(self, new_size):
         """Met à jour la taille de la police dans les zones de texte."""
