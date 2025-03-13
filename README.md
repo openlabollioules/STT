@@ -16,10 +16,29 @@ This application provides robust speech-to-text and translation functionalities 
 
 - **Audio Loopback:**  
   For live transcription, your system audio must be routed through a loopback device.  
-  > **Note:** This feature currently supports macOS users. For testing, the application was configured using **BackHole-2ch**.
+> **Note:** This feature currently supports macOS users. For testing, the application was configured using **BackHole-2ch**.
 - **FFmpeg & PyPandoc:**  
   These are required for audio processing and document conversion.
 
+### Env requirements : 
+
+Create an .env file 
+```sh
+touch .env
+```
+Add these parameters :
+```python
+# env
+AUDIO_MODEL_NAME="openai/whisper-large-v3-turbo" # wisper for exemple
+MODEL_DIR = "./models" # where the models will be download
+
+# Files output directory 
+OUTPUT_DIR="./output"
+
+# Only for downloading the Diarization Model with Pyannote 
+HF_TOKEN="YOUR-HF-TOKEN"
+
+```
 ---
 
 ## Installation
@@ -104,7 +123,7 @@ Speech2Text/
 │   │── benchmark/                  # Additional benchmark files
 │   │   │── __init__.py
 │   │   │── benchmark.py
-│
+│   .env                            # add the env values 
 │── README.MD
 │── Graph_png.png                   # Diagram of LangGraph pipeline
 │── requirements.txt

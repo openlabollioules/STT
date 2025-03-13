@@ -21,7 +21,7 @@ def load_model():
         device: detected device (CPU/GPU)
     """
     try:
-        # Détection du périphérique (GPU/CPU)
+        # Detects the device and sets the appropriate dtype
         if torch.backends.mps.is_available():  # Apple Silicon GPU
             device = "mps"
             torch_dtype = torch.float16
@@ -37,7 +37,7 @@ def load_model():
 
         logger.debug(f"Device selected: {device}, dtype: {torch_dtype}")
 
-        # Chargement du modèle
+        # Loading the model
         model_id = os.getenv("AUDIO_MODEL_NAME")
         if not model_id:
             logger.error("AUDIO_MODEL_NAME environment variable is not set.")
@@ -49,12 +49,12 @@ def load_model():
             model_id,
             torch_dtype=torch_dtype,
             # low_cpu_mem_usage=True,
-            # cache_dir=MODEL_DIR
+            cache_dir=MODEL_DIR
         )
         model.to(device)
         logger.info("Audio model loaded successfully.")
 
-        # Chargement du processeur
+        # loading processor
         processor = AutoProcessor.from_pretrained(model_id)
         logger.info("Processor loaded successfully.")
 
@@ -71,7 +71,7 @@ def load_ollama_model():
         model: the Ollama model
     """
     try:
-        # Chargement du modèle LLM
+        # Loading the model 
         OLLAMA_MODEL = config.get("MODEL_NAME")
         if not OLLAMA_MODEL:
             logger.error("MODEL_NAME is missing in config.")
@@ -105,7 +105,7 @@ def load_pyannote():
     else:
         device = "cpu"
 
-    logger.info(f"Utilisation du périphérique : {device}")
+    logger.info(f"utilisation of the device : {device}")
 
     pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1", cache_dir=MODEL_DIR)
     pipeline.to(torch.device(device))

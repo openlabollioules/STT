@@ -123,7 +123,7 @@ class STTInterface:
         self.root.geometry(f"700x550+{x-350}+{y-225}")
         self.root.minsize(650, 400)
         
-        # Appliquer le thème ttkbootstrap
+        # add a theme form ttkbootstrap
         self.style = ttkb.Style(theme=self.themes[1])
         self.languages = {
             "auto" : "",
@@ -135,17 +135,15 @@ class STTInterface:
             "Portugais": "pt",
         }
 
-        # Rendre la grille responsive
         self.root.grid_rowconfigure(0, weight=1)
         self.root.grid_columnconfigure(0, weight=1)
         self.language_translation_var=tk.StringVar(value="Français")
-        # Taille de la police
         self.text_size = 16
 
-        # Bouton engrenage ⚙️ pour les réglages
+        # settings button
         self.settings_button = ttkb.Button(
             root, text="⚙️", command=self.open_settings,
-            bootstyle="link",  # Supprime le contour
+            bootstyle="link", 
             padding=0,
         )
 
@@ -181,10 +179,10 @@ class STTInterface:
         )
         self.save_button.grid(row=5, column=0, columnspan=4, padx=5, pady=5, sticky="ew")
 
-        # Variable pour activer/désactiver la traduction
+        # Translation button
         self.translation_enabled = tk.BooleanVar(value=False)
 
-        # Bouton Activer/Désactiver la Traduction
+        # activate translation button
         self.toggle_translation_button = ttkb.Button(
             root, text="Activer Traduction", command=self.toggle_translation, bootstyle="outline"
         )
@@ -194,7 +192,7 @@ class STTInterface:
         self.audio_devices = self.get_audio_devices()
         self.selected_device = tk.StringVar(value=self.audio_devices[0])
 
-        # Processus STT
+        # Process STT
         self.ffmpeg_process = None
         self.stt_process = None
         self.queue = queue.Queue()
@@ -203,18 +201,18 @@ class STTInterface:
         self.root.drop_target_register(DND_FILES)
         self.root.dnd_bind('<<Drop>>', self.drop_event)
         
-        # Zone d'affichage pour la traduction
+        # Text zone for transcription
         self.translation_display = scrolledtext.ScrolledText(
             root, wrap=tk.WORD, font=("Arial", self.text_size), height=8
         )
         self.translation_display.grid(row=1, column=0, columnspan=4, sticky="nsew", padx=10, pady=10)
-        self.translation_display.config(state=tk.DISABLED)  # Empêcher l'édition manuelle
+        self.translation_display.config(state=tk.DISABLED)
 
         if not self.translation_enabled.get():
             self.translation_display.grid_remove()
 
     def get_audio_devices(self):
-        """Récupère la liste des périphériques audio disponibles avec ffmpeg."""
+        """get a list of all devices with ffmpeg."""
         try:
             result = subprocess.run(
                 ["ffmpeg", "-list_devices", "true", "-f", "avfoundation", "-i", ""],
@@ -282,24 +280,23 @@ class STTInterface:
 
             self.text_display.insert(
                 tk.END,
-                f"🔴 Enregistrement en cours ({language}) avec l'entrée {self.selected_device.get()}...\n",
+                f"Loading model {os.getenv("AUDIO_MODEL_NAME")} with language({language}) using the device : {self.selected_device.get()}...\n",
             )
             self.text_display.yview(tk.END)
 
             self.listen_to_stt()
 
     def listen_to_stt(self):
-        """Écoute le flux STT, affiche la transcription et lance la traduction."""
+        """Listen to the STT process and display the transcription."""
         def listen():
             for line in self.stt_process.stdout:
                 text = line.strip()
-                # Affichage immédiat de la transcription dans sa fenêtre dédiée
                 self.root.after(0, self.display_transcription, text)
-                # Lancement de la traduction dans un thread séparé
+        # Starts a new thread for the STT
         threading.Thread(target=listen, daemon=True).start()
 
     def display_transcription(self, text):
-        """Affiche le texte transcrit dans la fenêtre de transcription."""
+        """Display the transcription in the text display area."""
         self.text_display.insert(tk.END, f"{text}\n")
         self.highlight_last_phrase()
         self.text_display.yview(tk.END)
@@ -307,13 +304,13 @@ class STTInterface:
         
 
     def process_translation(self, text):
-        """Traduit le texte et affiche le résultat dans la fenêtre dédiée à la traduction."""
+        """Process translation in a separate thread."""
         if not self.translation_enabled.get():
             return
         try:
             # Récupère la langue sélectionnée via la variable tkinter
             selected_lang = self.language_translation_var.get()
-            # Mappe le libellé de la combobox au code de langue (ajoutez ici d'autres langues si besoin)
+            # Mapp
             lang_map = {
                 "Français": "fr",
                 "Anglais": "en",
@@ -322,8 +319,7 @@ class STTInterface:
                 "Italien": "it",
                 "Portugais": "pt"
             }
-            target_code = lang_map.get(selected_lang, "fr")  # Par défaut en français
-            # Utilise une seule fonction de traduction qui prend en paramètre la langue cible
+            target_code = lang_map.get(selected_lang, "fr")  # default value french
             translated_text = translate_text(text, target_code)
             self.root.after(10, self.display_translation, translated_text)
         except Exception as e:
@@ -331,7 +327,7 @@ class STTInterface:
 
 
     def display_translation(self, translation):
-        """Affiche la traduction dans la fenêtre dédiée à la traduction."""
+        """Display the translation in the translation display area."""
         self.translation_display.config(state=tk.NORMAL)
         self.translation_display.insert(tk.END, f"{translation}\n")
         self.translation_display.yview(tk.END)
@@ -339,7 +335,7 @@ class STTInterface:
 
 
     def stop_process(self):
-        """Arrête les processus ffmpeg et STT."""
+        """Stop the ffmpeg and STT processes."""
         if self.ffmpeg_process:
             self.running = False
             self.ffmpeg_process.terminate()
@@ -354,7 +350,7 @@ class STTInterface:
         self.text_display.yview(tk.END)
 
     def zoom_in(self):
-        """Augmente la taille du texte."""
+        """Rise the text size."""
         self.text_size += 2
         self.text_display.config(font=("Arial", self.text_size))
         self.text_display.tag_config(
@@ -362,7 +358,7 @@ class STTInterface:
         )
 
     def zoom_out(self):
-        """Diminue la taille du texte."""
+        """Reduce the text size."""
         if self.text_size > 8:
             self.text_size -= 2
             self.text_display.config(font=("Arial", self.text_size))
@@ -371,7 +367,7 @@ class STTInterface:
             )
 
     def reset_zoom(self):
-        """Réinitialise la taille du texte."""
+        """Reset the text size to the default value."""
         self.text_size = 12
         self.text_display.config(font=("Arial", self.text_size))
         self.text_display.tag_config(
@@ -379,13 +375,13 @@ class STTInterface:
         )
 
     def highlight_last_phrase(self):
-        """Met en surbrillance la dernière ligne en blanc et en gras."""
+        """highlight the last transcribed phrase."""
         self.text_display.tag_remove("last_phrase", "1.0", tk.END)
         last_index = self.text_display.index("end-2c linestart")
         self.text_display.tag_add("last_phrase", last_index, "end-1c")
 
     def save_transcription(self):
-        """Sauvegarde le contenu de la zone de texte dans un fichier TXT."""
+        """saves the transcription to a file."""
         file_path = filedialog.asksaveasfilename(
             defaultextension=".txt",
             filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")],
@@ -402,7 +398,7 @@ class STTInterface:
             self.text_display.yview(tk.END)
 
     def start_post_processing(self):
-        """Ouvre l'explorateur de fichiers pour sélectionner un fichier puis lance le post process."""
+        """open a file picker for post-processing."""
         file_path = filedialog.askopenfilename(
             title="Sélectionnez un fichier pour le post process",
             filetypes=[("All Files", "*.*")]
@@ -464,7 +460,11 @@ class STTInterface:
             self.text_display.yview(tk.END)
     
     def drop_event(self, event):
-        """Gère le drag & drop."""
+        """Treat the dropped file.
+        Args:
+            event (tkinter event): The event object containing the dropped file path.
+        Returns:
+            None"""
         files = self.root.tk.splitlist(event.data)
         audio_extensions = ('.wav', '.mp3', '.flac', '.ogg', '.m4a')
         for file_path in files:
@@ -476,8 +476,11 @@ class STTInterface:
     
     def open_drag_post_process_window(self, file_path):
         """
-        Ouvre une fenêtre popup pour choisir la langue de l'audio,
-        puis lance le traitement avec une barre de chargement.
+        Opens a popup window asking the user to select the language for the dragged audio file and then initiates processing with a loading screen.
+        Args:
+            file_path (str): The path to the dragged audio file.
+        Returns:
+            None
         """
         languages = {
             "Français": "fr",
@@ -496,7 +499,7 @@ class STTInterface:
         lang_popup.geometry("300x150")
         lang_popup.update_idletasks()
         
-        # Centrer la popup
+        # center the popup 
         window_width = lang_popup.winfo_width()
         window_height = lang_popup.winfo_height()
         screen_width = lang_popup.winfo_screenwidth()
@@ -527,9 +530,13 @@ class STTInterface:
 
     def start_drag_processing(self, file_path, file_name, lang_code):
         """
-        Lance le traitement du fichier glissé en affichant une fenêtre
-        avec une barre de chargement. La langue sélectionnée (lang_code)
-        est passée à la fonction de transcription.
+        start the transcription and diarization process for a dragged audio file.
+        Args:
+            file_path (str): The path to the audio file.
+            file_name (str): The name of the audio file.
+            lang_code (str): The language code for the audio file.
+        Returns:
+            None
         """
         self.text_display.insert(tk.END, f"Début du traitement pour le fichier : {file_path}\n")
         self.text_display.yview(tk.END)
@@ -590,9 +597,11 @@ class STTInterface:
                 self.text_display.insert(tk.END, f"Erreur lors de la lecture du fichier : {e}\n")
     
     def open_markdown_editor(self, file_path=""):
-        """
-        Ouvre un éditeur Markdown visuel dans une fenêtre pop-up.
-        Si un chemin vers un fichier Markdown est fourni, le fichier est chargé.
+        """open a markdown editor window.
+        Args:
+            file_path (str): The path to the file to be loaded in the editor.
+        Returns:
+            None
         """
         popup = Toplevel()
         popup.title("Éditeur Markdown Visuel")
@@ -638,14 +647,14 @@ class STTInterface:
                 print(f"Erreur lors de la sauvegarde : {e}")
 
         def handle_export():
-            # Demander à l'utilisateur où sauvegarder le fichier Word
+            # ask the user for the output path
             output_path = filedialog.asksaveasfilename(
                 title="Enregistrer en tant que fichier Word",
                 defaultextension=".docx",
                 filetypes=[("Documents Word", "*.docx"), ("Tous les fichiers", "*.*")]
             )
             if not output_path:
-                return  # L'utilisateur a annulé
+                return  
             
             try:
                 md_2_docx(popup.file_path, output_path)
@@ -758,7 +767,7 @@ class STTInterface:
                 editor.insert(tk.END, f"Erreur lors du chargement du fichier : {e}")
     
     def open_translation_window(self):
-        """Ouvre une nouvelle fenêtre pour afficher la traduction en temps réel."""
+        """Opens a new window dedicated to live translation output."""
         if hasattr(self, "translation_window") and self.translation_window.winfo_exists():
             return  
         
@@ -772,7 +781,7 @@ class STTInterface:
         self.translated_text_display.pack(fill=BOTH, expand=True, padx=10, pady=10)
     
     def toggle_translation(self):
-        """Active ou désactive l'affichage de la zone de traduction."""
+        """Activates or desactivates display translation zone"""
         if self.translation_enabled.get():
             self.translation_display.grid_remove()
             self.toggle_translation_button.config(text="Activer Traduction")
@@ -782,7 +791,7 @@ class STTInterface:
         self.translation_enabled.set(not self.translation_enabled.get())
 
     def translate_text(self, text, index):
-        """Traduit le texte et insère le résultat juste sous la transcription associée."""
+        """Translate text and display the result in the translation display area."""
         if not self.translation_enabled.get():
             return
         try:
@@ -795,7 +804,7 @@ class STTInterface:
 
     
     def open_settings(self):
-        """Ouvre la fenêtre des réglages."""
+        """Open settings window."""
         settings_window = Toplevel(self.root)
         settings_window.title("Réglages")
         settings_window.geometry("500x400")
@@ -858,14 +867,14 @@ class STTInterface:
         self.translation_display.insert(tk.END, f"Traduction en {self.language_translation_var.get()}\n")
     
     def update_font_size(self, new_size):
-        """Met à jour la taille de la police dans les zones de texte."""
+        """update the text size in the transcription and translation display areas."""
         self.text_size = int(float(new_size))
         self.text_display.config(font=("Arial", self.text_size))
         self.translation_display.config(font=("Arial", self.text_size))
         self.text_display.tag_config("last_phrase", font=("Arial", self.text_size + 2, "bold", "underline"))
 
     def apply_settings(self, new_theme):
-        """Applique les changements de couleur de fond."""
+        """Apply the selected UI theme to the interface."""
         self.style = ttkb.Style(theme=new_theme)
 
 def run():

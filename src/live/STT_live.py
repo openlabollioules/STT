@@ -118,7 +118,8 @@ def transcribe_stream( language,write_auto_correction=True):
     )  # Nombre d'échantillons à conserver pour l'overlap
     previous_audio = b""  # Stocke les données de l'overlap
     previous_text = ""
-
+    send_text("Ready to transcribe...")
+    send_text("\n")
     try:
         while True:
             data = sys.stdin.buffer.read(4096)  # Lire des blocs de 4096 octets
