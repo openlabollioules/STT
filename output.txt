@@ -1,0 +1,1267 @@
+[0.00s - 4.64s]  Débat ce matin sur l'intelligence artificielle et la création.
+[4.84s - 87.32s]  La semaine dernière, les comédiens de doublage manifestaient à Paris contre ce qu'ils considèrent être le vol de leur voix par les IA. La semaine dernière, toujours, la Confédération internationale des sociétés d'auteurs et compositeurs, qui représente 5 millions de créateurs dans 116 pays, publié la toute première étude mondiale consacrée aux impacts de l'IA sur les contenus musicaux et audiovisuels et sur l'économie de ces secteurs artistiques en général. Impact considérable, on va y venir. L'intelligence artificielle va-t-elle faire disparaître des pans entiers de la création culturelle ou la question doit-elle se poser de manière plus complexe ? On en débat ce matin avec Éric Sadin, bonjour. Bonjour. Philosophe spécialiste des technologies numériques, auteur de dix livres sur ces questions. Le dernier en date, La vie spectrale, penser l'ère du métavers et des IA génératives chez Grasset. Hugo Cazel-Dupré, bonjour. Chercheur en intelligence artificielle et cofondateur du collectif artistique Obvious, vous travaillez à l'Institut des systèmes intelligents et de robotique. C'est une unité de recherche Sorbonne Université, CNRS et INSM. Merci à tous les deux d'être au micro d'Inter.
+[87.32s - 92.68s]  Partons de cette enquête de la Confédération internationale des sociétés d'auteurs et compositeurs.
+[92.68s - 97.68s]  Les créateurs pourraient perdre près d'un quart de leur revenu à l'horizon 2028,
+[97.68s - 104.96s]  c'est-à-dire demain matin, à cause de l'effet de substitution de l'IA sur les œuvres des créateurs humains.
+[104.96s - 108.00s]  Comment recevez-vous ce chiffre et cette perspective ?
+
+[0.00s - 7.00s]  Eric Sadin ? Cette information représente un des signes parmi tant d'autres, et il y en aura toujours plus dans les mois à venir,
+[7.00s - 12.82s]  qui témoignent du fait que nous vivons un moment de gravité. Je dirais même d'une très haute gravité,
+[12.82s - 20.24s]  mais nous ne le voyons pas, nous commençons à le voir et nous le verrons de plus en plus dans les mois et les années qui viennent.
+[20.24s - 25.54s]  Car, pour dire précisément les choses, depuis deux ans, depuis le 30 novembre 2022,
+
+[0.00s - 27.46s]  à l'occasion de la première mise en ligne de Chad GPT dans sa version publique. Il s'est produit ce que j'appelle un tremblement de terre, social, culturel, civilisationnel, et utilisons des grands mots, anthropologiques. Pourquoi ? Parce que des machines, sur une simple instruction de notre part, vous le savez ce qui est appelé un prompt, se sont mises à produire du texte, des images fixes ou vidéos et des musiques.
+[27.54s - 31.32s]  Et qu'est-ce qu'on a vu ? Parce qu'il faut nous interroger sur nos pratiques.
+[31.72s - 37.06s]  On a vu des foules se jeter toutes affaires cessantes sur ces oracles robotisés sans...
+
+[0.00s - 2.16s]  Succès fulgurant, instantané.
+
+[0.00s - 6.86s]  Un succès fulgurant, sans nullement se soucier de l'étendue des conséquences civilisationnelles et sociales, et elles sont très importantes.
+[7.20s - 3.58s]  La raison pourquoi nous sommes-nous jetés comme ça, dans une telle insouciance, ou même avec une tendance de passion et d'enthousiasme, c'est parce que les personnes n'ont vu que l'aspect pratique. Et ça, c'est dû à l'utilitarisme et au fonctionnalisme qui est tellement à l'œuvre depuis 200 ans dans nos sociétés, qu'il en est arrivé à tellement imprégner nos psychés
+[3.58s - 48.06s]  que les personnes ne voient plus qu'à partir du midi de leur intérêt. Et à mon sens, la première des questions, la première des toutes premières questions que nous aurions dû nous poser dès le 1er décembre 2022, c'est celle de nos enfants et de nos petits-enfants. Qu'ils voyez-vous dans un ou deux ans, et ça commence déjà à nous poser la question,
+[48.16s - 55.04s]  mais pourquoi papa, maman, je vais à l'école, moi, s'il y a un système sur une simple instruction de ma part, va écrire à ma place.
+[55.12s - 60.94s]  Mais non, cette question, nous ne laissons pas poser, n'a pas fait partie du registre de nos préoccupations, et ça je le regrette.
+
+[0.00s - 5.74s]  Cazel Dupré, il y a la question de l'art et de la création, mais à entendre Éric
+[5.74s - 11.94s]  Sadin, il faut l'inscrire dans une dimension beaucoup plus large qui est celle d'une rupture
+[11.94s - 13.88s]  anthropologique, c'est le mot employé.
+[13.88s - 15.70s]  Vous partagez le concept ?
+
+[0.00s - 1.00s]  Tout à fait, quelque part oui on le partage dans le sens où on partage le fait que l'arrivée de cette technologie est une rupture dans notre société et que la réponse a clairement été comme l'a dit Eric, une réponse très productiviste qui est on voit un nouvel outil qui nous rend plus productif, on vit dans un système capitaliste qui promouvoit la productivité et donc logiquement on se met à le prendre dans ses mains et l'utiliser le plus vite possible pour gratter de la valeur à à gauche ou à droite.
+[1.00s - 109.44s]  Comment on gratte de la valeur dans le monde de l'art ? Alors dans le monde de l'art je pense que c'est justement différent. En fait je pense qu'il faut vraiment faire une différence entre le monde de l'art avec un grand A entre guillemets dans lequel l'arrivée de l'intelligence artificielle peut être comparée à l'arrivée de la photographie. Quand la photographie est arrivée en 1850, c'était réservé à des ingénieurs hautement qualifiés, c'était pas de l'art et certaines personnes ont voulu commencer à faire de l'art avec des appareils photo. On leur a dit maintenant tu cliques sur un bouton, c'est pas de l'art, l'art c'est le caravage, c'est les personnes qui peignent, etc. Aujourd'hui, un peu moins de 200 ans plus tard, on est tous d'accord pour dire que la photographie est un mouvement artistique à part entière. On a tous des appareils photo dans notre téléphone, mais on n'est pas tous photographes, on est tous d'accord là-dessus. Et il faut avoir un œil, il faut savoir utiliser la technique, il faut avoir un message. On produit des images, on ne produit pas des photos avec notre téléphone portable. Exactement. Et donc, du coup, certaines personnes se sont démarquées comme ayant été capables d'utiliser la photographie comme un outil artistique Donc dans le monde de l'art avec un grand A, on pense qu'il va se passer la même chose, nous c'est ce qu'on essaie de faire via notre pratique artistique Par contre, dans le monde de la création plus globalement, et donc dans le monde qui s'inscrit dans le système plus capitaliste Même si le monde de l'art s'inscrit aussi dans ce système là, mais un petit peu moins je dirais Dans le monde de la création, les designers doubleurs toutes les personnes qui écrivent les traducteurs les scénaristes tous ces métiers là
+[109.44s - 115.44s]  sont forcément mis à mal par cette technologie là et nous ce qu'on nous via notre art ce qu'on
+[115.44s - 119.74s]  essaie de faire c'est de prévenir le fait que ces technologies arrivent essayer via l'art de
+[119.74s - 125.56s]  pouvoir discuter de cette question là et aussi essayer de sensibiliser les personnes sur le fait
+
+[0.00s - 1.32s]  C'est ce que dit de pardon au premier.
+
+[0.00s - 0.84s]  Compris les scénaristes.
+
+[0.00s - 2.00s]  les personnes sur le fait qu'il faut parler au gouvernement.
+[2.00s - 6.32s]  Donc vous nous dites qu'il y a des métiers dispensables désormais à cause de l'intelligence
+[6.32s - 7.32s]  artificielle ?
+
+[0.00s - 0.66s]  Parle-au-gouvernement.
+
+[0.00s - 0.24s]  Non.
+
+[0.00s - 4.62s]  Comme les portraitistes en 1850, les portraitistes ont disparu parce que l'appareil photo est arrivé.
+
+[0.00s - 0.80s]  Mais là, c'est une toute autre chose.
+
+[0.00s - 0.76s]  Éric Sadin
+
+[0.00s - 6.22s]  C'est une d'outre mesure parce que il faut donner des concepts aux phénomènes, aux situations que nous vivons.
+
+[0.00s - 7.54s]  Nous vivons actuellement ce que j'appelle, c'est très simple, on va tous comprendre, le tournant intellectuel et créatif de l'intelligence artificielle.
+[7.88s - 9.88s]  Qu'est-ce que ça veut dire le tournant intellectuel ?
+
+[0.00s - 0.76s]  C'est pas bien, ça ?
+
+[0.00s - 2.52s]  Alors, pour l'instant, c'est ni bien ni mal.
+[2.54s - 5.38s]  Non, parce que intellectuel et créatif, moi je prends.
+[5.52s - 7.36s]  Non, mais je vous propose d'analyser ce qui se joue.
+[7.44s - 8.56s]  Qu'est-ce que ça veut dire ?
+
+[0.00s - 1.04s]  Non parce que...
+
+[0.00s - 9.58s]  D'un point de vue, pour en saisir toute la portée, ce que je disais dans ma tribune qui est parue dans Le Monde la semaine dernière, c'est que pour en saisir toute la portée, il faut utiliser une formule littérale.
+
+[0.00s - 2.40s]  Troisième point, et puis la parole à Hugo Cazel-Dupont.
+
+[0.00s - 25.34s]  Et relativement à l'image, il y a aussi dans le monde de la culture, le fait que de plus en plus de systèmes proposent de produire des petits romans, des séries, des films qui s'ajustent à nos vues. C'est l'altérité qui est éloignée. Je renvoie à la plateforme Cloud. Cloud, peut-être en avez-vous entendu parler, c'est un gros marqueur de l'époque.
+[25.34s - 27.70s]  C'est-à-dire, voilà des systèmes qui proposent
+[27.70s - 30.96s]  d'écrire des scénarios qui correspondent à nos souhaits,
+[30.96s - 33.56s]  de réaliser des films qui correspondent à nos souhaits
+[33.56s - 37.64s]  et qui fait qu'il n'y a plus que nos vues qui sont réalisées.
+[37.64s - 40.66s]  C'est le génie de l'altérité qui se trouve éloigné.
+[40.66s - 42.16s]  Et deuxième point, mais on y en reviendra,
+[42.16s - 43.20s]  je ne veux pas être trop long,
+[43.20s - 45.34s]  c'est évidemment les métiers de service.
+[45.34s - 47.36s]  Tous les métiers de service au moment où nous vivons
+[47.36s - 49.40s]  le tournant intellectuel et créatif de l'intelligence.
+
+[0.00s - 0.40s]  C'est que...
+
+[0.00s - 27.20s]  Hugo Cazel-Dupré, vous faites partie d'un trio d'artistes, je le disais, Obvious, qui fabrique des œuvres à partir d'algorithmes d'intelligence artificielle. Vous êtes précurseur dans le domaine. En 2018, vous avez vendu un tableau Edmond de Bellamy pour 435 000 dollars chez Christie's, ce qui a propulsé votre carrière. C'est un portrait fictif, aux contours flous, entièrement conçu par un algorithme d'IA.
+[27.20s - 31.94s]  Je l'ai revu ce matin, c'est un très beau portrait qu'on pourrait trouver, je ne sais pas,
+[31.94s - 42.14s]  peut-être fin 19e siècle, peut-être début 20e siècle. Quand vous entendez Éric Sadin,
+
+[0.00s - 0.34s]  Eh, claro.
+
+[0.00s - 4.24s]  Faire le tableau apocalyptique qu'il vient de faire, comment recevez-vous ces mots ?
+
+[0.00s - 47.86s]  Je le rejoins dans le sens où c'est la vue de ce qui peut arriver dans une dystopie. Dans une dystopie, si on décide d'utiliser l'intelligence artificielle pour toutes ces applications-là, c'est ce qui va arriver. Je pense qu'on peut comparer à plein d'autres technologies transformatives comme le nucléaire ou Internet. C'est la manière dont tu l'utilises. C'est vraiment assez trivial de dire que la technologie n'est pas mauvaise en soi. C'est l'utilisation qu'on en fait qui est un problème. Si on l'utilise pour faire des photos de son voisin qui bat sa femme, évidemment que l'intelligence artificielle, c'est pas terrible. On est tous d'accord là-dessus. Par contre, si on utilise l'intelligence artificielle pour résoudre le problème du cancer, par exemple, on est tous d'accord, c'est trivial, pareil, que c'est une chose positive. Donc ma question, plutôt pour Eric, c'est à quoi bon blâmer la technologie quand c'est son utilisation qui est problématique ?
+[47.86s - 50.02s]  Non, je ne blâme en aucune manière.
+[50.02s - 53.44s]  Du coup, votre proposition, est-ce que votre proposition c'est d'arrêter le progrès,
+[53.44s - 54.82s]  de se priver de cela ? Absolument pas.
+[54.82s - 58.30s]  Ou alors, que faire avec l'intelligence artificielle ? Est-ce que vous me rejoignez
+[58.30s - 60.88s]  sur le fait que ça peut nous apporter quelque chose dans l'humanité ?
+
+[0.00s - 2.28s]  Non, je ne blâme en aucune manière.
+
+[0.00s - 0.46s]  C'est ça ?
+
+[0.00s - 0.16s]  C'est parti.
+
+[0.00s - 0.26s]  C'est lui.
+
+[0.00s - 0.80s]  Eric Sadin.
+
+[0.00s - 1.52s]  Alors, je vais redécouvrir
+
+[0.00s - 2.08s]  pour définir votre question, le fait que…
+[2.08s - 4.08s]  Elle était assez claire, Eric Sadin.
+
+[0.00s - 3.34s]  Elle était assez claire Eric Sadin, elle était assez claire.
+
+[0.00s - 4.30s]  Vous savez, quand on parle, nous vivons ce que j'appelle un fondamentalisme de l'IA.
+[4.82s - 0.56s]  C'est-à-dire, en gros, c'est l'avenir lumineux et inéluctable de l'humanité. Mais ne vous inquiétez pas, mesdames et messieurs, nous avons une parade qui va nous prémunir de toutes les dérives. C'est la régulation. Et c'est une façon de vous répondre, ce que je dis là. La régulation, la façon dont elle est posée, Nicolas Demorand, en ce moment, elle est totalement erronée. C'est totalement erroné. Et je vous rejoins là-dessus.
+[0.60s - 49.32s]  Pourquoi la façon dont le régulateur pense l'intelligence artificielle sur une équation totalement erronée ? C'est parce qu'elle est fondée toujours sur cette sans piternelle équation avantage-inconvénient. Ce que vous venez de dire. Alors, pourquoi ça c'est une équation erronée ? Parce que avantage-inconvénient et lUE Acte développé par Thierry Breton est totalement fondé sur ça, sur une échelle des risques.
+[49.62s - 53.56s]  Parce que d'abord, les avantages et l'inconvénient, c'est relatif, n'est-ce pas ?
+[53.56s - 55.20s]  Et puis c'est uniquement fonctionnaliste.
+[55.48s - 57.88s]  C'est sur une toute autre équation qu'il faudrait poser les choses.
+
+[0.00s - 0.78s]  de ce qui fait.
+
+[0.00s - 1.70s]  Alors laquelle ? Parce qu'on n'a plus le temps.
+
+[0.00s - 2.92s]  Alors, c'est là on a la main et là on n'a pas la main.
+[3.00s - 4.02s]  Vous avez parlé de cancer.
+[4.40s - 9.86s]  Si des systèmes nous permettent de développer des molécules, comme si ça se passe dans la pharmacologie...
+[9.86s - 10.94s]  Oui, ou des outils diagnostiques.
+
+[0.00s - 0.92s]  Oui, je vous dis, dis-tu, dis-tu ?
+
+[0.00s - 0.34s]  Steve
+
+[0.00s - 25.46s]  Voilà, ou alors par exemple dans l'aéronautique, affiner des productions de design. Mais là ça ne pose pas de problème. Mais là on n'a pas la main. Vous savez-vous que dans les entrepôts Amazon, des systèmes d'intelligence artificielle orientent continuellement les manufacturiers pour les chercher tel produit à telle vitesse et les reproducteurs à telle vitesse, qui réduit des humains à des robots de chair et de sang. Est-ce que vous avez entendu une seule fois un régulateur parler de ça ? Jamais.
+[25.46s - 29.76s]  Et la deuxième équation qu'on devrait se poser, que n'est jamais posée Nicolas Demorand,
+[29.76s - 33.50s]  c'est est-ce que ces systèmes respectent ou non les principes fondamentaux qui sont les nôtres ?
+[33.50s - 36.00s]  Et quels sont-ils ? Ils sont au nombre de cinq à mon sens.
+[36.00s - 37.50s]  Ce n'est pas très compliqué.
+[37.50s - 40.50s]  C'est le respect de la liberté, de la dignité et de l'intégrité humaine,
+[40.50s - 44.00s]  de la créativité et de la sociabilité.
+[44.00s - 49.18s]  Mais cela, voyez-vous, nous ne tenons pas compte au nom de seuls intérêts économiques.
+
+[0.00s - 0.38s]  Voilà.
+
+[0.00s - 1.36s]  Et ça c'est problématique !
+
+[0.00s - 0.26s]  C'est parfait.
+
+[0.00s - 0.34s]  Et quel
+
+[0.00s - 4.60s]  Il nous reste 30 secondes Eric Sadin, vous vouliez nous dire quelque chose ?
+
+[0.00s - 8.28s]  Oui, je souhaite en primeur sur l'antenne de France Inter, merci de me laisser quelques secondes pour annoncer cette nouvelle, cher Nicolas Demorand.
+[46.62s - 46.88s]  Vous savez que les 10 et 11 février se tiendra à Paris une gigantesque messe propagandiste, le sommet mondial sur l'IA qui va inviter une centaine de chefs d'État et tout le monde de la tech. Ça va être encore les mêmes discours d'investissement toujours plus important dans cette course toujours plus folle à l'intelligence artificielle, où des quantités de personnes vont parler à notre place. Je réfléchis très sérieusement, ça va être confirmé début janvier, avec plusieurs groupements à monter un contre-sommet à Paris, où seront invitées toutes les corporations concernées, non pas à parler de façon hors-sol, mais à partir des réalités quotidiennes.
+[49.42s - 49.50s]  Et il y a le syndicat national des journalistes,
+[53.06s - 53.14s]  qui est très intéressé, qui va assurer l'organisation logistique.
+[55.46s - 55.78s]  Et comme c'est un lundi, c'est jour de relâche dans les salles parisiennes,
+[57.72s - 58.24s]  ça va avoir lieu le lundi 10 février.
+[63.42s - 66.30s]  Et j'invite les auditeurs qui souhaitent témoigner dans le cadre de cette journée à m'écrire sur le site à mon adresse.
+[66.62s - 69.88s]  Et puis tout cela sera structuré par le comité d'organisation.
+
+[0.00s - 0.46s]  C'est pas le cas.
+
+[0.00s - 0.68s]  Bien reçu !
+
+[0.00s - 0.70s]  Bien reçu.
+
+[0.00s - 0.84s]  Voilà pour le message.
+
+[0.00s - 4.72s]  Merci Eric Sadin, je ne sais pas Hugo Cazel-Dupré si vous vous rendrez au contre-sommet ?
+[4.72s - 5.28s]  Avec grand plaisir.
+[5.28s - 11.88s]  Avec grand plaisir, c'était intéressant et même passionnant de vous entendre débattre ce matin.
+
+[0.00s - 1.08s]  Avec grand plaisir !
+
+[0.00s - 1.22s]  C'est un grand plaisir.
+
+[0.00s - 4.64s]  Débat ce matin sur l'intelligence artificielle et la création.
+[4.84s - 87.32s]  La semaine dernière, les comédiens de doublage manifestaient à Paris contre ce qu'ils considèrent être le vol de leur voix par les IA. La semaine dernière, toujours, la Confédération internationale des sociétés d'auteurs et compositeurs, qui représente 5 millions de créateurs dans 116 pays, publié la toute première étude mondiale consacrée aux impacts de l'IA sur les contenus musicaux et audiovisuels et sur l'économie de ces secteurs artistiques en général. Impact considérable, on va y venir. L'intelligence artificielle va-t-elle faire disparaître des pans entiers de la création culturelle ou la question doit-elle se poser de manière plus complexe ? On en débat ce matin avec Éric Sadin, bonjour. Bonjour. Philosophe spécialiste des technologies numériques, auteur de dix livres sur ces questions. Le dernier en date, La vie spectrale, penser l'ère du métavers et des IA génératives chez Grasset. Hugo Cazel-Dupré, bonjour. Chercheur en intelligence artificielle et cofondateur du collectif artistique Obvious, vous travaillez à l'Institut des systèmes intelligents et de robotique. C'est une unité de recherche Sorbonne Université, CNRS et INSM. Merci à tous les deux d'être au micro d'Inter.
+[87.32s - 92.68s]  Partons de cette enquête de la Confédération internationale des sociétés d'auteurs et compositeurs.
+[92.68s - 97.68s]  Les créateurs pourraient perdre près d'un quart de leur revenu à l'horizon 2028,
+[97.68s - 104.96s]  c'est-à-dire demain matin, à cause de l'effet de substitution de l'IA sur les œuvres des créateurs humains.
+[104.96s - 108.00s]  Comment recevez-vous ce chiffre et cette perspective ?
+
+[0.00s - 7.00s]  Eric Sadin ? Cette information représente un des signes parmi tant d'autres, et il y en aura toujours plus dans les mois à venir,
+[7.00s - 12.82s]  qui témoignent du fait que nous vivons un moment de gravité. Je dirais même d'une très haute gravité,
+[12.82s - 20.24s]  mais nous ne le voyons pas, nous commençons à le voir et nous le verrons de plus en plus dans les mois et les années qui viennent.
+[20.24s - 25.54s]  Car, pour dire précisément les choses, depuis deux ans, depuis le 30 novembre 2022,
+
+[0.00s - 27.46s]  à l'occasion de la première mise en ligne de Chad GPT dans sa version publique. Il s'est produit ce que j'appelle un tremblement de terre, social, culturel, civilisationnel, et utilisons des grands mots, anthropologiques. Pourquoi ? Parce que des machines, sur une simple instruction de notre part, vous le savez ce qui est appelé un prompt, se sont mises à produire du texte, des images fixes ou vidéos et des musiques.
+[27.54s - 31.32s]  Et qu'est-ce qu'on a vu ? Parce qu'il faut nous interroger sur nos pratiques.
+[31.72s - 37.06s]  On a vu des foules se jeter toutes affaires cessantes sur ces oracles robotisés sans...
+
+[0.00s - 2.16s]  Succès fulgurant, instantané.
+
+[0.00s - 6.86s]  Un succès fulgurant, sans nullement se soucier de l'étendue des conséquences civilisationnelles et sociales, et elles sont très importantes.
+[7.20s - 3.58s]  La raison pourquoi nous sommes-nous jetés comme ça, dans une telle insouciance, ou même avec une tendance de passion et d'enthousiasme, c'est parce que les personnes n'ont vu que l'aspect pratique. Et ça, c'est dû à l'utilitarisme et au fonctionnalisme qui est tellement à l'œuvre depuis 200 ans dans nos sociétés, qu'il en est arrivé à tellement imprégner nos psychés
+[3.58s - 48.06s]  que les personnes ne voient plus qu'à partir du midi de leur intérêt. Et à mon sens, la première des questions, la première des toutes premières questions que nous aurions dû nous poser dès le 1er décembre 2022, c'est celle de nos enfants et de nos petits-enfants. Qu'ils voyez-vous dans un ou deux ans, et ça commence déjà à nous poser la question,
+[48.16s - 55.04s]  mais pourquoi papa, maman, je vais à l'école, moi, s'il y a un système sur une simple instruction de ma part, va écrire à ma place.
+[55.12s - 60.94s]  Mais non, cette question, nous ne laissons pas poser, n'a pas fait partie du registre de nos préoccupations, et ça je le regrette.
+
+[0.00s - 5.74s]  Cazel Dupré, il y a la question de l'art et de la création, mais à entendre Éric
+[5.74s - 11.94s]  Sadin, il faut l'inscrire dans une dimension beaucoup plus large qui est celle d'une rupture
+[11.94s - 13.88s]  anthropologique, c'est le mot employé.
+[13.88s - 15.70s]  Vous partagez le concept ?
+
+[0.00s - 1.00s]  Tout à fait, quelque part oui on le partage dans le sens où on partage le fait que l'arrivée de cette technologie est une rupture dans notre société et que la réponse a clairement été comme l'a dit Eric, une réponse très productiviste qui est on voit un nouvel outil qui nous rend plus productif, on vit dans un système capitaliste qui promouvoit la productivité et donc logiquement on se met à le prendre dans ses mains et l'utiliser le plus vite possible pour gratter de la valeur à à gauche ou à droite.
+[1.00s - 109.44s]  Comment on gratte de la valeur dans le monde de l'art ? Alors dans le monde de l'art je pense que c'est justement différent. En fait je pense qu'il faut vraiment faire une différence entre le monde de l'art avec un grand A entre guillemets dans lequel l'arrivée de l'intelligence artificielle peut être comparée à l'arrivée de la photographie. Quand la photographie est arrivée en 1850, c'était réservé à des ingénieurs hautement qualifiés, c'était pas de l'art et certaines personnes ont voulu commencer à faire de l'art avec des appareils photo. On leur a dit maintenant tu cliques sur un bouton, c'est pas de l'art, l'art c'est le caravage, c'est les personnes qui peignent, etc. Aujourd'hui, un peu moins de 200 ans plus tard, on est tous d'accord pour dire que la photographie est un mouvement artistique à part entière. On a tous des appareils photo dans notre téléphone, mais on n'est pas tous photographes, on est tous d'accord là-dessus. Et il faut avoir un œil, il faut savoir utiliser la technique, il faut avoir un message. On produit des images, on ne produit pas des photos avec notre téléphone portable. Exactement. Et donc, du coup, certaines personnes se sont démarquées comme ayant été capables d'utiliser la photographie comme un outil artistique Donc dans le monde de l'art avec un grand A, on pense qu'il va se passer la même chose, nous c'est ce qu'on essaie de faire via notre pratique artistique Par contre, dans le monde de la création plus globalement, et donc dans le monde qui s'inscrit dans le système plus capitaliste Même si le monde de l'art s'inscrit aussi dans ce système là, mais un petit peu moins je dirais Dans le monde de la création, les designers doubleurs toutes les personnes qui écrivent les traducteurs les scénaristes tous ces métiers là
+[109.44s - 115.44s]  sont forcément mis à mal par cette technologie là et nous ce qu'on nous via notre art ce qu'on
+[115.44s - 119.74s]  essaie de faire c'est de prévenir le fait que ces technologies arrivent essayer via l'art de
+[119.74s - 125.56s]  pouvoir discuter de cette question là et aussi essayer de sensibiliser les personnes sur le fait
+
+[0.00s - 1.32s]  C'est ce que dit de pardon au premier.
+
+[0.00s - 0.84s]  Compris les scénaristes.
+
+[0.00s - 2.00s]  les personnes sur le fait qu'il faut parler au gouvernement.
+[2.00s - 6.32s]  Donc vous nous dites qu'il y a des métiers dispensables désormais à cause de l'intelligence
+[6.32s - 7.32s]  artificielle ?
+
+[0.00s - 0.66s]  Parle-au-gouvernement.
+
+[0.00s - 0.24s]  Non.
+
+[0.00s - 4.62s]  Comme les portraitistes en 1850, les portraitistes ont disparu parce que l'appareil photo est arrivé.
+
+[0.00s - 0.80s]  Mais là, c'est une toute autre chose.
+
+[0.00s - 0.76s]  Éric Sadin
+
+[0.00s - 6.22s]  C'est une d'outre mesure parce que il faut donner des concepts aux phénomènes, aux situations que nous vivons.
+
+[0.00s - 7.54s]  Nous vivons actuellement ce que j'appelle, c'est très simple, on va tous comprendre, le tournant intellectuel et créatif de l'intelligence artificielle.
+[7.88s - 9.88s]  Qu'est-ce que ça veut dire le tournant intellectuel ?
+
+[0.00s - 0.76s]  C'est pas bien, ça ?
+
+[0.00s - 2.52s]  Alors, pour l'instant, c'est ni bien ni mal.
+[2.54s - 5.38s]  Non, parce que intellectuel et créatif, moi je prends.
+[5.52s - 7.36s]  Non, mais je vous propose d'analyser ce qui se joue.
+[7.44s - 8.56s]  Qu'est-ce que ça veut dire ?
+
+[0.00s - 1.04s]  Non parce que...
+
+[0.00s - 9.58s]  D'un point de vue, pour en saisir toute la portée, ce que je disais dans ma tribune qui est parue dans Le Monde la semaine dernière, c'est que pour en saisir toute la portée, il faut utiliser une formule littérale.
+
+[0.00s - 2.40s]  Troisième point, et puis la parole à Hugo Cazel-Dupont.
+
+[0.00s - 25.34s]  Et relativement à l'image, il y a aussi dans le monde de la culture, le fait que de plus en plus de systèmes proposent de produire des petits romans, des séries, des films qui s'ajustent à nos vues. C'est l'altérité qui est éloignée. Je renvoie à la plateforme Cloud. Cloud, peut-être en avez-vous entendu parler, c'est un gros marqueur de l'époque.
+[25.34s - 27.70s]  C'est-à-dire, voilà des systèmes qui proposent
+[27.70s - 30.96s]  d'écrire des scénarios qui correspondent à nos souhaits,
+[30.96s - 33.56s]  de réaliser des films qui correspondent à nos souhaits
+[33.56s - 37.64s]  et qui fait qu'il n'y a plus que nos vues qui sont réalisées.
+[37.64s - 40.66s]  C'est le génie de l'altérité qui se trouve éloigné.
+[40.66s - 42.16s]  Et deuxième point, mais on y en reviendra,
+[42.16s - 43.20s]  je ne veux pas être trop long,
+[43.20s - 45.34s]  c'est évidemment les métiers de service.
+[45.34s - 47.36s]  Tous les métiers de service au moment où nous vivons
+[47.36s - 49.40s]  le tournant intellectuel et créatif de l'intelligence.
+
+[0.00s - 0.40s]  C'est que...
+
+[0.00s - 27.20s]  Hugo Cazel-Dupré, vous faites partie d'un trio d'artistes, je le disais, Obvious, qui fabrique des œuvres à partir d'algorithmes d'intelligence artificielle. Vous êtes précurseur dans le domaine. En 2018, vous avez vendu un tableau Edmond de Bellamy pour 435 000 dollars chez Christie's, ce qui a propulsé votre carrière. C'est un portrait fictif, aux contours flous, entièrement conçu par un algorithme d'IA.
+[27.20s - 31.94s]  Je l'ai revu ce matin, c'est un très beau portrait qu'on pourrait trouver, je ne sais pas,
+[31.94s - 42.14s]  peut-être fin 19e siècle, peut-être début 20e siècle. Quand vous entendez Éric Sadin,
+
+[0.00s - 0.34s]  Eh, claro.
+
+[0.00s - 4.24s]  Faire le tableau apocalyptique qu'il vient de faire, comment recevez-vous ces mots ?
+
+[0.00s - 47.86s]  Je le rejoins dans le sens où c'est la vue de ce qui peut arriver dans une dystopie. Dans une dystopie, si on décide d'utiliser l'intelligence artificielle pour toutes ces applications-là, c'est ce qui va arriver. Je pense qu'on peut comparer à plein d'autres technologies transformatives comme le nucléaire ou Internet. C'est la manière dont tu l'utilises. C'est vraiment assez trivial de dire que la technologie n'est pas mauvaise en soi. C'est l'utilisation qu'on en fait qui est un problème. Si on l'utilise pour faire des photos de son voisin qui bat sa femme, évidemment que l'intelligence artificielle, c'est pas terrible. On est tous d'accord là-dessus. Par contre, si on utilise l'intelligence artificielle pour résoudre le problème du cancer, par exemple, on est tous d'accord, c'est trivial, pareil, que c'est une chose positive. Donc ma question, plutôt pour Eric, c'est à quoi bon blâmer la technologie quand c'est son utilisation qui est problématique ?
+[47.86s - 50.02s]  Non, je ne blâme en aucune manière.
+[50.02s - 53.44s]  Du coup, votre proposition, est-ce que votre proposition c'est d'arrêter le progrès,
+[53.44s - 54.82s]  de se priver de cela ? Absolument pas.
+[54.82s - 58.30s]  Ou alors, que faire avec l'intelligence artificielle ? Est-ce que vous me rejoignez
+[58.30s - 60.88s]  sur le fait que ça peut nous apporter quelque chose dans l'humanité ?
+
+[0.00s - 2.28s]  Non, je ne blâme en aucune manière.
+
+[0.00s - 0.46s]  C'est ça ?
+
+[0.00s - 0.16s]  C'est parti.
+
+[0.00s - 0.26s]  C'est lui.
+
+[0.00s - 0.80s]  Eric Sadin.
+
+[0.00s - 1.52s]  Alors, je vais redécouvrir
+
+[0.00s - 2.08s]  pour définir votre question, le fait que…
+[2.08s - 4.08s]  Elle était assez claire, Eric Sadin.
+
+[0.00s - 3.34s]  Elle était assez claire Eric Sadin, elle était assez claire.
+
+[0.00s - 4.30s]  Vous savez, quand on parle, nous vivons ce que j'appelle un fondamentalisme de l'IA.
+[4.82s - 0.56s]  C'est-à-dire, en gros, c'est l'avenir lumineux et inéluctable de l'humanité. Mais ne vous inquiétez pas, mesdames et messieurs, nous avons une parade qui va nous prémunir de toutes les dérives. C'est la régulation. Et c'est une façon de vous répondre, ce que je dis là. La régulation, la façon dont elle est posée, Nicolas Demorand, en ce moment, elle est totalement erronée. C'est totalement erroné. Et je vous rejoins là-dessus.
+[0.60s - 49.32s]  Pourquoi la façon dont le régulateur pense l'intelligence artificielle sur une équation totalement erronée ? C'est parce qu'elle est fondée toujours sur cette sans piternelle équation avantage-inconvénient. Ce que vous venez de dire. Alors, pourquoi ça c'est une équation erronée ? Parce que avantage-inconvénient et lUE Acte développé par Thierry Breton est totalement fondé sur ça, sur une échelle des risques.
+[49.62s - 53.56s]  Parce que d'abord, les avantages et l'inconvénient, c'est relatif, n'est-ce pas ?
+[53.56s - 55.20s]  Et puis c'est uniquement fonctionnaliste.
+[55.48s - 57.88s]  C'est sur une toute autre équation qu'il faudrait poser les choses.
+
+[0.00s - 0.78s]  de ce qui fait.
+
+[0.00s - 1.70s]  Alors laquelle ? Parce qu'on n'a plus le temps.
+
+[0.00s - 2.92s]  Alors, c'est là on a la main et là on n'a pas la main.
+[3.00s - 4.02s]  Vous avez parlé de cancer.
+[4.40s - 9.86s]  Si des systèmes nous permettent de développer des molécules, comme si ça se passe dans la pharmacologie...
+[9.86s - 10.94s]  Oui, ou des outils diagnostiques.
+
+[0.00s - 0.92s]  Oui, je vous dis, dis-tu, dis-tu ?
+
+[0.00s - 0.34s]  Steve
+
+[0.00s - 25.46s]  Voilà, ou alors par exemple dans l'aéronautique, affiner des productions de design. Mais là ça ne pose pas de problème. Mais là on n'a pas la main. Vous savez-vous que dans les entrepôts Amazon, des systèmes d'intelligence artificielle orientent continuellement les manufacturiers pour les chercher tel produit à telle vitesse et les reproducteurs à telle vitesse, qui réduit des humains à des robots de chair et de sang. Est-ce que vous avez entendu une seule fois un régulateur parler de ça ? Jamais.
+[25.46s - 29.76s]  Et la deuxième équation qu'on devrait se poser, que n'est jamais posée Nicolas Demorand,
+[29.76s - 33.50s]  c'est est-ce que ces systèmes respectent ou non les principes fondamentaux qui sont les nôtres ?
+[33.50s - 36.00s]  Et quels sont-ils ? Ils sont au nombre de cinq à mon sens.
+[36.00s - 37.50s]  Ce n'est pas très compliqué.
+[37.50s - 40.50s]  C'est le respect de la liberté, de la dignité et de l'intégrité humaine,
+[40.50s - 44.00s]  de la créativité et de la sociabilité.
+[44.00s - 49.18s]  Mais cela, voyez-vous, nous ne tenons pas compte au nom de seuls intérêts économiques.
+
+[0.00s - 0.38s]  Voilà.
+
+[0.00s - 1.36s]  Et ça c'est problématique !
+
+[0.00s - 0.26s]  C'est parfait.
+
+[0.00s - 0.34s]  Et quel
+
+[0.00s - 4.60s]  Il nous reste 30 secondes Eric Sadin, vous vouliez nous dire quelque chose ?
+
+[0.00s - 8.28s]  Oui, je souhaite en primeur sur l'antenne de France Inter, merci de me laisser quelques secondes pour annoncer cette nouvelle, cher Nicolas Demorand.
+[46.62s - 46.88s]  Vous savez que les 10 et 11 février se tiendra à Paris une gigantesque messe propagandiste, le sommet mondial sur l'IA qui va inviter une centaine de chefs d'État et tout le monde de la tech. Ça va être encore les mêmes discours d'investissement toujours plus important dans cette course toujours plus folle à l'intelligence artificielle, où des quantités de personnes vont parler à notre place. Je réfléchis très sérieusement, ça va être confirmé début janvier, avec plusieurs groupements à monter un contre-sommet à Paris, où seront invitées toutes les corporations concernées, non pas à parler de façon hors-sol, mais à partir des réalités quotidiennes.
+[49.42s - 49.50s]  Et il y a le syndicat national des journalistes,
+[53.06s - 53.14s]  qui est très intéressé, qui va assurer l'organisation logistique.
+[55.46s - 55.78s]  Et comme c'est un lundi, c'est jour de relâche dans les salles parisiennes,
+[57.72s - 58.24s]  ça va avoir lieu le lundi 10 février.
+[63.42s - 66.30s]  Et j'invite les auditeurs qui souhaitent témoigner dans le cadre de cette journée à m'écrire sur le site à mon adresse.
+[66.62s - 69.88s]  Et puis tout cela sera structuré par le comité d'organisation.
+
+[0.00s - 0.46s]  C'est pas le cas.
+
+[0.00s - 0.68s]  Bien reçu !
+
+[0.00s - 0.70s]  Bien reçu.
+
+[0.00s - 0.84s]  Voilà pour le message.
+
+[0.00s - 4.72s]  Merci Eric Sadin, je ne sais pas Hugo Cazel-Dupré si vous vous rendrez au contre-sommet ?
+[4.72s - 5.28s]  Avec grand plaisir.
+[5.28s - 11.88s]  Avec grand plaisir, c'était intéressant et même passionnant de vous entendre débattre ce matin.
+
+[0.00s - 1.08s]  Avec grand plaisir !
+
+[0.00s - 1.22s]  C'est un grand plaisir.
+
+[0.00s - 4.64s]  Débat ce matin sur l'intelligence artificielle et la création.
+[4.84s - 87.32s]  La semaine dernière, les comédiens de doublage manifestaient à Paris contre ce qu'ils considèrent être le vol de leur voix par les IA. La semaine dernière, toujours, la Confédération internationale des sociétés d'auteurs et compositeurs, qui représente 5 millions de créateurs dans 116 pays, publié la toute première étude mondiale consacrée aux impacts de l'IA sur les contenus musicaux et audiovisuels et sur l'économie de ces secteurs artistiques en général. Impact considérable, on va y venir. L'intelligence artificielle va-t-elle faire disparaître des pans entiers de la création culturelle ou la question doit-elle se poser de manière plus complexe ? On en débat ce matin avec Éric Sadin, bonjour. Bonjour. Philosophe spécialiste des technologies numériques, auteur de dix livres sur ces questions. Le dernier en date, La vie spectrale, penser l'ère du métavers et des IA génératives chez Grasset. Hugo Cazel-Dupré, bonjour. Chercheur en intelligence artificielle et cofondateur du collectif artistique Obvious, vous travaillez à l'Institut des systèmes intelligents et de robotique. C'est une unité de recherche Sorbonne Université, CNRS et INSM. Merci à tous les deux d'être au micro d'Inter.
+[87.32s - 92.68s]  Partons de cette enquête de la Confédération internationale des sociétés d'auteurs et compositeurs.
+[92.68s - 97.68s]  Les créateurs pourraient perdre près d'un quart de leur revenu à l'horizon 2028,
+[97.68s - 104.96s]  c'est-à-dire demain matin, à cause de l'effet de substitution de l'IA sur les œuvres des créateurs humains.
+[104.96s - 108.00s]  Comment recevez-vous ce chiffre et cette perspective ?
+
+[0.00s - 7.00s]  Eric Sadin ? Cette information représente un des signes parmi tant d'autres, et il y en aura toujours plus dans les mois à venir,
+[7.00s - 12.82s]  qui témoignent du fait que nous vivons un moment de gravité. Je dirais même d'une très haute gravité,
+[12.82s - 20.24s]  mais nous ne le voyons pas, nous commençons à le voir et nous le verrons de plus en plus dans les mois et les années qui viennent.
+[20.24s - 25.54s]  Car, pour dire précisément les choses, depuis deux ans, depuis le 30 novembre 2022,
+
+[0.00s - 27.46s]  à l'occasion de la première mise en ligne de Chad GPT dans sa version publique. Il s'est produit ce que j'appelle un tremblement de terre, social, culturel, civilisationnel, et utilisons des grands mots, anthropologiques. Pourquoi ? Parce que des machines, sur une simple instruction de notre part, vous le savez ce qui est appelé un prompt, se sont mises à produire du texte, des images fixes ou vidéos et des musiques.
+[27.54s - 31.32s]  Et qu'est-ce qu'on a vu ? Parce qu'il faut nous interroger sur nos pratiques.
+[31.72s - 37.06s]  On a vu des foules se jeter toutes affaires cessantes sur ces oracles robotisés sans...
+
+[0.00s - 2.16s]  Succès fulgurant, instantané.
+
+[0.00s - 6.86s]  Un succès fulgurant, sans nullement se soucier de l'étendue des conséquences civilisationnelles et sociales, et elles sont très importantes.
+[7.20s - 3.58s]  La raison pourquoi nous sommes-nous jetés comme ça, dans une telle insouciance, ou même avec une tendance de passion et d'enthousiasme, c'est parce que les personnes n'ont vu que l'aspect pratique. Et ça, c'est dû à l'utilitarisme et au fonctionnalisme qui est tellement à l'œuvre depuis 200 ans dans nos sociétés, qu'il en est arrivé à tellement imprégner nos psychés
+[3.58s - 48.06s]  que les personnes ne voient plus qu'à partir du midi de leur intérêt. Et à mon sens, la première des questions, la première des toutes premières questions que nous aurions dû nous poser dès le 1er décembre 2022, c'est celle de nos enfants et de nos petits-enfants. Qu'ils voyez-vous dans un ou deux ans, et ça commence déjà à nous poser la question,
+[48.16s - 55.04s]  mais pourquoi papa, maman, je vais à l'école, moi, s'il y a un système sur une simple instruction de ma part, va écrire à ma place.
+[55.12s - 60.94s]  Mais non, cette question, nous ne laissons pas poser, n'a pas fait partie du registre de nos préoccupations, et ça je le regrette.
+
+[0.00s - 5.74s]  Cazel Dupré, il y a la question de l'art et de la création, mais à entendre Éric
+[5.74s - 11.94s]  Sadin, il faut l'inscrire dans une dimension beaucoup plus large qui est celle d'une rupture
+[11.94s - 13.88s]  anthropologique, c'est le mot employé.
+[13.88s - 15.70s]  Vous partagez le concept ?
+
+[0.00s - 1.00s]  Tout à fait, quelque part oui on le partage dans le sens où on partage le fait que l'arrivée de cette technologie est une rupture dans notre société et que la réponse a clairement été comme l'a dit Eric, une réponse très productiviste qui est on voit un nouvel outil qui nous rend plus productif, on vit dans un système capitaliste qui promouvoit la productivité et donc logiquement on se met à le prendre dans ses mains et l'utiliser le plus vite possible pour gratter de la valeur à à gauche ou à droite.
+[1.00s - 109.44s]  Comment on gratte de la valeur dans le monde de l'art ? Alors dans le monde de l'art je pense que c'est justement différent. En fait je pense qu'il faut vraiment faire une différence entre le monde de l'art avec un grand A entre guillemets dans lequel l'arrivée de l'intelligence artificielle peut être comparée à l'arrivée de la photographie. Quand la photographie est arrivée en 1850, c'était réservé à des ingénieurs hautement qualifiés, c'était pas de l'art et certaines personnes ont voulu commencer à faire de l'art avec des appareils photo. On leur a dit maintenant tu cliques sur un bouton, c'est pas de l'art, l'art c'est le caravage, c'est les personnes qui peignent, etc. Aujourd'hui, un peu moins de 200 ans plus tard, on est tous d'accord pour dire que la photographie est un mouvement artistique à part entière. On a tous des appareils photo dans notre téléphone, mais on n'est pas tous photographes, on est tous d'accord là-dessus. Et il faut avoir un œil, il faut savoir utiliser la technique, il faut avoir un message. On produit des images, on ne produit pas des photos avec notre téléphone portable. Exactement. Et donc, du coup, certaines personnes se sont démarquées comme ayant été capables d'utiliser la photographie comme un outil artistique Donc dans le monde de l'art avec un grand A, on pense qu'il va se passer la même chose, nous c'est ce qu'on essaie de faire via notre pratique artistique Par contre, dans le monde de la création plus globalement, et donc dans le monde qui s'inscrit dans le système plus capitaliste Même si le monde de l'art s'inscrit aussi dans ce système là, mais un petit peu moins je dirais Dans le monde de la création, les designers doubleurs toutes les personnes qui écrivent les traducteurs les scénaristes tous ces métiers là
+[109.44s - 115.44s]  sont forcément mis à mal par cette technologie là et nous ce qu'on nous via notre art ce qu'on
+[115.44s - 119.74s]  essaie de faire c'est de prévenir le fait que ces technologies arrivent essayer via l'art de
+[119.74s - 125.56s]  pouvoir discuter de cette question là et aussi essayer de sensibiliser les personnes sur le fait
+
+[0.00s - 1.32s]  C'est ce que dit de pardon au premier.
+
+[0.00s - 0.84s]  Compris les scénaristes.
+
+[0.00s - 2.00s]  les personnes sur le fait qu'il faut parler au gouvernement.
+[2.00s - 6.32s]  Donc vous nous dites qu'il y a des métiers dispensables désormais à cause de l'intelligence
+[6.32s - 7.32s]  artificielle ?
+
+[0.00s - 0.66s]  Parle-au-gouvernement.
+
+[0.00s - 0.24s]  Non.
+
+[0.00s - 4.62s]  Comme les portraitistes en 1850, les portraitistes ont disparu parce que l'appareil photo est arrivé.
+
+[0.00s - 0.80s]  Mais là, c'est une toute autre chose.
+
+[0.00s - 0.76s]  Éric Sadin
+
+[0.00s - 6.22s]  C'est une d'outre mesure parce que il faut donner des concepts aux phénomènes, aux situations que nous vivons.
+
+[0.00s - 7.54s]  Nous vivons actuellement ce que j'appelle, c'est très simple, on va tous comprendre, le tournant intellectuel et créatif de l'intelligence artificielle.
+[7.88s - 9.88s]  Qu'est-ce que ça veut dire le tournant intellectuel ?
+
+[0.00s - 0.76s]  C'est pas bien, ça ?
+
+[0.00s - 2.52s]  Alors, pour l'instant, c'est ni bien ni mal.
+[2.54s - 5.38s]  Non, parce que intellectuel et créatif, moi je prends.
+[5.52s - 7.36s]  Non, mais je vous propose d'analyser ce qui se joue.
+[7.44s - 8.56s]  Qu'est-ce que ça veut dire ?
+
+[0.00s - 1.04s]  Non parce que...
+
+[0.00s - 9.58s]  D'un point de vue, pour en saisir toute la portée, ce que je disais dans ma tribune qui est parue dans Le Monde la semaine dernière, c'est que pour en saisir toute la portée, il faut utiliser une formule littérale.
+
+[0.00s - 2.40s]  Troisième point, et puis la parole à Hugo Cazel-Dupont.
+
+[0.00s - 25.34s]  Et relativement à l'image, il y a aussi dans le monde de la culture, le fait que de plus en plus de systèmes proposent de produire des petits romans, des séries, des films qui s'ajustent à nos vues. C'est l'altérité qui est éloignée. Je renvoie à la plateforme Cloud. Cloud, peut-être en avez-vous entendu parler, c'est un gros marqueur de l'époque.
+[25.34s - 27.70s]  C'est-à-dire, voilà des systèmes qui proposent
+[27.70s - 30.96s]  d'écrire des scénarios qui correspondent à nos souhaits,
+[30.96s - 33.56s]  de réaliser des films qui correspondent à nos souhaits
+[33.56s - 37.64s]  et qui fait qu'il n'y a plus que nos vues qui sont réalisées.
+[37.64s - 40.66s]  C'est le génie de l'altérité qui se trouve éloigné.
+[40.66s - 42.16s]  Et deuxième point, mais on y en reviendra,
+[42.16s - 43.20s]  je ne veux pas être trop long,
+[43.20s - 45.34s]  c'est évidemment les métiers de service.
+[45.34s - 47.36s]  Tous les métiers de service au moment où nous vivons
+[47.36s - 49.40s]  le tournant intellectuel et créatif de l'intelligence.
+
+[0.00s - 0.40s]  C'est que...
+
+[0.00s - 27.20s]  Hugo Cazel-Dupré, vous faites partie d'un trio d'artistes, je le disais, Obvious, qui fabrique des œuvres à partir d'algorithmes d'intelligence artificielle. Vous êtes précurseur dans le domaine. En 2018, vous avez vendu un tableau Edmond de Bellamy pour 435 000 dollars chez Christie's, ce qui a propulsé votre carrière. C'est un portrait fictif, aux contours flous, entièrement conçu par un algorithme d'IA.
+[27.20s - 31.94s]  Je l'ai revu ce matin, c'est un très beau portrait qu'on pourrait trouver, je ne sais pas,
+[31.94s - 42.14s]  peut-être fin 19e siècle, peut-être début 20e siècle. Quand vous entendez Éric Sadin,
+
+[0.00s - 0.34s]  Eh, claro.
+
+[0.00s - 4.24s]  Faire le tableau apocalyptique qu'il vient de faire, comment recevez-vous ces mots ?
+
+[0.00s - 47.86s]  Je le rejoins dans le sens où c'est la vue de ce qui peut arriver dans une dystopie. Dans une dystopie, si on décide d'utiliser l'intelligence artificielle pour toutes ces applications-là, c'est ce qui va arriver. Je pense qu'on peut comparer à plein d'autres technologies transformatives comme le nucléaire ou Internet. C'est la manière dont tu l'utilises. C'est vraiment assez trivial de dire que la technologie n'est pas mauvaise en soi. C'est l'utilisation qu'on en fait qui est un problème. Si on l'utilise pour faire des photos de son voisin qui bat sa femme, évidemment que l'intelligence artificielle, c'est pas terrible. On est tous d'accord là-dessus. Par contre, si on utilise l'intelligence artificielle pour résoudre le problème du cancer, par exemple, on est tous d'accord, c'est trivial, pareil, que c'est une chose positive. Donc ma question, plutôt pour Eric, c'est à quoi bon blâmer la technologie quand c'est son utilisation qui est problématique ?
+[47.86s - 50.02s]  Non, je ne blâme en aucune manière.
+[50.02s - 53.44s]  Du coup, votre proposition, est-ce que votre proposition c'est d'arrêter le progrès,
+[53.44s - 54.82s]  de se priver de cela ? Absolument pas.
+[54.82s - 58.30s]  Ou alors, que faire avec l'intelligence artificielle ? Est-ce que vous me rejoignez
+[58.30s - 60.88s]  sur le fait que ça peut nous apporter quelque chose dans l'humanité ?
+
+[0.00s - 2.28s]  Non, je ne blâme en aucune manière.
+
+[0.00s - 0.46s]  C'est ça ?
+
+[0.00s - 0.16s]  C'est parti.
+
+[0.00s - 0.26s]  C'est lui.
+
+[0.00s - 0.80s]  Eric Sadin.
+
+[0.00s - 1.52s]  Alors, je vais redécouvrir
+
+[0.00s - 2.08s]  pour définir votre question, le fait que…
+[2.08s - 4.08s]  Elle était assez claire, Eric Sadin.
+
+[0.00s - 3.34s]  Elle était assez claire Eric Sadin, elle était assez claire.
+
+[0.00s - 4.30s]  Vous savez, quand on parle, nous vivons ce que j'appelle un fondamentalisme de l'IA.
+[4.82s - 0.56s]  C'est-à-dire, en gros, c'est l'avenir lumineux et inéluctable de l'humanité. Mais ne vous inquiétez pas, mesdames et messieurs, nous avons une parade qui va nous prémunir de toutes les dérives. C'est la régulation. Et c'est une façon de vous répondre, ce que je dis là. La régulation, la façon dont elle est posée, Nicolas Demorand, en ce moment, elle est totalement erronée. C'est totalement erroné. Et je vous rejoins là-dessus.
+[0.60s - 49.32s]  Pourquoi la façon dont le régulateur pense l'intelligence artificielle sur une équation totalement erronée ? C'est parce qu'elle est fondée toujours sur cette sans piternelle équation avantage-inconvénient. Ce que vous venez de dire. Alors, pourquoi ça c'est une équation erronée ? Parce que avantage-inconvénient et lUE Acte développé par Thierry Breton est totalement fondé sur ça, sur une échelle des risques.
+[49.62s - 53.56s]  Parce que d'abord, les avantages et l'inconvénient, c'est relatif, n'est-ce pas ?
+[53.56s - 55.20s]  Et puis c'est uniquement fonctionnaliste.
+[55.48s - 57.88s]  C'est sur une toute autre équation qu'il faudrait poser les choses.
+
+[0.00s - 0.78s]  de ce qui fait.
+
+[0.00s - 1.70s]  Alors laquelle ? Parce qu'on n'a plus le temps.
+
+[0.00s - 2.92s]  Alors, c'est là on a la main et là on n'a pas la main.
+[3.00s - 4.02s]  Vous avez parlé de cancer.
+[4.40s - 9.86s]  Si des systèmes nous permettent de développer des molécules, comme si ça se passe dans la pharmacologie...
+[9.86s - 10.94s]  Oui, ou des outils diagnostiques.
+
+[0.00s - 0.92s]  Oui, je vous dis, dis-tu, dis-tu ?
+
+[0.00s - 0.34s]  Steve
+
+[0.00s - 25.46s]  Voilà, ou alors par exemple dans l'aéronautique, affiner des productions de design. Mais là ça ne pose pas de problème. Mais là on n'a pas la main. Vous savez-vous que dans les entrepôts Amazon, des systèmes d'intelligence artificielle orientent continuellement les manufacturiers pour les chercher tel produit à telle vitesse et les reproducteurs à telle vitesse, qui réduit des humains à des robots de chair et de sang. Est-ce que vous avez entendu une seule fois un régulateur parler de ça ? Jamais.
+[25.46s - 29.76s]  Et la deuxième équation qu'on devrait se poser, que n'est jamais posée Nicolas Demorand,
+[29.76s - 33.50s]  c'est est-ce que ces systèmes respectent ou non les principes fondamentaux qui sont les nôtres ?
+[33.50s - 36.00s]  Et quels sont-ils ? Ils sont au nombre de cinq à mon sens.
+[36.00s - 37.50s]  Ce n'est pas très compliqué.
+[37.50s - 40.50s]  C'est le respect de la liberté, de la dignité et de l'intégrité humaine,
+[40.50s - 44.00s]  de la créativité et de la sociabilité.
+[44.00s - 49.18s]  Mais cela, voyez-vous, nous ne tenons pas compte au nom de seuls intérêts économiques.
+
+[0.00s - 0.38s]  Voilà.
+
+[0.00s - 1.36s]  Et ça c'est problématique !
+
+[0.00s - 0.26s]  C'est parfait.
+
+[0.00s - 0.34s]  Et quel
+
+[0.00s - 4.60s]  Il nous reste 30 secondes Eric Sadin, vous vouliez nous dire quelque chose ?
+
+[0.00s - 8.28s]  Oui, je souhaite en primeur sur l'antenne de France Inter, merci de me laisser quelques secondes pour annoncer cette nouvelle, cher Nicolas Demorand.
+[46.62s - 46.88s]  Vous savez que les 10 et 11 février se tiendra à Paris une gigantesque messe propagandiste, le sommet mondial sur l'IA qui va inviter une centaine de chefs d'État et tout le monde de la tech. Ça va être encore les mêmes discours d'investissement toujours plus important dans cette course toujours plus folle à l'intelligence artificielle, où des quantités de personnes vont parler à notre place. Je réfléchis très sérieusement, ça va être confirmé début janvier, avec plusieurs groupements à monter un contre-sommet à Paris, où seront invitées toutes les corporations concernées, non pas à parler de façon hors-sol, mais à partir des réalités quotidiennes.
+[49.42s - 49.50s]  Et il y a le syndicat national des journalistes,
+[53.06s - 53.14s]  qui est très intéressé, qui va assurer l'organisation logistique.
+[55.46s - 55.78s]  Et comme c'est un lundi, c'est jour de relâche dans les salles parisiennes,
+[57.72s - 58.24s]  ça va avoir lieu le lundi 10 février.
+[63.42s - 66.30s]  Et j'invite les auditeurs qui souhaitent témoigner dans le cadre de cette journée à m'écrire sur le site à mon adresse.
+[66.62s - 69.88s]  Et puis tout cela sera structuré par le comité d'organisation.
+
+[0.00s - 0.46s]  C'est pas le cas.
+
+[0.00s - 0.68s]  Bien reçu !
+
+[0.00s - 0.70s]  Bien reçu.
+
+[0.00s - 0.84s]  Voilà pour le message.
+
+[0.00s - 4.72s]  Merci Eric Sadin, je ne sais pas Hugo Cazel-Dupré si vous vous rendrez au contre-sommet ?
+[4.72s - 5.28s]  Avec grand plaisir.
+[5.28s - 11.88s]  Avec grand plaisir, c'était intéressant et même passionnant de vous entendre débattre ce matin.
+
+[0.00s - 1.08s]  Avec grand plaisir !
+
+[0.00s - 1.22s]  C'est un grand plaisir.
+
+[0.00s - 4.64s]  Débat ce matin sur l'intelligence artificielle et la création.
+[4.84s - 87.32s]  La semaine dernière, les comédiens de doublage manifestaient à Paris contre ce qu'ils considèrent être le vol de leur voix par les IA. La semaine dernière, toujours, la Confédération internationale des sociétés d'auteurs et compositeurs, qui représente 5 millions de créateurs dans 116 pays, publié la toute première étude mondiale consacrée aux impacts de l'IA sur les contenus musicaux et audiovisuels et sur l'économie de ces secteurs artistiques en général. Impact considérable, on va y venir. L'intelligence artificielle va-t-elle faire disparaître des pans entiers de la création culturelle ou la question doit-elle se poser de manière plus complexe ? On en débat ce matin avec Éric Sadin, bonjour. Bonjour. Philosophe spécialiste des technologies numériques, auteur de dix livres sur ces questions. Le dernier en date, La vie spectrale, penser l'ère du métavers et des IA génératives chez Grasset. Hugo Cazel-Dupré, bonjour. Chercheur en intelligence artificielle et cofondateur du collectif artistique Obvious, vous travaillez à l'Institut des systèmes intelligents et de robotique. C'est une unité de recherche Sorbonne Université, CNRS et INSM. Merci à tous les deux d'être au micro d'Inter.
+[87.32s - 92.68s]  Partons de cette enquête de la Confédération internationale des sociétés d'auteurs et compositeurs.
+[92.68s - 97.68s]  Les créateurs pourraient perdre près d'un quart de leur revenu à l'horizon 2028,
+[97.68s - 104.96s]  c'est-à-dire demain matin, à cause de l'effet de substitution de l'IA sur les œuvres des créateurs humains.
+[104.96s - 108.00s]  Comment recevez-vous ce chiffre et cette perspective ?
+
+[0.00s - 7.00s]  Eric Sadin ? Cette information représente un des signes parmi tant d'autres, et il y en aura toujours plus dans les mois à venir,
+[7.00s - 12.82s]  qui témoignent du fait que nous vivons un moment de gravité. Je dirais même d'une très haute gravité,
+[12.82s - 20.24s]  mais nous ne le voyons pas, nous commençons à le voir et nous le verrons de plus en plus dans les mois et les années qui viennent.
+[20.24s - 25.54s]  Car, pour dire précisément les choses, depuis deux ans, depuis le 30 novembre 2022,
+
+[0.00s - 27.46s]  à l'occasion de la première mise en ligne de Chad GPT dans sa version publique. Il s'est produit ce que j'appelle un tremblement de terre, social, culturel, civilisationnel, et utilisons des grands mots, anthropologiques. Pourquoi ? Parce que des machines, sur une simple instruction de notre part, vous le savez ce qui est appelé un prompt, se sont mises à produire du texte, des images fixes ou vidéos et des musiques.
+[27.54s - 31.32s]  Et qu'est-ce qu'on a vu ? Parce qu'il faut nous interroger sur nos pratiques.
+[31.72s - 37.06s]  On a vu des foules se jeter toutes affaires cessantes sur ces oracles robotisés sans...
+
+[0.00s - 2.16s]  Succès fulgurant, instantané.
+
+[0.00s - 6.86s]  Un succès fulgurant, sans nullement se soucier de l'étendue des conséquences civilisationnelles et sociales, et elles sont très importantes.
+[7.20s - 3.58s]  La raison pourquoi nous sommes-nous jetés comme ça, dans une telle insouciance, ou même avec une tendance de passion et d'enthousiasme, c'est parce que les personnes n'ont vu que l'aspect pratique. Et ça, c'est dû à l'utilitarisme et au fonctionnalisme qui est tellement à l'œuvre depuis 200 ans dans nos sociétés, qu'il en est arrivé à tellement imprégner nos psychés
+[3.58s - 48.06s]  que les personnes ne voient plus qu'à partir du midi de leur intérêt. Et à mon sens, la première des questions, la première des toutes premières questions que nous aurions dû nous poser dès le 1er décembre 2022, c'est celle de nos enfants et de nos petits-enfants. Qu'ils voyez-vous dans un ou deux ans, et ça commence déjà à nous poser la question,
+[48.16s - 55.04s]  mais pourquoi papa, maman, je vais à l'école, moi, s'il y a un système sur une simple instruction de ma part, va écrire à ma place.
+[55.12s - 60.94s]  Mais non, cette question, nous ne laissons pas poser, n'a pas fait partie du registre de nos préoccupations, et ça je le regrette.
+
+[0.00s - 5.74s]  Cazel Dupré, il y a la question de l'art et de la création, mais à entendre Éric
+[5.74s - 11.94s]  Sadin, il faut l'inscrire dans une dimension beaucoup plus large qui est celle d'une rupture
+[11.94s - 13.88s]  anthropologique, c'est le mot employé.
+[13.88s - 15.70s]  Vous partagez le concept ?
+
+[0.00s - 1.00s]  Tout à fait, quelque part oui on le partage dans le sens où on partage le fait que l'arrivée de cette technologie est une rupture dans notre société et que la réponse a clairement été comme l'a dit Eric, une réponse très productiviste qui est on voit un nouvel outil qui nous rend plus productif, on vit dans un système capitaliste qui promouvoit la productivité et donc logiquement on se met à le prendre dans ses mains et l'utiliser le plus vite possible pour gratter de la valeur à à gauche ou à droite.
+[1.00s - 109.44s]  Comment on gratte de la valeur dans le monde de l'art ? Alors dans le monde de l'art je pense que c'est justement différent. En fait je pense qu'il faut vraiment faire une différence entre le monde de l'art avec un grand A entre guillemets dans lequel l'arrivée de l'intelligence artificielle peut être comparée à l'arrivée de la photographie. Quand la photographie est arrivée en 1850, c'était réservé à des ingénieurs hautement qualifiés, c'était pas de l'art et certaines personnes ont voulu commencer à faire de l'art avec des appareils photo. On leur a dit maintenant tu cliques sur un bouton, c'est pas de l'art, l'art c'est le caravage, c'est les personnes qui peignent, etc. Aujourd'hui, un peu moins de 200 ans plus tard, on est tous d'accord pour dire que la photographie est un mouvement artistique à part entière. On a tous des appareils photo dans notre téléphone, mais on n'est pas tous photographes, on est tous d'accord là-dessus. Et il faut avoir un œil, il faut savoir utiliser la technique, il faut avoir un message. On produit des images, on ne produit pas des photos avec notre téléphone portable. Exactement. Et donc, du coup, certaines personnes se sont démarquées comme ayant été capables d'utiliser la photographie comme un outil artistique Donc dans le monde de l'art avec un grand A, on pense qu'il va se passer la même chose, nous c'est ce qu'on essaie de faire via notre pratique artistique Par contre, dans le monde de la création plus globalement, et donc dans le monde qui s'inscrit dans le système plus capitaliste Même si le monde de l'art s'inscrit aussi dans ce système là, mais un petit peu moins je dirais Dans le monde de la création, les designers doubleurs toutes les personnes qui écrivent les traducteurs les scénaristes tous ces métiers là
+[109.44s - 115.44s]  sont forcément mis à mal par cette technologie là et nous ce qu'on nous via notre art ce qu'on
+[115.44s - 119.74s]  essaie de faire c'est de prévenir le fait que ces technologies arrivent essayer via l'art de
+[119.74s - 125.56s]  pouvoir discuter de cette question là et aussi essayer de sensibiliser les personnes sur le fait
+
+[0.00s - 1.32s]  C'est ce que dit de pardon au premier.
+
+[0.00s - 0.84s]  Compris les scénaristes.
+
+[0.00s - 2.00s]  les personnes sur le fait qu'il faut parler au gouvernement.
+[2.00s - 6.32s]  Donc vous nous dites qu'il y a des métiers dispensables désormais à cause de l'intelligence
+[6.32s - 7.32s]  artificielle ?
+
+[0.00s - 0.66s]  Parle-au-gouvernement.
+
+[0.00s - 0.24s]  Non.
+
+[0.00s - 4.62s]  Comme les portraitistes en 1850, les portraitistes ont disparu parce que l'appareil photo est arrivé.
+
+[0.00s - 0.80s]  Mais là, c'est une toute autre chose.
+
+[0.00s - 0.76s]  Éric Sadin
+
+[0.00s - 6.22s]  C'est une d'outre mesure parce que il faut donner des concepts aux phénomènes, aux situations que nous vivons.
+
+[0.00s - 7.54s]  Nous vivons actuellement ce que j'appelle, c'est très simple, on va tous comprendre, le tournant intellectuel et créatif de l'intelligence artificielle.
+[7.88s - 9.88s]  Qu'est-ce que ça veut dire le tournant intellectuel ?
+
+[0.00s - 0.76s]  C'est pas bien, ça ?
+
+[0.00s - 2.52s]  Alors, pour l'instant, c'est ni bien ni mal.
+[2.54s - 5.38s]  Non, parce que intellectuel et créatif, moi je prends.
+[5.52s - 7.36s]  Non, mais je vous propose d'analyser ce qui se joue.
+[7.44s - 8.56s]  Qu'est-ce que ça veut dire ?
+
+[0.00s - 1.04s]  Non parce que...
+
+[0.00s - 9.58s]  D'un point de vue, pour en saisir toute la portée, ce que je disais dans ma tribune qui est parue dans Le Monde la semaine dernière, c'est que pour en saisir toute la portée, il faut utiliser une formule littérale.
+
+[0.00s - 2.40s]  Troisième point, et puis la parole à Hugo Cazel-Dupont.
+
+[0.00s - 25.34s]  Et relativement à l'image, il y a aussi dans le monde de la culture, le fait que de plus en plus de systèmes proposent de produire des petits romans, des séries, des films qui s'ajustent à nos vues. C'est l'altérité qui est éloignée. Je renvoie à la plateforme Cloud. Cloud, peut-être en avez-vous entendu parler, c'est un gros marqueur de l'époque.
+[25.34s - 27.70s]  C'est-à-dire, voilà des systèmes qui proposent
+[27.70s - 30.96s]  d'écrire des scénarios qui correspondent à nos souhaits,
+[30.96s - 33.56s]  de réaliser des films qui correspondent à nos souhaits
+[33.56s - 37.64s]  et qui fait qu'il n'y a plus que nos vues qui sont réalisées.
+[37.64s - 40.66s]  C'est le génie de l'altérité qui se trouve éloigné.
+[40.66s - 42.16s]  Et deuxième point, mais on y en reviendra,
+[42.16s - 43.20s]  je ne veux pas être trop long,
+[43.20s - 45.34s]  c'est évidemment les métiers de service.
+[45.34s - 47.36s]  Tous les métiers de service au moment où nous vivons
+[47.36s - 49.40s]  le tournant intellectuel et créatif de l'intelligence.
+
+[0.00s - 0.40s]  C'est que...
+
+[0.00s - 27.20s]  Hugo Cazel-Dupré, vous faites partie d'un trio d'artistes, je le disais, Obvious, qui fabrique des œuvres à partir d'algorithmes d'intelligence artificielle. Vous êtes précurseur dans le domaine. En 2018, vous avez vendu un tableau Edmond de Bellamy pour 435 000 dollars chez Christie's, ce qui a propulsé votre carrière. C'est un portrait fictif, aux contours flous, entièrement conçu par un algorithme d'IA.
+[27.20s - 31.94s]  Je l'ai revu ce matin, c'est un très beau portrait qu'on pourrait trouver, je ne sais pas,
+[31.94s - 42.14s]  peut-être fin 19e siècle, peut-être début 20e siècle. Quand vous entendez Éric Sadin,
+
+[0.00s - 0.34s]  Eh, claro.
+
+[0.00s - 4.24s]  Faire le tableau apocalyptique qu'il vient de faire, comment recevez-vous ces mots ?
+
+[0.00s - 47.86s]  Je le rejoins dans le sens où c'est la vue de ce qui peut arriver dans une dystopie. Dans une dystopie, si on décide d'utiliser l'intelligence artificielle pour toutes ces applications-là, c'est ce qui va arriver. Je pense qu'on peut comparer à plein d'autres technologies transformatives comme le nucléaire ou Internet. C'est la manière dont tu l'utilises. C'est vraiment assez trivial de dire que la technologie n'est pas mauvaise en soi. C'est l'utilisation qu'on en fait qui est un problème. Si on l'utilise pour faire des photos de son voisin qui bat sa femme, évidemment que l'intelligence artificielle, c'est pas terrible. On est tous d'accord là-dessus. Par contre, si on utilise l'intelligence artificielle pour résoudre le problème du cancer, par exemple, on est tous d'accord, c'est trivial, pareil, que c'est une chose positive. Donc ma question, plutôt pour Eric, c'est à quoi bon blâmer la technologie quand c'est son utilisation qui est problématique ?
+[47.86s - 50.02s]  Non, je ne blâme en aucune manière.
+[50.02s - 53.44s]  Du coup, votre proposition, est-ce que votre proposition c'est d'arrêter le progrès,
+[53.44s - 54.82s]  de se priver de cela ? Absolument pas.
+[54.82s - 58.30s]  Ou alors, que faire avec l'intelligence artificielle ? Est-ce que vous me rejoignez
+[58.30s - 60.88s]  sur le fait que ça peut nous apporter quelque chose dans l'humanité ?
+
+[0.00s - 2.28s]  Non, je ne blâme en aucune manière.
+
+[0.00s - 0.46s]  C'est ça ?
+
+[0.00s - 0.16s]  C'est parti.
+
+[0.00s - 0.26s]  C'est lui.
+
+[0.00s - 0.80s]  Eric Sadin.
+
+[0.00s - 1.52s]  Alors, je vais redécouvrir
+
+[0.00s - 2.08s]  pour définir votre question, le fait que…
+[2.08s - 4.08s]  Elle était assez claire, Eric Sadin.
+
+[0.00s - 3.34s]  Elle était assez claire Eric Sadin, elle était assez claire.
+
+[0.00s - 4.30s]  Vous savez, quand on parle, nous vivons ce que j'appelle un fondamentalisme de l'IA.
+[4.82s - 0.56s]  C'est-à-dire, en gros, c'est l'avenir lumineux et inéluctable de l'humanité. Mais ne vous inquiétez pas, mesdames et messieurs, nous avons une parade qui va nous prémunir de toutes les dérives. C'est la régulation. Et c'est une façon de vous répondre, ce que je dis là. La régulation, la façon dont elle est posée, Nicolas Demorand, en ce moment, elle est totalement erronée. C'est totalement erroné. Et je vous rejoins là-dessus.
+[0.60s - 49.32s]  Pourquoi la façon dont le régulateur pense l'intelligence artificielle sur une équation totalement erronée ? C'est parce qu'elle est fondée toujours sur cette sans piternelle équation avantage-inconvénient. Ce que vous venez de dire. Alors, pourquoi ça c'est une équation erronée ? Parce que avantage-inconvénient et lUE Acte développé par Thierry Breton est totalement fondé sur ça, sur une échelle des risques.
+[49.62s - 53.56s]  Parce que d'abord, les avantages et l'inconvénient, c'est relatif, n'est-ce pas ?
+[53.56s - 55.20s]  Et puis c'est uniquement fonctionnaliste.
+[55.48s - 57.88s]  C'est sur une toute autre équation qu'il faudrait poser les choses.
+
+[0.00s - 0.78s]  de ce qui fait.
+
+[0.00s - 1.70s]  Alors laquelle ? Parce qu'on n'a plus le temps.
+
+[0.00s - 2.92s]  Alors, c'est là on a la main et là on n'a pas la main.
+[3.00s - 4.02s]  Vous avez parlé de cancer.
+[4.40s - 9.86s]  Si des systèmes nous permettent de développer des molécules, comme si ça se passe dans la pharmacologie...
+[9.86s - 10.94s]  Oui, ou des outils diagnostiques.
+
+[0.00s - 0.92s]  Oui, je vous dis, dis-tu, dis-tu ?
+
+[0.00s - 0.34s]  Steve
+
+[0.00s - 25.46s]  Voilà, ou alors par exemple dans l'aéronautique, affiner des productions de design. Mais là ça ne pose pas de problème. Mais là on n'a pas la main. Vous savez-vous que dans les entrepôts Amazon, des systèmes d'intelligence artificielle orientent continuellement les manufacturiers pour les chercher tel produit à telle vitesse et les reproducteurs à telle vitesse, qui réduit des humains à des robots de chair et de sang. Est-ce que vous avez entendu une seule fois un régulateur parler de ça ? Jamais.
+[25.46s - 29.76s]  Et la deuxième équation qu'on devrait se poser, que n'est jamais posée Nicolas Demorand,
+[29.76s - 33.50s]  c'est est-ce que ces systèmes respectent ou non les principes fondamentaux qui sont les nôtres ?
+[33.50s - 36.00s]  Et quels sont-ils ? Ils sont au nombre de cinq à mon sens.
+[36.00s - 37.50s]  Ce n'est pas très compliqué.
+[37.50s - 40.50s]  C'est le respect de la liberté, de la dignité et de l'intégrité humaine,
+[40.50s - 44.00s]  de la créativité et de la sociabilité.
+[44.00s - 49.18s]  Mais cela, voyez-vous, nous ne tenons pas compte au nom de seuls intérêts économiques.
+
+[0.00s - 0.38s]  Voilà.
+
+[0.00s - 1.36s]  Et ça c'est problématique !
+
+[0.00s - 0.26s]  C'est parfait.
+
+[0.00s - 0.34s]  Et quel
+
+[0.00s - 4.60s]  Il nous reste 30 secondes Eric Sadin, vous vouliez nous dire quelque chose ?
+
+[0.00s - 8.28s]  Oui, je souhaite en primeur sur l'antenne de France Inter, merci de me laisser quelques secondes pour annoncer cette nouvelle, cher Nicolas Demorand.
+[46.62s - 46.88s]  Vous savez que les 10 et 11 février se tiendra à Paris une gigantesque messe propagandiste, le sommet mondial sur l'IA qui va inviter une centaine de chefs d'État et tout le monde de la tech. Ça va être encore les mêmes discours d'investissement toujours plus important dans cette course toujours plus folle à l'intelligence artificielle, où des quantités de personnes vont parler à notre place. Je réfléchis très sérieusement, ça va être confirmé début janvier, avec plusieurs groupements à monter un contre-sommet à Paris, où seront invitées toutes les corporations concernées, non pas à parler de façon hors-sol, mais à partir des réalités quotidiennes.
+[49.42s - 49.50s]  Et il y a le syndicat national des journalistes,
+[53.06s - 53.14s]  qui est très intéressé, qui va assurer l'organisation logistique.
+[55.46s - 55.78s]  Et comme c'est un lundi, c'est jour de relâche dans les salles parisiennes,
+[57.72s - 58.24s]  ça va avoir lieu le lundi 10 février.
+[63.42s - 66.30s]  Et j'invite les auditeurs qui souhaitent témoigner dans le cadre de cette journée à m'écrire sur le site à mon adresse.
+[66.62s - 69.88s]  Et puis tout cela sera structuré par le comité d'organisation.
+
+[0.00s - 0.46s]  C'est pas le cas.
+
+[0.00s - 0.68s]  Bien reçu !
+
+[0.00s - 0.70s]  Bien reçu.
+
+[0.00s - 0.84s]  Voilà pour le message.
+
+[0.00s - 4.72s]  Merci Eric Sadin, je ne sais pas Hugo Cazel-Dupré si vous vous rendrez au contre-sommet ?
+[4.72s - 5.28s]  Avec grand plaisir.
+[5.28s - 11.88s]  Avec grand plaisir, c'était intéressant et même passionnant de vous entendre débattre ce matin.
+
+[0.00s - 1.08s]  Avec grand plaisir !
+
+[0.00s - 1.22s]  C'est un grand plaisir.
+
+[0.00s - 4.64s]  Débat ce matin sur l'intelligence artificielle et la création.
+[4.84s - 87.32s]  La semaine dernière, les comédiens de doublage manifestaient à Paris contre ce qu'ils considèrent être le vol de leur voix par les IA. La semaine dernière, toujours, la Confédération internationale des sociétés d'auteurs et compositeurs, qui représente 5 millions de créateurs dans 116 pays, publié la toute première étude mondiale consacrée aux impacts de l'IA sur les contenus musicaux et audiovisuels et sur l'économie de ces secteurs artistiques en général. Impact considérable, on va y venir. L'intelligence artificielle va-t-elle faire disparaître des pans entiers de la création culturelle ou la question doit-elle se poser de manière plus complexe ? On en débat ce matin avec Éric Sadin, bonjour. Bonjour. Philosophe spécialiste des technologies numériques, auteur de dix livres sur ces questions. Le dernier en date, La vie spectrale, penser l'ère du métavers et des IA génératives chez Grasset. Hugo Cazel-Dupré, bonjour. Chercheur en intelligence artificielle et cofondateur du collectif artistique Obvious, vous travaillez à l'Institut des systèmes intelligents et de robotique. C'est une unité de recherche Sorbonne Université, CNRS et INSM. Merci à tous les deux d'être au micro d'Inter.
+[87.32s - 92.68s]  Partons de cette enquête de la Confédération internationale des sociétés d'auteurs et compositeurs.
+[92.68s - 97.68s]  Les créateurs pourraient perdre près d'un quart de leur revenu à l'horizon 2028,
+[97.68s - 104.96s]  c'est-à-dire demain matin, à cause de l'effet de substitution de l'IA sur les œuvres des créateurs humains.
+[104.96s - 108.00s]  Comment recevez-vous ce chiffre et cette perspective ?
+
+[0.00s - 7.00s]  Eric Sadin ? Cette information représente un des signes parmi tant d'autres, et il y en aura toujours plus dans les mois à venir,
+[7.00s - 12.82s]  qui témoignent du fait que nous vivons un moment de gravité. Je dirais même d'une très haute gravité,
+[12.82s - 20.24s]  mais nous ne le voyons pas, nous commençons à le voir et nous le verrons de plus en plus dans les mois et les années qui viennent.
+[20.24s - 25.54s]  Car, pour dire précisément les choses, depuis deux ans, depuis le 30 novembre 2022,
+
+[0.00s - 27.46s]  à l'occasion de la première mise en ligne de Chad GPT dans sa version publique. Il s'est produit ce que j'appelle un tremblement de terre, social, culturel, civilisationnel, et utilisons des grands mots, anthropologiques. Pourquoi ? Parce que des machines, sur une simple instruction de notre part, vous le savez ce qui est appelé un prompt, se sont mises à produire du texte, des images fixes ou vidéos et des musiques.
+[27.54s - 31.32s]  Et qu'est-ce qu'on a vu ? Parce qu'il faut nous interroger sur nos pratiques.
+[31.72s - 37.06s]  On a vu des foules se jeter toutes affaires cessantes sur ces oracles robotisés sans...
+
+[0.00s - 2.16s]  Succès fulgurant, instantané.
+
+[0.00s - 6.86s]  Un succès fulgurant, sans nullement se soucier de l'étendue des conséquences civilisationnelles et sociales, et elles sont très importantes.
+[7.20s - 3.58s]  La raison pourquoi nous sommes-nous jetés comme ça, dans une telle insouciance, ou même avec une tendance de passion et d'enthousiasme, c'est parce que les personnes n'ont vu que l'aspect pratique. Et ça, c'est dû à l'utilitarisme et au fonctionnalisme qui est tellement à l'œuvre depuis 200 ans dans nos sociétés, qu'il en est arrivé à tellement imprégner nos psychés
+[3.58s - 48.06s]  que les personnes ne voient plus qu'à partir du midi de leur intérêt. Et à mon sens, la première des questions, la première des toutes premières questions que nous aurions dû nous poser dès le 1er décembre 2022, c'est celle de nos enfants et de nos petits-enfants. Qu'ils voyez-vous dans un ou deux ans, et ça commence déjà à nous poser la question,
+[48.16s - 55.04s]  mais pourquoi papa, maman, je vais à l'école, moi, s'il y a un système sur une simple instruction de ma part, va écrire à ma place.
+[55.12s - 60.94s]  Mais non, cette question, nous ne laissons pas poser, n'a pas fait partie du registre de nos préoccupations, et ça je le regrette.
+
+[0.00s - 5.74s]  Cazel Dupré, il y a la question de l'art et de la création, mais à entendre Éric
+[5.74s - 11.94s]  Sadin, il faut l'inscrire dans une dimension beaucoup plus large qui est celle d'une rupture
+[11.94s - 13.88s]  anthropologique, c'est le mot employé.
+[13.88s - 15.70s]  Vous partagez le concept ?
+
+[0.00s - 1.00s]  Tout à fait, quelque part oui on le partage dans le sens où on partage le fait que l'arrivée de cette technologie est une rupture dans notre société et que la réponse a clairement été comme l'a dit Eric, une réponse très productiviste qui est on voit un nouvel outil qui nous rend plus productif, on vit dans un système capitaliste qui promouvoit la productivité et donc logiquement on se met à le prendre dans ses mains et l'utiliser le plus vite possible pour gratter de la valeur à à gauche ou à droite.
+[1.00s - 109.44s]  Comment on gratte de la valeur dans le monde de l'art ? Alors dans le monde de l'art je pense que c'est justement différent. En fait je pense qu'il faut vraiment faire une différence entre le monde de l'art avec un grand A entre guillemets dans lequel l'arrivée de l'intelligence artificielle peut être comparée à l'arrivée de la photographie. Quand la photographie est arrivée en 1850, c'était réservé à des ingénieurs hautement qualifiés, c'était pas de l'art et certaines personnes ont voulu commencer à faire de l'art avec des appareils photo. On leur a dit maintenant tu cliques sur un bouton, c'est pas de l'art, l'art c'est le caravage, c'est les personnes qui peignent, etc. Aujourd'hui, un peu moins de 200 ans plus tard, on est tous d'accord pour dire que la photographie est un mouvement artistique à part entière. On a tous des appareils photo dans notre téléphone, mais on n'est pas tous photographes, on est tous d'accord là-dessus. Et il faut avoir un œil, il faut savoir utiliser la technique, il faut avoir un message. On produit des images, on ne produit pas des photos avec notre téléphone portable. Exactement. Et donc, du coup, certaines personnes se sont démarquées comme ayant été capables d'utiliser la photographie comme un outil artistique Donc dans le monde de l'art avec un grand A, on pense qu'il va se passer la même chose, nous c'est ce qu'on essaie de faire via notre pratique artistique Par contre, dans le monde de la création plus globalement, et donc dans le monde qui s'inscrit dans le système plus capitaliste Même si le monde de l'art s'inscrit aussi dans ce système là, mais un petit peu moins je dirais Dans le monde de la création, les designers doubleurs toutes les personnes qui écrivent les traducteurs les scénaristes tous ces métiers là
+[109.44s - 115.44s]  sont forcément mis à mal par cette technologie là et nous ce qu'on nous via notre art ce qu'on
+[115.44s - 119.74s]  essaie de faire c'est de prévenir le fait que ces technologies arrivent essayer via l'art de
+[119.74s - 125.56s]  pouvoir discuter de cette question là et aussi essayer de sensibiliser les personnes sur le fait
+
+[0.00s - 1.32s]  C'est ce que dit de pardon au premier.
+
+[0.00s - 0.84s]  Compris les scénaristes.
+
+[0.00s - 2.00s]  les personnes sur le fait qu'il faut parler au gouvernement.
+[2.00s - 6.32s]  Donc vous nous dites qu'il y a des métiers dispensables désormais à cause de l'intelligence
+[6.32s - 7.32s]  artificielle ?
+
+[0.00s - 0.66s]  Parle-au-gouvernement.
+
+[0.00s - 0.24s]  Non.
+
+[0.00s - 4.62s]  Comme les portraitistes en 1850, les portraitistes ont disparu parce que l'appareil photo est arrivé.
+
+[0.00s - 0.80s]  Mais là, c'est une toute autre chose.
+
+[0.00s - 0.76s]  Éric Sadin
+
+[0.00s - 6.22s]  C'est une d'outre mesure parce que il faut donner des concepts aux phénomènes, aux situations que nous vivons.
+
+[0.00s - 7.54s]  Nous vivons actuellement ce que j'appelle, c'est très simple, on va tous comprendre, le tournant intellectuel et créatif de l'intelligence artificielle.
+[7.88s - 9.88s]  Qu'est-ce que ça veut dire le tournant intellectuel ?
+
+[0.00s - 0.76s]  C'est pas bien, ça ?
+
+[0.00s - 2.52s]  Alors, pour l'instant, c'est ni bien ni mal.
+[2.54s - 5.38s]  Non, parce que intellectuel et créatif, moi je prends.
+[5.52s - 7.36s]  Non, mais je vous propose d'analyser ce qui se joue.
+[7.44s - 8.56s]  Qu'est-ce que ça veut dire ?
+
+[0.00s - 1.04s]  Non parce que...
+
+[0.00s - 9.58s]  D'un point de vue, pour en saisir toute la portée, ce que je disais dans ma tribune qui est parue dans Le Monde la semaine dernière, c'est que pour en saisir toute la portée, il faut utiliser une formule littérale.
+
+[0.00s - 2.40s]  Troisième point, et puis la parole à Hugo Cazel-Dupont.
+
+[0.00s - 25.34s]  Et relativement à l'image, il y a aussi dans le monde de la culture, le fait que de plus en plus de systèmes proposent de produire des petits romans, des séries, des films qui s'ajustent à nos vues. C'est l'altérité qui est éloignée. Je renvoie à la plateforme Cloud. Cloud, peut-être en avez-vous entendu parler, c'est un gros marqueur de l'époque.
+[25.34s - 27.70s]  C'est-à-dire, voilà des systèmes qui proposent
+[27.70s - 30.96s]  d'écrire des scénarios qui correspondent à nos souhaits,
+[30.96s - 33.56s]  de réaliser des films qui correspondent à nos souhaits
+[33.56s - 37.64s]  et qui fait qu'il n'y a plus que nos vues qui sont réalisées.
+[37.64s - 40.66s]  C'est le génie de l'altérité qui se trouve éloigné.
+[40.66s - 42.16s]  Et deuxième point, mais on y en reviendra,
+[42.16s - 43.20s]  je ne veux pas être trop long,
+[43.20s - 45.34s]  c'est évidemment les métiers de service.
+[45.34s - 47.36s]  Tous les métiers de service au moment où nous vivons
+[47.36s - 49.40s]  le tournant intellectuel et créatif de l'intelligence.
+
+[0.00s - 0.40s]  C'est que...
+
+[0.00s - 27.20s]  Hugo Cazel-Dupré, vous faites partie d'un trio d'artistes, je le disais, Obvious, qui fabrique des œuvres à partir d'algorithmes d'intelligence artificielle. Vous êtes précurseur dans le domaine. En 2018, vous avez vendu un tableau Edmond de Bellamy pour 435 000 dollars chez Christie's, ce qui a propulsé votre carrière. C'est un portrait fictif, aux contours flous, entièrement conçu par un algorithme d'IA.
+[27.20s - 31.94s]  Je l'ai revu ce matin, c'est un très beau portrait qu'on pourrait trouver, je ne sais pas,
+[31.94s - 42.14s]  peut-être fin 19e siècle, peut-être début 20e siècle. Quand vous entendez Éric Sadin,
+
+[0.00s - 0.34s]  Eh, claro.
+
+[0.00s - 4.24s]  Faire le tableau apocalyptique qu'il vient de faire, comment recevez-vous ces mots ?
+
+[0.00s - 47.86s]  Je le rejoins dans le sens où c'est la vue de ce qui peut arriver dans une dystopie. Dans une dystopie, si on décide d'utiliser l'intelligence artificielle pour toutes ces applications-là, c'est ce qui va arriver. Je pense qu'on peut comparer à plein d'autres technologies transformatives comme le nucléaire ou Internet. C'est la manière dont tu l'utilises. C'est vraiment assez trivial de dire que la technologie n'est pas mauvaise en soi. C'est l'utilisation qu'on en fait qui est un problème. Si on l'utilise pour faire des photos de son voisin qui bat sa femme, évidemment que l'intelligence artificielle, c'est pas terrible. On est tous d'accord là-dessus. Par contre, si on utilise l'intelligence artificielle pour résoudre le problème du cancer, par exemple, on est tous d'accord, c'est trivial, pareil, que c'est une chose positive. Donc ma question, plutôt pour Eric, c'est à quoi bon blâmer la technologie quand c'est son utilisation qui est problématique ?
+[47.86s - 50.02s]  Non, je ne blâme en aucune manière.
+[50.02s - 53.44s]  Du coup, votre proposition, est-ce que votre proposition c'est d'arrêter le progrès,
+[53.44s - 54.82s]  de se priver de cela ? Absolument pas.
+[54.82s - 58.30s]  Ou alors, que faire avec l'intelligence artificielle ? Est-ce que vous me rejoignez
+[58.30s - 60.88s]  sur le fait que ça peut nous apporter quelque chose dans l'humanité ?
+
+[0.00s - 2.28s]  Non, je ne blâme en aucune manière.
+
+[0.00s - 0.46s]  C'est ça ?
+
+[0.00s - 0.16s]  C'est parti.
+
+[0.00s - 0.26s]  C'est lui.
+
+[0.00s - 0.80s]  Eric Sadin.
+
+[0.00s - 1.52s]  Alors, je vais redécouvrir
+
+[0.00s - 2.08s]  pour définir votre question, le fait que…
+[2.08s - 4.08s]  Elle était assez claire, Eric Sadin.
+
+[0.00s - 3.34s]  Elle était assez claire Eric Sadin, elle était assez claire.
+
+[0.00s - 4.30s]  Vous savez, quand on parle, nous vivons ce que j'appelle un fondamentalisme de l'IA.
+[4.82s - 0.56s]  C'est-à-dire, en gros, c'est l'avenir lumineux et inéluctable de l'humanité. Mais ne vous inquiétez pas, mesdames et messieurs, nous avons une parade qui va nous prémunir de toutes les dérives. C'est la régulation. Et c'est une façon de vous répondre, ce que je dis là. La régulation, la façon dont elle est posée, Nicolas Demorand, en ce moment, elle est totalement erronée. C'est totalement erroné. Et je vous rejoins là-dessus.
+[0.60s - 49.32s]  Pourquoi la façon dont le régulateur pense l'intelligence artificielle sur une équation totalement erronée ? C'est parce qu'elle est fondée toujours sur cette sans piternelle équation avantage-inconvénient. Ce que vous venez de dire. Alors, pourquoi ça c'est une équation erronée ? Parce que avantage-inconvénient et lUE Acte développé par Thierry Breton est totalement fondé sur ça, sur une échelle des risques.
+[49.62s - 53.56s]  Parce que d'abord, les avantages et l'inconvénient, c'est relatif, n'est-ce pas ?
+[53.56s - 55.20s]  Et puis c'est uniquement fonctionnaliste.
+[55.48s - 57.88s]  C'est sur une toute autre équation qu'il faudrait poser les choses.
+
+[0.00s - 0.78s]  de ce qui fait.
+
+[0.00s - 1.70s]  Alors laquelle ? Parce qu'on n'a plus le temps.
+
+[0.00s - 2.92s]  Alors, c'est là on a la main et là on n'a pas la main.
+[3.00s - 4.02s]  Vous avez parlé de cancer.
+[4.40s - 9.86s]  Si des systèmes nous permettent de développer des molécules, comme si ça se passe dans la pharmacologie...
+[9.86s - 10.94s]  Oui, ou des outils diagnostiques.
+
+[0.00s - 0.92s]  Oui, je vous dis, dis-tu, dis-tu ?
+
+[0.00s - 0.34s]  Steve
+
+[0.00s - 25.46s]  Voilà, ou alors par exemple dans l'aéronautique, affiner des productions de design. Mais là ça ne pose pas de problème. Mais là on n'a pas la main. Vous savez-vous que dans les entrepôts Amazon, des systèmes d'intelligence artificielle orientent continuellement les manufacturiers pour les chercher tel produit à telle vitesse et les reproducteurs à telle vitesse, qui réduit des humains à des robots de chair et de sang. Est-ce que vous avez entendu une seule fois un régulateur parler de ça ? Jamais.
+[25.46s - 29.76s]  Et la deuxième équation qu'on devrait se poser, que n'est jamais posée Nicolas Demorand,
+[29.76s - 33.50s]  c'est est-ce que ces systèmes respectent ou non les principes fondamentaux qui sont les nôtres ?
+[33.50s - 36.00s]  Et quels sont-ils ? Ils sont au nombre de cinq à mon sens.
+[36.00s - 37.50s]  Ce n'est pas très compliqué.
+[37.50s - 40.50s]  C'est le respect de la liberté, de la dignité et de l'intégrité humaine,
+[40.50s - 44.00s]  de la créativité et de la sociabilité.
+[44.00s - 49.18s]  Mais cela, voyez-vous, nous ne tenons pas compte au nom de seuls intérêts économiques.
+
+[0.00s - 0.38s]  Voilà.
+
+[0.00s - 1.36s]  Et ça c'est problématique !
+
+[0.00s - 0.26s]  C'est parfait.
+
+[0.00s - 0.34s]  Et quel
+
+[0.00s - 4.60s]  Il nous reste 30 secondes Eric Sadin, vous vouliez nous dire quelque chose ?
+
+[0.00s - 8.28s]  Oui, je souhaite en primeur sur l'antenne de France Inter, merci de me laisser quelques secondes pour annoncer cette nouvelle, cher Nicolas Demorand.
+[46.62s - 46.88s]  Vous savez que les 10 et 11 février se tiendra à Paris une gigantesque messe propagandiste, le sommet mondial sur l'IA qui va inviter une centaine de chefs d'État et tout le monde de la tech. Ça va être encore les mêmes discours d'investissement toujours plus important dans cette course toujours plus folle à l'intelligence artificielle, où des quantités de personnes vont parler à notre place. Je réfléchis très sérieusement, ça va être confirmé début janvier, avec plusieurs groupements à monter un contre-sommet à Paris, où seront invitées toutes les corporations concernées, non pas à parler de façon hors-sol, mais à partir des réalités quotidiennes.
+[49.42s - 49.50s]  Et il y a le syndicat national des journalistes,
+[53.06s - 53.14s]  qui est très intéressé, qui va assurer l'organisation logistique.
+[55.46s - 55.78s]  Et comme c'est un lundi, c'est jour de relâche dans les salles parisiennes,
+[57.72s - 58.24s]  ça va avoir lieu le lundi 10 février.
+[63.42s - 66.30s]  Et j'invite les auditeurs qui souhaitent témoigner dans le cadre de cette journée à m'écrire sur le site à mon adresse.
+[66.62s - 69.88s]  Et puis tout cela sera structuré par le comité d'organisation.
+
+[0.00s - 0.46s]  C'est pas le cas.
+
+[0.00s - 0.68s]  Bien reçu !
+
+[0.00s - 0.70s]  Bien reçu.
+
+[0.00s - 0.84s]  Voilà pour le message.
+
+[0.00s - 4.72s]  Merci Eric Sadin, je ne sais pas Hugo Cazel-Dupré si vous vous rendrez au contre-sommet ?
+[4.72s - 5.28s]  Avec grand plaisir.
+[5.28s - 11.88s]  Avec grand plaisir, c'était intéressant et même passionnant de vous entendre débattre ce matin.
+
+[0.00s - 1.08s]  Avec grand plaisir !
+
+[0.00s - 1.22s]  C'est un grand plaisir.
+
+[0.00s - 4.64s]  Débat ce matin sur l'intelligence artificielle et la création.
+[4.84s - 87.32s]  La semaine dernière, les comédiens de doublage manifestaient à Paris contre ce qu'ils considèrent être le vol de leur voix par les IA. La semaine dernière, toujours, la Confédération internationale des sociétés d'auteurs et compositeurs, qui représente 5 millions de créateurs dans 116 pays, publié la toute première étude mondiale consacrée aux impacts de l'IA sur les contenus musicaux et audiovisuels et sur l'économie de ces secteurs artistiques en général. Impact considérable, on va y venir. L'intelligence artificielle va-t-elle faire disparaître des pans entiers de la création culturelle ou la question doit-elle se poser de manière plus complexe ? On en débat ce matin avec Éric Sadin, bonjour. Bonjour. Philosophe spécialiste des technologies numériques, auteur de dix livres sur ces questions. Le dernier en date, La vie spectrale, penser l'ère du métavers et des IA génératives chez Grasset. Hugo Cazel-Dupré, bonjour. Chercheur en intelligence artificielle et cofondateur du collectif artistique Obvious, vous travaillez à l'Institut des systèmes intelligents et de robotique. C'est une unité de recherche Sorbonne Université, CNRS et INSM. Merci à tous les deux d'être au micro d'Inter.
+[87.32s - 92.68s]  Partons de cette enquête de la Confédération internationale des sociétés d'auteurs et compositeurs.
+[92.68s - 97.68s]  Les créateurs pourraient perdre près d'un quart de leur revenu à l'horizon 2028,
+[97.68s - 104.96s]  c'est-à-dire demain matin, à cause de l'effet de substitution de l'IA sur les œuvres des créateurs humains.
+[104.96s - 108.00s]  Comment recevez-vous ce chiffre et cette perspective ?
+
+[0.00s - 7.00s]  Eric Sadin ? Cette information représente un des signes parmi tant d'autres, et il y en aura toujours plus dans les mois à venir,
+[7.00s - 12.82s]  qui témoignent du fait que nous vivons un moment de gravité. Je dirais même d'une très haute gravité,
+[12.82s - 20.24s]  mais nous ne le voyons pas, nous commençons à le voir et nous le verrons de plus en plus dans les mois et les années qui viennent.
+[20.24s - 25.54s]  Car, pour dire précisément les choses, depuis deux ans, depuis le 30 novembre 2022,
+
+[0.00s - 27.46s]  à l'occasion de la première mise en ligne de Chad GPT dans sa version publique. Il s'est produit ce que j'appelle un tremblement de terre, social, culturel, civilisationnel, et utilisons des grands mots, anthropologiques. Pourquoi ? Parce que des machines, sur une simple instruction de notre part, vous le savez ce qui est appelé un prompt, se sont mises à produire du texte, des images fixes ou vidéos et des musiques.
+[27.54s - 31.32s]  Et qu'est-ce qu'on a vu ? Parce qu'il faut nous interroger sur nos pratiques.
+[31.72s - 37.06s]  On a vu des foules se jeter toutes affaires cessantes sur ces oracles robotisés sans...
+
+[0.00s - 2.16s]  Succès fulgurant, instantané.
+
+[0.00s - 6.86s]  Un succès fulgurant, sans nullement se soucier de l'étendue des conséquences civilisationnelles et sociales, et elles sont très importantes.
+[7.20s - 3.58s]  La raison pourquoi nous sommes-nous jetés comme ça, dans une telle insouciance, ou même avec une tendance de passion et d'enthousiasme, c'est parce que les personnes n'ont vu que l'aspect pratique. Et ça, c'est dû à l'utilitarisme et au fonctionnalisme qui est tellement à l'œuvre depuis 200 ans dans nos sociétés, qu'il en est arrivé à tellement imprégner nos psychés
+[3.58s - 48.06s]  que les personnes ne voient plus qu'à partir du midi de leur intérêt. Et à mon sens, la première des questions, la première des toutes premières questions que nous aurions dû nous poser dès le 1er décembre 2022, c'est celle de nos enfants et de nos petits-enfants. Qu'ils voyez-vous dans un ou deux ans, et ça commence déjà à nous poser la question,
+[48.16s - 55.04s]  mais pourquoi papa, maman, je vais à l'école, moi, s'il y a un système sur une simple instruction de ma part, va écrire à ma place.
+[55.12s - 60.94s]  Mais non, cette question, nous ne laissons pas poser, n'a pas fait partie du registre de nos préoccupations, et ça je le regrette.
+
+[0.00s - 5.74s]  Cazel Dupré, il y a la question de l'art et de la création, mais à entendre Éric
+[5.74s - 11.94s]  Sadin, il faut l'inscrire dans une dimension beaucoup plus large qui est celle d'une rupture
+[11.94s - 13.88s]  anthropologique, c'est le mot employé.
+[13.88s - 15.70s]  Vous partagez le concept ?
+
+[0.00s - 1.00s]  Tout à fait, quelque part oui on le partage dans le sens où on partage le fait que l'arrivée de cette technologie est une rupture dans notre société et que la réponse a clairement été comme l'a dit Eric, une réponse très productiviste qui est on voit un nouvel outil qui nous rend plus productif, on vit dans un système capitaliste qui promouvoit la productivité et donc logiquement on se met à le prendre dans ses mains et l'utiliser le plus vite possible pour gratter de la valeur à à gauche ou à droite.
+[1.00s - 109.44s]  Comment on gratte de la valeur dans le monde de l'art ? Alors dans le monde de l'art je pense que c'est justement différent. En fait je pense qu'il faut vraiment faire une différence entre le monde de l'art avec un grand A entre guillemets dans lequel l'arrivée de l'intelligence artificielle peut être comparée à l'arrivée de la photographie. Quand la photographie est arrivée en 1850, c'était réservé à des ingénieurs hautement qualifiés, c'était pas de l'art et certaines personnes ont voulu commencer à faire de l'art avec des appareils photo. On leur a dit maintenant tu cliques sur un bouton, c'est pas de l'art, l'art c'est le caravage, c'est les personnes qui peignent, etc. Aujourd'hui, un peu moins de 200 ans plus tard, on est tous d'accord pour dire que la photographie est un mouvement artistique à part entière. On a tous des appareils photo dans notre téléphone, mais on n'est pas tous photographes, on est tous d'accord là-dessus. Et il faut avoir un œil, il faut savoir utiliser la technique, il faut avoir un message. On produit des images, on ne produit pas des photos avec notre téléphone portable. Exactement. Et donc, du coup, certaines personnes se sont démarquées comme ayant été capables d'utiliser la photographie comme un outil artistique Donc dans le monde de l'art avec un grand A, on pense qu'il va se passer la même chose, nous c'est ce qu'on essaie de faire via notre pratique artistique Par contre, dans le monde de la création plus globalement, et donc dans le monde qui s'inscrit dans le système plus capitaliste Même si le monde de l'art s'inscrit aussi dans ce système là, mais un petit peu moins je dirais Dans le monde de la création, les designers doubleurs toutes les personnes qui écrivent les traducteurs les scénaristes tous ces métiers là
+[109.44s - 115.44s]  sont forcément mis à mal par cette technologie là et nous ce qu'on nous via notre art ce qu'on
+[115.44s - 119.74s]  essaie de faire c'est de prévenir le fait que ces technologies arrivent essayer via l'art de
+[119.74s - 125.56s]  pouvoir discuter de cette question là et aussi essayer de sensibiliser les personnes sur le fait
+
+[0.00s - 1.32s]  C'est ce que dit de pardon au premier.
+
+[0.00s - 0.84s]  Compris les scénaristes.
+
+[0.00s - 2.00s]  les personnes sur le fait qu'il faut parler au gouvernement.
+[2.00s - 6.32s]  Donc vous nous dites qu'il y a des métiers dispensables désormais à cause de l'intelligence
+[6.32s - 7.32s]  artificielle ?
+
+[0.00s - 0.66s]  Parle-au-gouvernement.
+
+[0.00s - 0.24s]  Non.
+
+[0.00s - 4.62s]  Comme les portraitistes en 1850, les portraitistes ont disparu parce que l'appareil photo est arrivé.
+
+[0.00s - 0.80s]  Mais là, c'est une toute autre chose.
+
+[0.00s - 0.76s]  Éric Sadin
+
+[0.00s - 6.22s]  C'est une d'outre mesure parce que il faut donner des concepts aux phénomènes, aux situations que nous vivons.
+
+[0.00s - 7.54s]  Nous vivons actuellement ce que j'appelle, c'est très simple, on va tous comprendre, le tournant intellectuel et créatif de l'intelligence artificielle.
+[7.88s - 9.88s]  Qu'est-ce que ça veut dire le tournant intellectuel ?
+
+[0.00s - 0.76s]  C'est pas bien, ça ?
+
+[0.00s - 2.52s]  Alors, pour l'instant, c'est ni bien ni mal.
+[2.54s - 5.38s]  Non, parce que intellectuel et créatif, moi je prends.
+[5.52s - 7.36s]  Non, mais je vous propose d'analyser ce qui se joue.
+[7.44s - 8.56s]  Qu'est-ce que ça veut dire ?
+
+[0.00s - 1.04s]  Non parce que...
+
+[0.00s - 9.58s]  D'un point de vue, pour en saisir toute la portée, ce que je disais dans ma tribune qui est parue dans Le Monde la semaine dernière, c'est que pour en saisir toute la portée, il faut utiliser une formule littérale.
+
+[0.00s - 2.40s]  Troisième point, et puis la parole à Hugo Cazel-Dupont.
+
+[0.00s - 25.34s]  Et relativement à l'image, il y a aussi dans le monde de la culture, le fait que de plus en plus de systèmes proposent de produire des petits romans, des séries, des films qui s'ajustent à nos vues. C'est l'altérité qui est éloignée. Je renvoie à la plateforme Cloud. Cloud, peut-être en avez-vous entendu parler, c'est un gros marqueur de l'époque.
+[25.34s - 27.70s]  C'est-à-dire, voilà des systèmes qui proposent
+[27.70s - 30.96s]  d'écrire des scénarios qui correspondent à nos souhaits,
+[30.96s - 33.56s]  de réaliser des films qui correspondent à nos souhaits
+[33.56s - 37.64s]  et qui fait qu'il n'y a plus que nos vues qui sont réalisées.
+[37.64s - 40.66s]  C'est le génie de l'altérité qui se trouve éloigné.
+[40.66s - 42.16s]  Et deuxième point, mais on y en reviendra,
+[42.16s - 43.20s]  je ne veux pas être trop long,
+[43.20s - 45.34s]  c'est évidemment les métiers de service.
+[45.34s - 47.36s]  Tous les métiers de service au moment où nous vivons
+[47.36s - 49.40s]  le tournant intellectuel et créatif de l'intelligence.
+
+[0.00s - 0.40s]  C'est que...
+
+[0.00s - 27.20s]  Hugo Cazel-Dupré, vous faites partie d'un trio d'artistes, je le disais, Obvious, qui fabrique des œuvres à partir d'algorithmes d'intelligence artificielle. Vous êtes précurseur dans le domaine. En 2018, vous avez vendu un tableau Edmond de Bellamy pour 435 000 dollars chez Christie's, ce qui a propulsé votre carrière. C'est un portrait fictif, aux contours flous, entièrement conçu par un algorithme d'IA.
+[27.20s - 31.94s]  Je l'ai revu ce matin, c'est un très beau portrait qu'on pourrait trouver, je ne sais pas,
+[31.94s - 42.14s]  peut-être fin 19e siècle, peut-être début 20e siècle. Quand vous entendez Éric Sadin,
+
+[0.00s - 0.34s]  Eh, claro.
+
+[0.00s - 4.24s]  Faire le tableau apocalyptique qu'il vient de faire, comment recevez-vous ces mots ?
+
+[0.00s - 47.86s]  Je le rejoins dans le sens où c'est la vue de ce qui peut arriver dans une dystopie. Dans une dystopie, si on décide d'utiliser l'intelligence artificielle pour toutes ces applications-là, c'est ce qui va arriver. Je pense qu'on peut comparer à plein d'autres technologies transformatives comme le nucléaire ou Internet. C'est la manière dont tu l'utilises. C'est vraiment assez trivial de dire que la technologie n'est pas mauvaise en soi. C'est l'utilisation qu'on en fait qui est un problème. Si on l'utilise pour faire des photos de son voisin qui bat sa femme, évidemment que l'intelligence artificielle, c'est pas terrible. On est tous d'accord là-dessus. Par contre, si on utilise l'intelligence artificielle pour résoudre le problème du cancer, par exemple, on est tous d'accord, c'est trivial, pareil, que c'est une chose positive. Donc ma question, plutôt pour Eric, c'est à quoi bon blâmer la technologie quand c'est son utilisation qui est problématique ?
+[47.86s - 50.02s]  Non, je ne blâme en aucune manière.
+[50.02s - 53.44s]  Du coup, votre proposition, est-ce que votre proposition c'est d'arrêter le progrès,
+[53.44s - 54.82s]  de se priver de cela ? Absolument pas.
+[54.82s - 58.30s]  Ou alors, que faire avec l'intelligence artificielle ? Est-ce que vous me rejoignez
+[58.30s - 60.88s]  sur le fait que ça peut nous apporter quelque chose dans l'humanité ?
+
+[0.00s - 2.28s]  Non, je ne blâme en aucune manière.
+
+[0.00s - 0.46s]  C'est ça ?
+
+[0.00s - 0.16s]  C'est parti.
+
+[0.00s - 0.26s]  C'est lui.
+
+[0.00s - 0.80s]  Eric Sadin.
+
+[0.00s - 1.52s]  Alors, je vais redécouvrir
+
+[0.00s - 2.08s]  pour définir votre question, le fait que…
+[2.08s - 4.08s]  Elle était assez claire, Eric Sadin.
+
+[0.00s - 3.34s]  Elle était assez claire Eric Sadin, elle était assez claire.
+
+[0.00s - 4.30s]  Vous savez, quand on parle, nous vivons ce que j'appelle un fondamentalisme de l'IA.
+[4.82s - 0.56s]  C'est-à-dire, en gros, c'est l'avenir lumineux et inéluctable de l'humanité. Mais ne vous inquiétez pas, mesdames et messieurs, nous avons une parade qui va nous prémunir de toutes les dérives. C'est la régulation. Et c'est une façon de vous répondre, ce que je dis là. La régulation, la façon dont elle est posée, Nicolas Demorand, en ce moment, elle est totalement erronée. C'est totalement erroné. Et je vous rejoins là-dessus.
+[0.60s - 49.32s]  Pourquoi la façon dont le régulateur pense l'intelligence artificielle sur une équation totalement erronée ? C'est parce qu'elle est fondée toujours sur cette sans piternelle équation avantage-inconvénient. Ce que vous venez de dire. Alors, pourquoi ça c'est une équation erronée ? Parce que avantage-inconvénient et lUE Acte développé par Thierry Breton est totalement fondé sur ça, sur une échelle des risques.
+[49.62s - 53.56s]  Parce que d'abord, les avantages et l'inconvénient, c'est relatif, n'est-ce pas ?
+[53.56s - 55.20s]  Et puis c'est uniquement fonctionnaliste.
+[55.48s - 57.88s]  C'est sur une toute autre équation qu'il faudrait poser les choses.
+
+[0.00s - 0.78s]  de ce qui fait.
+
+[0.00s - 1.70s]  Alors laquelle ? Parce qu'on n'a plus le temps.
+
+[0.00s - 2.92s]  Alors, c'est là on a la main et là on n'a pas la main.
+[3.00s - 4.02s]  Vous avez parlé de cancer.
+[4.40s - 9.86s]  Si des systèmes nous permettent de développer des molécules, comme si ça se passe dans la pharmacologie...
+[9.86s - 10.94s]  Oui, ou des outils diagnostiques.
+
+[0.00s - 0.92s]  Oui, je vous dis, dis-tu, dis-tu ?
+
+[0.00s - 0.34s]  Steve
+
+[0.00s - 25.46s]  Voilà, ou alors par exemple dans l'aéronautique, affiner des productions de design. Mais là ça ne pose pas de problème. Mais là on n'a pas la main. Vous savez-vous que dans les entrepôts Amazon, des systèmes d'intelligence artificielle orientent continuellement les manufacturiers pour les chercher tel produit à telle vitesse et les reproducteurs à telle vitesse, qui réduit des humains à des robots de chair et de sang. Est-ce que vous avez entendu une seule fois un régulateur parler de ça ? Jamais.
+[25.46s - 29.76s]  Et la deuxième équation qu'on devrait se poser, que n'est jamais posée Nicolas Demorand,
+[29.76s - 33.50s]  c'est est-ce que ces systèmes respectent ou non les principes fondamentaux qui sont les nôtres ?
+[33.50s - 36.00s]  Et quels sont-ils ? Ils sont au nombre de cinq à mon sens.
+[36.00s - 37.50s]  Ce n'est pas très compliqué.
+[37.50s - 40.50s]  C'est le respect de la liberté, de la dignité et de l'intégrité humaine,
+[40.50s - 44.00s]  de la créativité et de la sociabilité.
+[44.00s - 49.18s]  Mais cela, voyez-vous, nous ne tenons pas compte au nom de seuls intérêts économiques.
+
+[0.00s - 0.38s]  Voilà.
+
+[0.00s - 1.36s]  Et ça c'est problématique !
+
+[0.00s - 0.26s]  C'est parfait.
+
+[0.00s - 0.34s]  Et quel
+
+[0.00s - 4.60s]  Il nous reste 30 secondes Eric Sadin, vous vouliez nous dire quelque chose ?
+
+[0.00s - 8.28s]  Oui, je souhaite en primeur sur l'antenne de France Inter, merci de me laisser quelques secondes pour annoncer cette nouvelle, cher Nicolas Demorand.
+[46.62s - 46.88s]  Vous savez que les 10 et 11 février se tiendra à Paris une gigantesque messe propagandiste, le sommet mondial sur l'IA qui va inviter une centaine de chefs d'État et tout le monde de la tech. Ça va être encore les mêmes discours d'investissement toujours plus important dans cette course toujours plus folle à l'intelligence artificielle, où des quantités de personnes vont parler à notre place. Je réfléchis très sérieusement, ça va être confirmé début janvier, avec plusieurs groupements à monter un contre-sommet à Paris, où seront invitées toutes les corporations concernées, non pas à parler de façon hors-sol, mais à partir des réalités quotidiennes.
+[49.42s - 49.50s]  Et il y a le syndicat national des journalistes,
+[53.06s - 53.14s]  qui est très intéressé, qui va assurer l'organisation logistique.
+[55.46s - 55.78s]  Et comme c'est un lundi, c'est jour de relâche dans les salles parisiennes,
+[57.72s - 58.24s]  ça va avoir lieu le lundi 10 février.
+[63.42s - 66.30s]  Et j'invite les auditeurs qui souhaitent témoigner dans le cadre de cette journée à m'écrire sur le site à mon adresse.
+[66.62s - 69.88s]  Et puis tout cela sera structuré par le comité d'organisation.
+
+[0.00s - 0.46s]  C'est pas le cas.
+
+[0.00s - 0.68s]  Bien reçu !
+
+[0.00s - 0.70s]  Bien reçu.
+
+[0.00s - 0.84s]  Voilà pour le message.
+
+[0.00s - 4.72s]  Merci Eric Sadin, je ne sais pas Hugo Cazel-Dupré si vous vous rendrez au contre-sommet ?
+[4.72s - 5.28s]  Avec grand plaisir.
+[5.28s - 11.88s]  Avec grand plaisir, c'était intéressant et même passionnant de vous entendre débattre ce matin.
+
+[0.00s - 1.08s]  Avec grand plaisir !
+
+[0.00s - 1.22s]  C'est un grand plaisir.
+
+[0.00s - 4.64s]  Débat ce matin sur l'intelligence artificielle et la création.
+[4.84s - 87.32s]  La semaine dernière, les comédiens de doublage manifestaient à Paris contre ce qu'ils considèrent être le vol de leur voix par les IA. La semaine dernière, toujours, la Confédération internationale des sociétés d'auteurs et compositeurs, qui représente 5 millions de créateurs dans 116 pays, publié la toute première étude mondiale consacrée aux impacts de l'IA sur les contenus musicaux et audiovisuels et sur l'économie de ces secteurs artistiques en général. Impact considérable, on va y venir. L'intelligence artificielle va-t-elle faire disparaître des pans entiers de la création culturelle ou la question doit-elle se poser de manière plus complexe ? On en débat ce matin avec Éric Sadin, bonjour. Bonjour. Philosophe spécialiste des technologies numériques, auteur de dix livres sur ces questions. Le dernier en date, La vie spectrale, penser l'ère du métavers et des IA génératives chez Grasset. Hugo Cazel-Dupré, bonjour. Chercheur en intelligence artificielle et cofondateur du collectif artistique Obvious, vous travaillez à l'Institut des systèmes intelligents et de robotique. C'est une unité de recherche Sorbonne Université, CNRS et INSM. Merci à tous les deux d'être au micro d'Inter.
+[87.32s - 92.68s]  Partons de cette enquête de la Confédération internationale des sociétés d'auteurs et compositeurs.
+[92.68s - 97.68s]  Les créateurs pourraient perdre près d'un quart de leur revenu à l'horizon 2028,
+[97.68s - 104.96s]  c'est-à-dire demain matin, à cause de l'effet de substitution de l'IA sur les œuvres des créateurs humains.
+[104.96s - 108.00s]  Comment recevez-vous ce chiffre et cette perspective ?
+
+[0.00s - 7.00s]  Eric Sadin ? Cette information représente un des signes parmi tant d'autres, et il y en aura toujours plus dans les mois à venir,
+[7.00s - 12.82s]  qui témoignent du fait que nous vivons un moment de gravité. Je dirais même d'une très haute gravité,
+[12.82s - 20.24s]  mais nous ne le voyons pas, nous commençons à le voir et nous le verrons de plus en plus dans les mois et les années qui viennent.
+[20.24s - 25.54s]  Car, pour dire précisément les choses, depuis deux ans, depuis le 30 novembre 2022,
+
+[0.00s - 27.46s]  à l'occasion de la première mise en ligne de Chad GPT dans sa version publique. Il s'est produit ce que j'appelle un tremblement de terre, social, culturel, civilisationnel, et utilisons des grands mots, anthropologiques. Pourquoi ? Parce que des machines, sur une simple instruction de notre part, vous le savez ce qui est appelé un prompt, se sont mises à produire du texte, des images fixes ou vidéos et des musiques.
+[27.54s - 31.32s]  Et qu'est-ce qu'on a vu ? Parce qu'il faut nous interroger sur nos pratiques.
+[31.72s - 37.06s]  On a vu des foules se jeter toutes affaires cessantes sur ces oracles robotisés sans...
+
+[0.00s - 2.16s]  Succès fulgurant, instantané.
+
+[0.00s - 6.86s]  Un succès fulgurant, sans nullement se soucier de l'étendue des conséquences civilisationnelles et sociales, et elles sont très importantes.
+[7.20s - 3.58s]  La raison pourquoi nous sommes-nous jetés comme ça, dans une telle insouciance, ou même avec une tendance de passion et d'enthousiasme, c'est parce que les personnes n'ont vu que l'aspect pratique. Et ça, c'est dû à l'utilitarisme et au fonctionnalisme qui est tellement à l'œuvre depuis 200 ans dans nos sociétés, qu'il en est arrivé à tellement imprégner nos psychés
+[3.58s - 48.06s]  que les personnes ne voient plus qu'à partir du midi de leur intérêt. Et à mon sens, la première des questions, la première des toutes premières questions que nous aurions dû nous poser dès le 1er décembre 2022, c'est celle de nos enfants et de nos petits-enfants. Qu'ils voyez-vous dans un ou deux ans, et ça commence déjà à nous poser la question,
+[48.16s - 55.04s]  mais pourquoi papa, maman, je vais à l'école, moi, s'il y a un système sur une simple instruction de ma part, va écrire à ma place.
+[55.12s - 60.94s]  Mais non, cette question, nous ne laissons pas poser, n'a pas fait partie du registre de nos préoccupations, et ça je le regrette.
+
+[0.00s - 5.74s]  Cazel Dupré, il y a la question de l'art et de la création, mais à entendre Éric
+[5.74s - 11.94s]  Sadin, il faut l'inscrire dans une dimension beaucoup plus large qui est celle d'une rupture
+[11.94s - 13.88s]  anthropologique, c'est le mot employé.
+[13.88s - 15.70s]  Vous partagez le concept ?
+
+[0.00s - 1.00s]  Tout à fait, quelque part oui on le partage dans le sens où on partage le fait que l'arrivée de cette technologie est une rupture dans notre société et que la réponse a clairement été comme l'a dit Eric, une réponse très productiviste qui est on voit un nouvel outil qui nous rend plus productif, on vit dans un système capitaliste qui promouvoit la productivité et donc logiquement on se met à le prendre dans ses mains et l'utiliser le plus vite possible pour gratter de la valeur à à gauche ou à droite.
+[1.00s - 109.44s]  Comment on gratte de la valeur dans le monde de l'art ? Alors dans le monde de l'art je pense que c'est justement différent. En fait je pense qu'il faut vraiment faire une différence entre le monde de l'art avec un grand A entre guillemets dans lequel l'arrivée de l'intelligence artificielle peut être comparée à l'arrivée de la photographie. Quand la photographie est arrivée en 1850, c'était réservé à des ingénieurs hautement qualifiés, c'était pas de l'art et certaines personnes ont voulu commencer à faire de l'art avec des appareils photo. On leur a dit maintenant tu cliques sur un bouton, c'est pas de l'art, l'art c'est le caravage, c'est les personnes qui peignent, etc. Aujourd'hui, un peu moins de 200 ans plus tard, on est tous d'accord pour dire que la photographie est un mouvement artistique à part entière. On a tous des appareils photo dans notre téléphone, mais on n'est pas tous photographes, on est tous d'accord là-dessus. Et il faut avoir un œil, il faut savoir utiliser la technique, il faut avoir un message. On produit des images, on ne produit pas des photos avec notre téléphone portable. Exactement. Et donc, du coup, certaines personnes se sont démarquées comme ayant été capables d'utiliser la photographie comme un outil artistique Donc dans le monde de l'art avec un grand A, on pense qu'il va se passer la même chose, nous c'est ce qu'on essaie de faire via notre pratique artistique Par contre, dans le monde de la création plus globalement, et donc dans le monde qui s'inscrit dans le système plus capitaliste Même si le monde de l'art s'inscrit aussi dans ce système là, mais un petit peu moins je dirais Dans le monde de la création, les designers doubleurs toutes les personnes qui écrivent les traducteurs les scénaristes tous ces métiers là
+[109.44s - 115.44s]  sont forcément mis à mal par cette technologie là et nous ce qu'on nous via notre art ce qu'on
+[115.44s - 119.74s]  essaie de faire c'est de prévenir le fait que ces technologies arrivent essayer via l'art de
+[119.74s - 125.56s]  pouvoir discuter de cette question là et aussi essayer de sensibiliser les personnes sur le fait
+
+[0.00s - 1.32s]  C'est ce que dit de pardon au premier.
+
+[0.00s - 0.84s]  Compris les scénaristes.
+
+[0.00s - 2.00s]  les personnes sur le fait qu'il faut parler au gouvernement.
+[2.00s - 6.32s]  Donc vous nous dites qu'il y a des métiers dispensables désormais à cause de l'intelligence
+[6.32s - 7.32s]  artificielle ?
+
+[0.00s - 0.66s]  Parle-au-gouvernement.
+
+[0.00s - 0.24s]  Non.
+
+[0.00s - 4.62s]  Comme les portraitistes en 1850, les portraitistes ont disparu parce que l'appareil photo est arrivé.
+
+[0.00s - 0.80s]  Mais là, c'est une toute autre chose.
+
+[0.00s - 0.76s]  Éric Sadin
+
+[0.00s - 6.22s]  C'est une d'outre mesure parce que il faut donner des concepts aux phénomènes, aux situations que nous vivons.
+
+[0.00s - 7.54s]  Nous vivons actuellement ce que j'appelle, c'est très simple, on va tous comprendre, le tournant intellectuel et créatif de l'intelligence artificielle.
+[7.88s - 9.88s]  Qu'est-ce que ça veut dire le tournant intellectuel ?
+
+[0.00s - 0.76s]  C'est pas bien, ça ?
+
+[0.00s - 2.52s]  Alors, pour l'instant, c'est ni bien ni mal.
+[2.54s - 5.38s]  Non, parce que intellectuel et créatif, moi je prends.
+[5.52s - 7.36s]  Non, mais je vous propose d'analyser ce qui se joue.
+[7.44s - 8.56s]  Qu'est-ce que ça veut dire ?
+
+[0.00s - 1.04s]  Non parce que...
+
+[0.00s - 9.58s]  D'un point de vue, pour en saisir toute la portée, ce que je disais dans ma tribune qui est parue dans Le Monde la semaine dernière, c'est que pour en saisir toute la portée, il faut utiliser une formule littérale.
+
+[0.00s - 2.40s]  Troisième point, et puis la parole à Hugo Cazel-Dupont.
+
+[0.00s - 25.34s]  Et relativement à l'image, il y a aussi dans le monde de la culture, le fait que de plus en plus de systèmes proposent de produire des petits romans, des séries, des films qui s'ajustent à nos vues. C'est l'altérité qui est éloignée. Je renvoie à la plateforme Cloud. Cloud, peut-être en avez-vous entendu parler, c'est un gros marqueur de l'époque.
+[25.34s - 27.70s]  C'est-à-dire, voilà des systèmes qui proposent
+[27.70s - 30.96s]  d'écrire des scénarios qui correspondent à nos souhaits,
+[30.96s - 33.56s]  de réaliser des films qui correspondent à nos souhaits
+[33.56s - 37.64s]  et qui fait qu'il n'y a plus que nos vues qui sont réalisées.
+[37.64s - 40.66s]  C'est le génie de l'altérité qui se trouve éloigné.
+[40.66s - 42.16s]  Et deuxième point, mais on y en reviendra,
+[42.16s - 43.20s]  je ne veux pas être trop long,
+[43.20s - 45.34s]  c'est évidemment les métiers de service.
+[45.34s - 47.36s]  Tous les métiers de service au moment où nous vivons
+[47.36s - 49.40s]  le tournant intellectuel et créatif de l'intelligence.
+
+[0.00s - 0.40s]  C'est que...
+
+[0.00s - 27.20s]  Hugo Cazel-Dupré, vous faites partie d'un trio d'artistes, je le disais, Obvious, qui fabrique des œuvres à partir d'algorithmes d'intelligence artificielle. Vous êtes précurseur dans le domaine. En 2018, vous avez vendu un tableau Edmond de Bellamy pour 435 000 dollars chez Christie's, ce qui a propulsé votre carrière. C'est un portrait fictif, aux contours flous, entièrement conçu par un algorithme d'IA.
+[27.20s - 31.94s]  Je l'ai revu ce matin, c'est un très beau portrait qu'on pourrait trouver, je ne sais pas,
+[31.94s - 42.14s]  peut-être fin 19e siècle, peut-être début 20e siècle. Quand vous entendez Éric Sadin,
+
+[0.00s - 0.34s]  Eh, claro.
+
+[0.00s - 4.24s]  Faire le tableau apocalyptique qu'il vient de faire, comment recevez-vous ces mots ?
+
+[0.00s - 47.86s]  Je le rejoins dans le sens où c'est la vue de ce qui peut arriver dans une dystopie. Dans une dystopie, si on décide d'utiliser l'intelligence artificielle pour toutes ces applications-là, c'est ce qui va arriver. Je pense qu'on peut comparer à plein d'autres technologies transformatives comme le nucléaire ou Internet. C'est la manière dont tu l'utilises. C'est vraiment assez trivial de dire que la technologie n'est pas mauvaise en soi. C'est l'utilisation qu'on en fait qui est un problème. Si on l'utilise pour faire des photos de son voisin qui bat sa femme, évidemment que l'intelligence artificielle, c'est pas terrible. On est tous d'accord là-dessus. Par contre, si on utilise l'intelligence artificielle pour résoudre le problème du cancer, par exemple, on est tous d'accord, c'est trivial, pareil, que c'est une chose positive. Donc ma question, plutôt pour Eric, c'est à quoi bon blâmer la technologie quand c'est son utilisation qui est problématique ?
+[47.86s - 50.02s]  Non, je ne blâme en aucune manière.
+[50.02s - 53.44s]  Du coup, votre proposition, est-ce que votre proposition c'est d'arrêter le progrès,
+[53.44s - 54.82s]  de se priver de cela ? Absolument pas.
+[54.82s - 58.30s]  Ou alors, que faire avec l'intelligence artificielle ? Est-ce que vous me rejoignez
+[58.30s - 60.88s]  sur le fait que ça peut nous apporter quelque chose dans l'humanité ?
+
+[0.00s - 2.28s]  Non, je ne blâme en aucune manière.
+
+[0.00s - 0.46s]  C'est ça ?
+
+[0.00s - 0.16s]  C'est parti.
+
+[0.00s - 0.26s]  C'est lui.
+
+[0.00s - 0.80s]  Eric Sadin.
+
+[0.00s - 1.52s]  Alors, je vais redécouvrir
+
+[0.00s - 2.08s]  pour définir votre question, le fait que…
+[2.08s - 4.08s]  Elle était assez claire, Eric Sadin.
+
+[0.00s - 3.34s]  Elle était assez claire Eric Sadin, elle était assez claire.
+
+[0.00s - 4.30s]  Vous savez, quand on parle, nous vivons ce que j'appelle un fondamentalisme de l'IA.
+[4.82s - 0.56s]  C'est-à-dire, en gros, c'est l'avenir lumineux et inéluctable de l'humanité. Mais ne vous inquiétez pas, mesdames et messieurs, nous avons une parade qui va nous prémunir de toutes les dérives. C'est la régulation. Et c'est une façon de vous répondre, ce que je dis là. La régulation, la façon dont elle est posée, Nicolas Demorand, en ce moment, elle est totalement erronée. C'est totalement erroné. Et je vous rejoins là-dessus.
+[0.60s - 49.32s]  Pourquoi la façon dont le régulateur pense l'intelligence artificielle sur une équation totalement erronée ? C'est parce qu'elle est fondée toujours sur cette sans piternelle équation avantage-inconvénient. Ce que vous venez de dire. Alors, pourquoi ça c'est une équation erronée ? Parce que avantage-inconvénient et lUE Acte développé par Thierry Breton est totalement fondé sur ça, sur une échelle des risques.
+[49.62s - 53.56s]  Parce que d'abord, les avantages et l'inconvénient, c'est relatif, n'est-ce pas ?
+[53.56s - 55.20s]  Et puis c'est uniquement fonctionnaliste.
+[55.48s - 57.88s]  C'est sur une toute autre équation qu'il faudrait poser les choses.
+
+[0.00s - 0.78s]  de ce qui fait.
+
+[0.00s - 1.70s]  Alors laquelle ? Parce qu'on n'a plus le temps.
+
+[0.00s - 2.92s]  Alors, c'est là on a la main et là on n'a pas la main.
+[3.00s - 4.02s]  Vous avez parlé de cancer.
+[4.40s - 9.86s]  Si des systèmes nous permettent de développer des molécules, comme si ça se passe dans la pharmacologie...
+[9.86s - 10.94s]  Oui, ou des outils diagnostiques.
+
+[0.00s - 0.92s]  Oui, je vous dis, dis-tu, dis-tu ?
+
+[0.00s - 0.34s]  Steve
+
+[0.00s - 25.46s]  Voilà, ou alors par exemple dans l'aéronautique, affiner des productions de design. Mais là ça ne pose pas de problème. Mais là on n'a pas la main. Vous savez-vous que dans les entrepôts Amazon, des systèmes d'intelligence artificielle orientent continuellement les manufacturiers pour les chercher tel produit à telle vitesse et les reproducteurs à telle vitesse, qui réduit des humains à des robots de chair et de sang. Est-ce que vous avez entendu une seule fois un régulateur parler de ça ? Jamais.
+[25.46s - 29.76s]  Et la deuxième équation qu'on devrait se poser, que n'est jamais posée Nicolas Demorand,
+[29.76s - 33.50s]  c'est est-ce que ces systèmes respectent ou non les principes fondamentaux qui sont les nôtres ?
+[33.50s - 36.00s]  Et quels sont-ils ? Ils sont au nombre de cinq à mon sens.
+[36.00s - 37.50s]  Ce n'est pas très compliqué.
+[37.50s - 40.50s]  C'est le respect de la liberté, de la dignité et de l'intégrité humaine,
+[40.50s - 44.00s]  de la créativité et de la sociabilité.
+[44.00s - 49.18s]  Mais cela, voyez-vous, nous ne tenons pas compte au nom de seuls intérêts économiques.
+
+[0.00s - 0.38s]  Voilà.
+
+[0.00s - 1.36s]  Et ça c'est problématique !
+
+[0.00s - 0.26s]  C'est parfait.
+
+[0.00s - 0.34s]  Et quel
+
+[0.00s - 4.60s]  Il nous reste 30 secondes Eric Sadin, vous vouliez nous dire quelque chose ?
+
+[0.00s - 8.28s]  Oui, je souhaite en primeur sur l'antenne de France Inter, merci de me laisser quelques secondes pour annoncer cette nouvelle, cher Nicolas Demorand.
+[46.62s - 46.88s]  Vous savez que les 10 et 11 février se tiendra à Paris une gigantesque messe propagandiste, le sommet mondial sur l'IA qui va inviter une centaine de chefs d'État et tout le monde de la tech. Ça va être encore les mêmes discours d'investissement toujours plus important dans cette course toujours plus folle à l'intelligence artificielle, où des quantités de personnes vont parler à notre place. Je réfléchis très sérieusement, ça va être confirmé début janvier, avec plusieurs groupements à monter un contre-sommet à Paris, où seront invitées toutes les corporations concernées, non pas à parler de façon hors-sol, mais à partir des réalités quotidiennes.
+[49.42s - 49.50s]  Et il y a le syndicat national des journalistes,
+[53.06s - 53.14s]  qui est très intéressé, qui va assurer l'organisation logistique.
+[55.46s - 55.78s]  Et comme c'est un lundi, c'est jour de relâche dans les salles parisiennes,
+[57.72s - 58.24s]  ça va avoir lieu le lundi 10 février.
+[63.42s - 66.30s]  Et j'invite les auditeurs qui souhaitent témoigner dans le cadre de cette journée à m'écrire sur le site à mon adresse.
+[66.62s - 69.88s]  Et puis tout cela sera structuré par le comité d'organisation.
+
+[0.00s - 0.46s]  C'est pas le cas.
+
+[0.00s - 0.68s]  Bien reçu !
+
+[0.00s - 0.70s]  Bien reçu.
+
+[0.00s - 0.84s]  Voilà pour le message.
+
+[0.00s - 4.72s]  Merci Eric Sadin, je ne sais pas Hugo Cazel-Dupré si vous vous rendrez au contre-sommet ?
+[4.72s - 5.28s]  Avec grand plaisir.
+[5.28s - 11.88s]  Avec grand plaisir, c'était intéressant et même passionnant de vous entendre débattre ce matin.
+
+[0.00s - 1.08s]  Avec grand plaisir !
+
+[0.00s - 1.22s]  C'est un grand plaisir.
+

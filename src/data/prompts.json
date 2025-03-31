@@ -3,7 +3,7 @@
         "name": "formatage_fr",
         "description": "Formatage de la transcription",
         "template": "\nTu es un **assistant linguistique avancé** spécialisé dans l'analyse et le formatage des conversations transcrites automatiquement.  \nMa transcription brute provient d'un système de reconnaissance vocale en direct, avec un léger chevauchement entre les segments pour éviter les coupures de mots. Tu dois donc déterminer quel mot est le plus probable en fonction du contexte.  \nJe veux que tu **la structures correctement en Markdown** avec une mise en page claire et bien organisée, **sans perte d'information** ni altération. voici la liste des speakers intervenant remplace les Speaker pas leur nom {speakers}\n---\n## **Transcription brute :**\n{transcription_text}\n## 📌 **Instructions précises :**\n1. **Structure le dialogue** avec une séparation claire des interlocuteurs (**Intervenant 1, Intervenant 2, etc.**).  \n2. **Utilise un format Markdown optimisé** pour améliorer la lisibilité :\n   - **Gras** pour les noms des intervenants.\n   - _Italique_ pour les émotions, hésitations ou intonations.\n   - Puces `-` pour résumer les points clés si nécessaire.\n3. **Ne perds aucune information** :\n   - Garde **chaque phrase intacte** et reformule les mots mal transcrits si nécessaire (sans en altérer le sens).\n   - Si des mots sont coupés ou semblent incohérents, fais une **correction intelligente** en fonction du contexte.\n   - Si un passage est totalement incompréhensible, utilise `[??]` pour indiquer une erreur possible.\n4. **Ajoute un résumé structuré au début de la transcription** :\n   - **Contexte** : Qui parle ? Quel est le sujet ?\n   - **Points clés** : Résumé en quelques lignes.\n5. **Gère les silences, hésitations et bruits de fond** :\n   - Si une personne hésite, ajoute `(silence…)` ou `(hésitation…)`.\n   - Si un bruit perturbe une phrase, note `(bruit de fond…)`.\n---\n\n## **🎯 Exemple de sortie attendue :**\n\n# 📝 **Transcription structurée**\n**Date :** [Date du fichier audio]  \n**Durée :** [Durée en minutes]  \n## 📌 **Résumé**\n**Contexte :** Conversation entre un client et un représentant commercial à propos d'une offre logicielle.  \n**Points clés :**\n- Le client recherche un logiciel compatible avec son système.\n- Le représentant commercial présente les avantages de l’offre.  \n---\n## 💬 **Dialogue**\n**🗣️ Intervenant 1 (Représentant commercial) :**  \n_Bonjour et bienvenue chez XYZ ! Comment puis-je vous aider aujourd’hui ?_  \n**🗣️ Intervenant 2 (Client) :**  \n_Bonjour ! Je suis intéressé par votre offre sur le logiciel ABC. Pouvez-vous m’en dire plus ?_  \n**🗣️ Intervenant 1 (Représentant commercial) :**  \n_Bien sûr ! Le logiciel ABC inclut…_  \n_(Quelques secondes de silence)_  \n**🗣️ Intervenant 2 (Client) :**  \n_Cela semble intéressant, mais est-il compatible avec mon système actuel ?_  \n_(Hésitation)_  \n**🗣️ Intervenant 1 (Représentant commercial) :**  \n_Oui, absolument ! Il prend en charge…_  \n---"
-    },    
+    },
     "formatage_prompt_en": {
         "name": "formatage_en",
         "description": "fromatage of the transcrption",
@@ -24,7 +24,6 @@
         "description": "Synthèse rapide en quelques phrases.",
         "template": "Tu es un assistant linguistique avancé chargé de condenser les transcriptions de conversations. \nTu dois fournir un résumé **très concis**, en **trois phrases maximum**, en conservant uniquement les points les plus essentiels.\n---\n## **Transcription :**\n{transcription_text}\n## **Instructions :**\n1. **Utilise un ton neutre et synthétique.**\n2. **Ne garde que les informations clés.**\n3. Évite les détails non essentiels.\n---"
     },
-
     "summary_condensed_en": {
         "name": "Condensed Summary",
         "description": "Quick synthesis in a few sentences.",
@@ -70,38 +69,34 @@
         "description": "Summarizing key decisions and next steps.",
         "template": "You are an assistant specializing in **action-oriented summaries**.\nYou must analyze the transcription and identify **decisions made, responsibilities assigned, and next steps**.\n---\n## **Transcription:**\n{transcription_text}\n## **Instructions:**\n1. **List the decisions made** with a brief explanation.\n2. **Identify who is responsible** for each action.\n3. **Detail the next steps** to be taken.\n4. Structure everything into a **clear action list**.\n---"
     },
-    "auto_feedback_prompt_fr":{
-        "name":"auto_feedback_prompt",
-        "description":"auto feedback",
+    "auto_feedback_prompt_fr": {
+        "name": "auto_feedback_prompt",
+        "description": "auto feedback",
         "template": "Tu es un assistant linguistique avancé chargé d'évaluer la qualité d'un résumé par rapport à la transcription originale.\nAnalyse le résumé et la transcription et réponds en suivant ces critères :\n- **Fidélité** (le résumé est-il exact et ne contient-il pas d'erreurs ?)\n- **Complétude** (le résumé couvre-t-il tous les points importants ?)\n- **Concision** (est-il suffisamment court tout en restant pertinent ?)\n- **Clarté** (est-il bien écrit et structuré ?)\n\nDonne un score sur 10 pour chaque critère et explique brièvement ce qui peut être amélioré.\n\n---\n## 📌 **Transcription Originale :**  \n{transcription_text}\n\n## 📌 **Résumé Généré :**  \n{summary_text}\n\n---\n## 📝 **Feedback attendu :**\n- Fidélité : X/10\n- Complétude : X/10\n- Concision : X/10\n- Clarté : X/10\n- **Commentaires d'amélioration :**\n"
     },
-    "correction_prompt_fr":{
-        "name":"Auto Correction",
-        "description":"auto Correction en fonction du feedback",
-        "template":"\nTu es un assistant linguistique avancé. Voici une transcription originale {transcription_text} et un résumé généré {summary_text}.\nLe résumé a été évalué avec les remarques suivantes :\n## 📌 **Feedback reçu :**  \n{feedback_response}\nCorrige le résumé en fonction des remarques pour l'améliorer tout en respectant ces critères :\n1. **Ne pas modifier le sens de la transcription**.\n2. **Corriger les oublis signalés**.\n3. **Améliorer la clarté sans ajouter d'informations inutiles**.\n---\n## **Résumé corrigé attendu :**"
+    "correction_prompt_fr": {
+        "name": "Auto Correction",
+        "description": "auto Correction en fonction du feedback",
+        "template": "\nTu es un assistant linguistique avancé. Voici une transcription originale {transcription_text} et un résumé généré {summary_text}.\nLe résumé a été évalué avec les remarques suivantes :\n## 📌 **Feedback reçu :**  \n{feedback_response}\nCorrige le résumé en fonction des remarques pour l'améliorer tout en respectant ces critères :\n1. **Ne pas modifier le sens de la transcription**.\n2. **Corriger les oublis signalés**.\n3. **Améliorer la clarté sans ajouter d'informations inutiles**.\n---\n## **Résumé corrigé attendu :**"
     },
-    "diarization_prompt_fr":
-    {
-        "name":"diarization_prompt_fr",
-        "description":"diarizationprompt fr",
-        "template":"Formate le texte suivant en Markdown en appliquant strictement ce format, sans ajouter aucun commentaire ou texte supplémentaire :**🗣️ Speaker [numéro ou identifiant] :**  \n[contenu de l'intervention]\nPour chaque intervention, corrige automatiquement les fautes d’orthographe, de grammaire ou de syntaxe si tu es à plus de 80 % certain(e) qu'il s'agit d'une erreur, tout en conservant le sens original Rajoute en gras les mots clés souligne les dates, et met en italique les noms indentifié. Retourne uniquement le texte reformulé, sans explications ni commentaires.\n\n Voici la liste des personnes avec leur identifiant remplace les speakers par leur nom :\n {speakers} \n\n Voici le texte à traiter (ce n'est pas la suite des consignes):{transcription_text}"
+    "diarization_prompt_fr": {
+        "name": "diarization_prompt_fr",
+        "description": "diarizationprompt fr",
+        "template": "Formate le texte suivant en Markdown en appliquant strictement ce format, sans ajouter aucun commentaire ou texte supplémentaire :**🗣️ Speaker [numéro ou identifiant] :**  \n[contenu de l'intervention]\nPour chaque intervention, corrige automatiquement les fautes d’orthographe, de grammaire ou de syntaxe si tu es à plus de 80 % certain(e) qu'il s'agit d'une erreur, tout en conservant le sens original Rajoute en gras les mots clés souligne les dates, et met en italique les noms indentifié. Retourne uniquement le texte reformulé, sans explications ni commentaires.\n\n Voici la liste des personnes avec leur identifiant remplace les speakers par leur nom :\n {speakers} \n\n Voici le texte à traiter (ce n'est pas la suite des consignes):{transcription_text}"
     },
-    "identification_prompt_fr":
-    {
-        "name":"identification_prompt_fr",
-        "description":"identification prompt fr",
-        "template":"Tu es un outil d’analyse de transcription. À partir d’un texte contenant des segments horodatés et des indications de speaker (ex. : “SPEAKER_02”, “SPEAKER_00”), ton objectif est de lire la transcription et d’identifier tous les intervenants uniques. Pour chaque speaker, tu dois renvoyer une ligne contenant le code du speaker suivi du rôle ou du nom associé, si identifiable dans le texte je veux que tu identifie les n nombre de speakers et que assosie chaque speaker à son nom uniquement sans texte pour expliquer:( example de sortie attendue:  SPEAKER:00 = Présentateur, SPEAKER:01 = Jean ). \n Voici la transcription à traiter : \n ## Transcription :\n {transcription_text}"
+    "identification_prompt_fr": {
+        "name": "identification_prompt_fr",
+        "description": "identification prompt fr",
+        "template": "Tu es un outil d’analyse de transcription. À partir d’un texte contenant des segments horodatés et des indications de speaker (ex. : “SPEAKER_02”, “SPEAKER_00”), ton objectif est de lire la transcription et d’identifier tous les intervenants uniques. Pour chaque speaker, tu dois renvoyer une ligne contenant le code du speaker suivi du rôle ou du nom associé, si identifiable dans le texte je veux que tu identifie les n nombre de speakers et que assosie chaque speaker à son nom uniquement sans texte pour expliquer:( example de sortie attendue:  SPEAKER:00 = Présentateur, SPEAKER:01 = Jean ). \n Voici la transcription à traiter : \n ## Transcription :\n {transcription_text}"
     },
-    "introduction_prompt_fr":
-    {
-        "name":"introduction_prompt_fr",
-        "description":"introduction prompt fr",
-        "template":"Tu es un assistant expert en analyse de transcriptions textuelles. Ton objectif est d'extraire et structurer les informations essentielles d'une transcription brute.\n\n Voici le texte brute de transcription : {transcription_text}\n\n### Instructions :\n1. **Titre** : Trouve un titre représentatif du contenu de la transcription.\n2. **Introduction** : Résume brièvement l'idée principale en 2-3 phrases.\n3. **Durée** : Extrait la durée de l'enregistrement si mentionnée.\n4. **Date de réalisation** : Identifie la date de l'enregistrement si elle est présente.\n\n### Format attendu en Markdown :\n```md\n# [Titre généré]\n\n**📅 Date de réalisation :** [Date extraite]  \n\n**⏳ Durée :** [Durée extraite]  \n## Introduction\n[Introduction générée] "
+    "introduction_prompt_fr": {
+        "name": "introduction_prompt_fr",
+        "description": "introduction prompt fr",
+        "template": "Tu es un assistant expert en analyse de transcriptions textuelles. Ton objectif est d'extraire et structurer les informations essentielles d'une transcription brute.\n\n Voici le texte brute de transcription : {transcription_text}\n\n### Instructions :\n1. **Titre** : Trouve un titre représentatif du contenu de la transcription.\n2. **Introduction** : Résume brièvement l'idée principale en 2-3 phrases.\n3. **Durée** : Extrait la durée de l'enregistrement si mentionnée.\n4. **Date de réalisation** : Identifie la date de l'enregistrement si elle est présente.\n\n### Format attendu en Markdown :\n```md\n# [Titre généré]\n\n**📅 Date de réalisation :** [Date extraite]  \n\n**⏳ Durée :** [Durée extraite]  \n## Introduction\n[Introduction générée] "
     },
-    "shorter_phrase":
-    {
-        "name":"shorter_phrase",
-        "description":"short phrase",
-        "template" :"Tu es un assistant expert en synthèse de texte. Ton objectif est de résumer la phrase suivante de manière courte et concise, tout en conservant **toutes les informations importantes** et sans en modifier le sens.\n\n\n### **Phrase à résumer :**\n''{transcription_text}''\n\n### **Instructions :**\n- Si la phrase est longue, réduis-la au maximum sans perdre d'informations clés.\n- Si la phrase est déjà courte, conserve-la telle quelle.\n- Ne change pas le sens ni les faits.\n- Sois direct et clair.\n\n**Retourne uniquement le résumé sans explication supplémentaire.**"
+    "shorter_phrase": {
+        "name": "shorter_phrase",
+        "description": "short phrase",
+        "template": "Tu es un assistant expert en synthèse de texte. Ton objectif est de résumer la phrase suivante de manière courte et concise, tout en conservant **toutes les informations importantes** et sans en modifier le sens.\n\n\n### **Phrase à résumer :**\n''{transcription_text}''\n\n### **Instructions :**\n- Si la phrase est longue, réduis-la au maximum sans perdre d'informations clés.\n- Si la phrase est déjà courte, conserve-la telle quelle.\n- Ne change pas le sens ni les faits.\n- Sois direct et clair.\n\n**Retourne uniquement le résumé sans explication supplémentaire.**"
     }
 }

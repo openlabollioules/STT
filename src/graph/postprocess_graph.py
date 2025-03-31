@@ -67,8 +67,8 @@ class TranscriptionProcessor:
 
         # Initializing LLM models for each task
         self.llm_intro = OllamaLLM(model="deepseek-r1:8b", num_ctx=self.NUM_CTX)
-        self.llm_speakers = OllamaLLM(model="phi4:14b-q4_K_M", num_ctx=self.NUM_CTX)
-        self.llm_format = OllamaLLM(model="phi4:14b-q4_K_M", num_ctx=self.NUM_CTX)
+        self.llm_speakers = OllamaLLM(model="phi4:latest", num_ctx=self.NUM_CTX)
+        self.llm_format = OllamaLLM(model="phi4:latest", num_ctx=self.NUM_CTX)
         self.llm_shorter_phrase = OllamaLLM(model="mistral-small:latest", num_ctx=self.NUM_CTX)
         self.llm_summary = OllamaLLM(model="deepseek-r1:14b", num_ctx=self.NUM_CTX)
         self.llm_feedback = OllamaLLM(model="deepseek-r1:14b", num_ctx=self.NUM_CTX)
@@ -239,7 +239,7 @@ class TranscriptionProcessor:
             # Write each part inside the output file
             f.write(result["intro"])
             f.write("\n")
-            f.write("\n## Transcription Formaté : \n")
+            f.write("\n## Transcription Formatée : \n")
             f.write(result["formatted_text"])
             f.write("\n")
             f.write(result["summary_text"])

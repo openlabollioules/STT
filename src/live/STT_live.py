@@ -162,4 +162,4 @@ def transcribe_stream( language,write_auto_correction=True):
 if __name__ == "__main__":
     language = sys.argv[1] if len(sys.argv) > 1 else "transcribe"
     transcribe_stream(language)
-    start_post_process(True, file_path, file_name)
+    # start_post_process(True, file_path, file_name)

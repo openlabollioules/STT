@@ -3,12 +3,15 @@ from pyannote.audio import Audio, Pipeline
 import torch
 from langchain_ollama import OllamaLLM
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor
+from dotenv import load_dotenv 
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from services import logger
 from config import config
 
+load_dotenv()
 MODEL_DIR = os.getenv("MODEL_DIR")
+# MODEL_DIR = os.path.join
 HF_TOKEN = os.getenv("HF_TOKEN")
 
 def load_model():

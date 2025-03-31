@@ -17,3 +17,12 @@ torch
 transformers
 ttkbootstrap
 langdetect
+flask
+flask-cors
+gunicorn
+pytest
+pytest-flask
+requests
+python-dotenv
+numpy
+loguru
