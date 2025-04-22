@@ -280,7 +280,7 @@ class STTInterface:
 
             self.text_display.insert(
                 tk.END,
-                f"Loading model {os.getenv("AUDIO_MODEL_NAME")} with language({language}) using the device : {self.selected_device.get()}...\n",
+                f"Loading model {os.getenv('AUDIO_MODEL_NAME')} with language({language}) using the device : {self.selected_device.get()}...\n",
             )
             self.text_display.yview(tk.END)
 
