@@ -26,7 +26,12 @@ Create an .env file
 ```sh
 touch .env
 ```
-Add these parameters :
+Open the newly created .env file. For example on mac, you can type the following command in a terminal
+```sh
+open -e .env
+```
+
+Add these parameters:
 ```python
 # env
 AUDIO_MODEL_NAME="openai/whisper-large-v3-turbo" # wisper for exemple
@@ -43,6 +48,18 @@ HF_TOKEN="YOUR-HF-TOKEN"
 
 ## Installation
 
+Before installing and running the application, it is recommended to create a python virtual environment (only the first time).
+Replace "python" by "python3" if the "python" command is not found.
+
+```bash
+python -m venv env
+```
+Then activate the environment (each time you'll need to run the application, you'll need to be in this venv)
+
+```bash
+source env/bin/activate
+```
+
 1. **Install Python dependencies:**  
    ```bash
    pip install -r requirements.txt
@@ -51,15 +68,20 @@ HF_TOKEN="YOUR-HF-TOKEN"
    ```bash
    brew install ffmpeg && brew install python-markdown && brew install pypandoc
    ```
+If brew was not previously installed on your mac, go to https://brew.sh and type de provided command
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
 
 ---
 
 ## Running the Application
 
 Launch the main interface of the application using:
+Possibly replace "python" by "python3" if the "python" command is not found.
 
 ```bash
-python3 main.py
+python main.py
 ```
 
 This starts the user-friendly interface where you can select live transcription, live translation, file transcription via drag & drop, and summary generation.
