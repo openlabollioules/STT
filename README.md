@@ -14,6 +14,8 @@ This application provides robust speech-to-text and translation functionalities 
 
 ## Requirements
 
+- **Python 3.11 or higher:**  
+  Make sure python 3.11 or more is installed. Type python3 --version. Uninstall any older version using brew uninstall brew uninstall python@3.x then brew cleanup or by removing the python version from the Applications favorite in Finder.
 - **Audio Loopback:**  
   For live transcription, your system audio must be routed through a loopback device.  
 > **Note:** This feature currently supports macOS users. For testing, the application was configured using **BackHole-2ch**.
@@ -31,7 +33,7 @@ Open the newly created .env file. For example on mac, you can type the following
 open -e .env
 ```
 
-Add these parameters:
+Add these parameters (change the YOUR-HF-TOKEN to your hugging face key that you can create from your hugging face account):
 ```python
 # env
 AUDIO_MODEL_NAME="openai/whisper-large-v3-turbo" # wisper for exemple
